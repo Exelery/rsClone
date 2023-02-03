@@ -4,9 +4,9 @@
       <h1 class="logo me-auto"><RouterLink to="/">Page builder</RouterLink></h1>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><RouterLink to="/" class="nav-link scrollto active">Home</RouterLink></li>
-          <li><RouterLink to="/about" class="nav-link scrollto ">About</RouterLink></li>
-          <li><RouterLink to="/builder" class="nav-link scrollto ">Builder</RouterLink></li>
+          <li><RouterLink to="/" class="nav-link scrollto" :class="{active: $route.name==='home'}">Home</RouterLink></li>
+          <li><RouterLink to="/about" class="nav-link scrollto " :class="{active: $route.name==='about'}">About</RouterLink></li>
+          <li><RouterLink to="/builder" class="nav-link scrollto " :class="{active: $route.name==='builder'}">Builder</RouterLink></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
