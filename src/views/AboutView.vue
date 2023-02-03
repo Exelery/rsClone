@@ -261,4 +261,7 @@ export default {
 
 <style>
 @import "@/layout/assets/css/style.css";
+a {
+  text-decoration: none !important;
+}
 </style>
