@@ -3180,8 +3180,8 @@
     100%{transform:scale(1)}
 }
 [data-aos^=zoom][data-aos^=zoom] {
-    /*opacity: 0;*/
-    animation: fade-in .3s linear;
+    opacity: 1;
+    /*animation: fade-in .3s linear;*/
     transition-property: opacity, transform
 }
 
