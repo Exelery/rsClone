@@ -1,7 +1,7 @@
 <template>
   <header id="header" class="fixed-top header-inner-pages">
     <div class="container d-flex align-items-center">
-      <h1 class="logo me-auto"><a href="index.html">Page builder</a></h1>
+      <h1 class="logo me-auto"><RouterLink to="/">Page builder</RouterLink></h1>
       <nav id="navbar" class="navbar">
         <ul>
           <li><RouterLink to="/" class="nav-link scrollto active">Home</RouterLink></li>
@@ -17,7 +17,15 @@
 
 <script>
 export default {
-  name: "HeaderBox"
+  name: "HeaderBox",
+  mounted() {
+    document.querySelector(".mobile-nav-toggle").addEventListener('click', function(e) {
+      document.querySelector('#navbar').classList.toggle('navbar-mobile')
+      this.classList.toggle('bi-list')
+      this.classList.toggle('bi-x')
+    })
+
+  },
 }
 </script>
 

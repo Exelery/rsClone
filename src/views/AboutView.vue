@@ -251,6 +251,7 @@ import HeaderBox from "@/components/HeaderBox.vue";
 import FooterBox from "@/components/FooterBox.vue";
 
 export default {
+
   components: {
     HeaderBox,
     FooterBox

@@ -73,7 +73,8 @@ export default {
   components:{
     HeaderBox,
     FooterBox
-  }
+  },
+
 }
 </script>
 <style >
