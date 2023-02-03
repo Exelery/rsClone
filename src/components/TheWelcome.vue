@@ -1,93 +1,85 @@
-<script setup lang="ts">
-import WelcomeItem from "./WelcomeItem.vue";
-import DocumentationIcon from "./icons/IconDocumentation.vue";
-import ToolingIcon from "./icons/IconTooling.vue";
-import EcosystemIcon from "./icons/IconEcosystem.vue";
-import CommunityIcon from "./icons/IconCommunity.vue";
-import SupportIcon from "./icons/IconSupport.vue";
-</script>
-
 <template>
-  <WelcomeItem>
-    <template #icon>
-      <DocumentationIcon />
-    </template>
-    <template #heading>Documentation</template>
+  <div class="body">
+ <HeaderBox></HeaderBox>
+  <main>
+    <section id="hero" class="d-flex align-items-center">
 
-    Vue’s
-    <a target="_blank" href="https://vuejs.org/">official documentation</a>
-    provides you with all information you need to get started.
-  </WelcomeItem>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
+               data-aos="fade-up" data-aos-delay="200">
+            <h1>Create web pages in one click</h1>
+            <h2>We are team of talented developers give you the best webpage builder!</h2>
+            <div class="d-flex justify-content-center justify-content-lg-start">
+              <RouterLink to="/builder"  class="btn-get-started scrollto">Get Started</RouterLink>
+              <a href="#register" class="btn-get-started scrollto"  data-bs-toggle="modal" data-bs-target="#registerModal">Register</a>
+            </div>
+          </div>
+          <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+            <img src="@/layout/assets/img/hero-img.png" class="img-fluid animated" alt="">
+          </div>
+        </div>
+      </div>
 
-  <WelcomeItem>
-    <template #icon>
-      <ToolingIcon />
-    </template>
-    <template #heading>Tooling</template>
+    </section>
 
-    This project is served and bundled with
-    <a href="https://vitejs.dev/guide/features.html" target="_blank">Vite</a>.
-    The recommended IDE setup is
-    <a href="https://code.visualstudio.com/" target="_blank">VSCode</a> +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>.
-    If you need to test your components and web pages, check out
-    <a href="https://www.cypress.io/" target="_blank">Cypress</a> and
-    <a
-      href="https://docs.cypress.io/guides/component-testing/introduction"
-      target="_blank"
-      >Cypress Component Testing</a
-    >.
+  </main>
 
-    <br />
 
-    More instructions are available in <code>README.md</code>.
-  </WelcomeItem>
+  <FooterBox></FooterBox>
 
-  <WelcomeItem>
-    <template #icon>
-      <EcosystemIcon />
-    </template>
-    <template #heading>Ecosystem</template>
+<!--  <div id="preloader"></div>-->
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
-    Get official tools and libraries for your project:
-    <a target="_blank" href="https://pinia.vuejs.org/">Pinia</a>,
-    <a target="_blank" href="https://router.vuejs.org/">Vue Router</a>,
-    <a target="_blank" href="https://test-utils.vuejs.org/">Vue Test Utils</a>,
-    and
-    <a target="_blank" href="https://github.com/vuejs/devtools">Vue Dev Tools</a
-    >. If you need more resources, we suggest paying
-    <a target="_blank" href="https://github.com/vuejs/awesome-vue"
-      >Awesome Vue</a
-    >
-    a visit.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <CommunityIcon />
-    </template>
-    <template #heading>Community</template>
-
-    Got stuck? Ask your question on
-    <a target="_blank" href="https://chat.vuejs.org">Vue Land</a>, our official
-    Discord server, or
-    <a target="_blank" href="https://stackoverflow.com/questions/tagged/vue.js"
-      >StackOverflow</a
-    >. You should also subscribe to
-    <a target="_blank" href="https://news.vuejs.org">our mailing list</a> and
-    follow the official
-    <a target="_blank" href="https://twitter.com/vuejs">@vuejs</a>
-    twitter account for latest news in the Vue world.
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <SupportIcon />
-    </template>
-    <template #heading>Support Vue</template>
-
-    As an independent project, Vue relies on community backing for its
-    sustainability. You can help us by
-    <a target="_blank" href="https://vuejs.org/sponsor/">becoming a sponsor</a>.
-  </WelcomeItem>
+  <!-- Modal -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Register</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 </template>
+<script >
+import HeaderBox from "@/components/HeaderBox.vue";
+import FooterBox from "@/components/FooterBox.vue";
+export default {
+  components:{
+    HeaderBox,
+    FooterBox
+  },
+
+}
+</script>
+<style >
+@import "@/layout/assets/css/style.css";
+a {
+  text-decoration: none !important;
+}
+</style>
