@@ -21,5 +21,6 @@ import { RouterLink, RouterView } from "vue-router";
 
 #app {
   margin: 0;
+  min-height: 100vh;
 }
 </style>

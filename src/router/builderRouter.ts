@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import BuilderPage from "../pages/BuilderPage.vue"
 
-const router = createRouter({
+const BuilderRouter = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
@@ -14,13 +14,6 @@ const router = createRouter({
       path: "/builder",
       name: "builder",
       component: BuilderPage,
-      children:[
-        {
-          path: "create",
-          name: "creator",
-          component: BuilderPage,
-        }
-      ]
     },
     {
       path: "/about",
@@ -33,4 +26,4 @@ const router = createRouter({
   ],
 });
 
-export default router;
+export default BuilderRouter;
