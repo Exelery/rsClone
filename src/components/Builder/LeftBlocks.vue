@@ -2,8 +2,7 @@
     <draggable 
     v-model="blocks"
     item-key="id"
-    class="blocks scrollspy-example"
-    data-bs-spy="scroll"
+    class="blocks "
     ghost-class="ghost"
     :dragover-bubble="true"
     :group="{ name: 'people', pull: 'clone', put: false }"
