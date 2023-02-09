@@ -18,4 +18,10 @@ module.exports = {
       extends: ["plugin:cypress/recommended"],
     },
   ],
+  "prettier/prettier": [
+    "error",
+    {
+      endOfLine: "auto",
+    },
+  ],
 };
