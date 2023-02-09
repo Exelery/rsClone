@@ -1,17 +1,19 @@
 <template>
-    <div class="d-flex vh-100 bg-light">
+    <div class="d-flex vh-100 bg-light builder" >
         <LeftBar/>
-        <LeftBlocks/>
-        <workingSpace ref="workingSpace"/>
+        <div style="width:100%">
+            <BuilderTabs/>
+            <RouterView  />
+        </div>
+        
     </div>
 </template>
 
 <script lang="ts">
+import { RouterView } from "vue-router";
+import LeftBar from '../../components/builder/LeftBar.vue'
+import BuilderTabs from "../../components/builder/BuilderTabs.vue";
 import draggable from 'vuedraggable'
-import LeftBar from '../components/builder/LeftBar.vue'
-import LeftBlocks from '../components/builder/LeftBlocks.vue'
-import workingSpace from '../components/builder/WorkingSpace.vue'
-
 declare var require: any
 
  export default {
@@ -21,10 +23,9 @@ declare var require: any
         }
     },
     components: {
+        draggable,
         LeftBar,
-        LeftBlocks,
-        workingSpace,
-        draggable
+        BuilderTabs
     },
     computed:{
         getComponents(): number {
@@ -42,5 +43,8 @@ declare var require: any
 </script>
 
 <style>
-@import '../blocks/style/blocks.css';
+@import '../../blocks/style/blocks.css';
+.builder{
+    overflow-y: hidden;
+}
 </style>

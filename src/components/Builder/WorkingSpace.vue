@@ -1,64 +1,130 @@
 <template>
     <div>
+        <EditMenu :parent="workingParent" :editSave="editBlock" />
+        <ModalNewPrject/>
     <div ref="workingSpace" class="working-space">
-        <draggable 
+        <draggable
         v-model="blocks"
         group="people"
-        @start="drag=true"
-        @end="drag=false"
+        @start="drag(true)"
+        @end="drag(false)"
         item-key="id"
+        :disabled="false"
         class="working-space-drop"
         >
             <template  #item="{element}">
-                <div @mouseover="edit($event)" class="block">
+                <div
+                @mouseover="edit($event)"
+                @mouseout="removeEdit($event)"
+                @click="darragableClick($event)"
+                class="block"
+                >
                     <div v-html="element.data"></div>
-                    <h1 v-if="element.html === false">hello</h1>
                 </div>  
             </template>
         </draggable>
     </div>
-    <button type="button" @click="show" class="btn btn-primary position-absolute" style="right: 25px; bottom: 25px;">Preview</button>
+    <div class="position-absolute d-flex"  style="right: 25px; bottom: 25px;">
+        <button type="button" class="btn btn-primary button-control" data-bs-toggle="modal" data-bs-target="#myModal">
+            New page
+        </button>
+        <button type="button" @click="$router.push('/builder/editor')" class="btn btn-primary button-control">Edit page <i class="bi bi-code-slash"></i></button>
+        <button type="button" @click="show" class="btn btn-primary button-control">Preview <i class="bi bi-eye"></i></button>
+    </div>
 </div>
 </template>
 
 <script lang="ts">
-import { ref } from 'vue';
 import { useEditorStore } from '@/stores/editor'
 import draggable from 'vuedraggable'
-import blocks from '@/blocks/'
+import blocks from '@/blocks/';
+import EditMenu from './EditMenu.vue';
+import ModalNewPrject from './ModalNewPrject.vue';
+
 export default {
     data() {
-        return {
-            drag:true,
+        let data : any = {
             enabled: true,
             blocks: [],
             blocksType: '',
             dragging: false,
+            workingParent: this.$refs.workingSpace as HTMLElement,
+            editIndex: 0,
+            activeProject: '',
+            activePage: useEditorStore().activePage
         }
+        return data
     },
     methods:{
+        editBlock(){
+            this.blocks[this.editIndex].data = document.querySelector(".working-space")!.querySelectorAll('[data-draggable]')[this.editIndex].innerHTML
+        },
+        darragableClick(event: Event){
+            document.querySelector(".working-space")!.querySelectorAll('[data-draggable]').forEach((listElement, index) =>{
+                if (event.currentTarget == listElement) {
+                    this.editIndex = index
+                }
+            })
+        },
         edit(event: Event){
-            let elem = (event.target) as HTMLElement;
-            // elem.setAttribute("style", "background: red")
+            let elem = (event.currentTarget) as HTMLElement;
+            elem.setAttribute("style", "outline: 2px solid rgb(67, 211, 255)")
+            elem.getBoundingClientRect();
             // https://api.unsplash.com/search/photos?page=1&query=mountain&client_id=yugMy1rL6bPUQVHjtXVFzkZWc8mRLS0EOqrb6IAw3oA&per_page=2
         },
+        removeEdit(event: Event){
+            let elem = (event.currentTarget) as HTMLElement;
+            elem.removeAttribute("style")
+        },
+        drag(isStart: boolean){
+            if(!isStart){
+                localStorage.setItem(this.activePage + `/${this.activeProject}/page`, JSON.stringify(this.blocks))
+            }
+            useEditorStore().setActive(isStart?"delete":"navBar")
+        },
       show() {
-        let workingSpace = this.$refs.workingSpace as HTMLElement;
-        if( workingSpace.className.includes("active")){
-            workingSpace.classList.remove("active")
-        }else{
-            workingSpace.classList.add("active")
+            let workingSpace = this.$refs.workingSpace as HTMLElement;
+            if(workingSpace.className.includes("active")){
+                workingSpace.classList.remove("active")
+            }else{
+                workingSpace.classList.add("active")
+            }  
+        },
+        getParent(){
+            return this.$refs.workingSpace
         }
-        
-    }
+
     },
     components:{
         draggable,
+        EditMenu,
+        ModalNewPrject
     },
     created(){
+        if(localStorage.getItem("activeProject") == null){
+            localStorage.setItem("activeProject","first");
+        }
+        const setList = () =>{
+        this.activeProject = localStorage.getItem("activeProject");
+            if(localStorage.getItem(this.activePage + `/${this.activeProject}/page`) != null){
+                this.blocks = JSON.parse(String(localStorage.getItem(this.activePage + `/${this.activeProject}/page`)))
+            }
+        }
+
+        setList()
+
+        this.workingParent = this.$el
         useEditorStore().$onAction((e)=>{
-            this.blocksType = e.args[0];
-        },true)
+            if(e.name === 'setActive'){
+                this.blocksType = e.args[0];
+            }
+
+            if(e.name === 'setActivePage'){
+                this.activePage = e.args[0];
+                setList()
+            }
+        },true);
+    
     }
 }
 </script>
@@ -69,7 +135,7 @@ export default {
     right: 0;
     margin: auto;
     width: 100vw;
-    height: 300vh;
+    height: 280vh;
     overflow-y: auto;
     max-width: 1824px;
     max-height: 824px;
@@ -79,22 +145,29 @@ export default {
     background: rgb(230, 230, 230);
     transition: all 0.2s ease-in;
 }
-
 .working-space-drop{
     height: 100%;
     width: 100%;
 }
-
 .active.working-space{
     scale: 1;
     transform: translateY(0px);
     transform-origin: 0 0;
     width: 100vw;
     height: 100vh;
+    top: 0;
 }
 .working-space .block{
     margin-top: 0;
     background: auto;
     padding: 0;
+    border-spacing: 2px;
+}
+.working-space .block *:hover {
+    outline: 2px solid #5392ff;
+}
+.button-control{
+    margin-right: 3px;
+    color: #fff;
 }
 </style>

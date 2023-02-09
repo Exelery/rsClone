@@ -1,6 +1,7 @@
 export default [
   {
     html: true,
+    name: 'NavbarWhite',
     data: 
   `<header class="bl-nav">
     <div class="bl-nav d-flex justify-content-center py-3">
@@ -16,6 +17,7 @@ export default [
 },
 {
   html: true,
+  name: 'NavbarBlack',
   data: 
 `<nav class="navbar navbar-expand-md navbar-dark  bg-dark">
 <div class="container-fluid">
@@ -45,6 +47,7 @@ export default [
 },
 {
   html: true,
+  name:'FooterWhite',
   data: `<!-- Footer -->
   <footer class="text-center text-lg-start bg-light text-muted">
     <!-- Section: Social media -->

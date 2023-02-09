@@ -2,16 +2,16 @@
     <draggable 
     v-model="blocks"
     item-key="id"
-    class="blocks "
+    class="blocks"
+    :class="{'delete-space':(blocksType === 'delete')}"
     ghost-class="ghost"
     :dragover-bubble="true"
-    :group="{ name: 'people', pull: 'clone', put: false }"
+    :group="{ name: 'people', pull: 'clone', put: (blocksType === 'delete')?true:false }"
     >
         <template #item="{element}">
             <div class="block">
                 <div v-html="element.data"></div>
-             
-            </div> 
+            </div>
         </template>
     </draggable>
 </template>
@@ -53,9 +53,15 @@ export default {
     },
     created(){
         useEditorStore().$onAction((e)=>{
-            console.log(e.args[0], blocks[(e.args[0] as keyof typeof blocks)])
-            this.blocks = blocks[(e.args[0] as keyof typeof blocks)]
-            this.blocksType = e.args[0];
+            if(e.name === 'setActive'){
+                if(e.args[0] === "delete"){
+                    this.blocks = [];
+                    this.blocksType = "delete";
+                }else{
+                    this.blocks = blocks[(e.args[0] as keyof typeof blocks)]
+                    this.blocksType = e.args[0];
+                }
+            }   
         },true)
     }
 }
@@ -64,8 +70,9 @@ export default {
 <style>
 .blocks{
     width: 1024px;
-    height: 300vh;
+    height: 280vh;
     padding: 0 10px;
+    overflow-y: auto;
     scale: .3333;
     transform-origin: left top;
     background: rgb(215, 215, 215);
@@ -75,7 +82,12 @@ export default {
     padding: 0 10px;
 }
 
+.delete-space{
+    background: rgb(255, 130, 130);
+}
+
 .test{
     background: red;
 }
+
 </style>

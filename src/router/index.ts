@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import BuilderPage from "../pages/BuilderPage.vue"
+import BuilderPage from "../pages/builder/BuilderPage.vue"
+import BuilderEditor from "../pages/builder/BuilderEditor.vue"
+import BuilderConstuctor from "../pages/builder/BuilderConstructor.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,25 +13,22 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/builder",
+      path: "/builder/",
       name: "builder",
       component: BuilderPage,
       children:[
         {
           path: "create",
           name: "creator",
-          component: BuilderPage,
+          component: BuilderConstuctor,
+        },
+        {
+          path: "editor",
+          name: "editor",
+          component: BuilderEditor,
         }
       ]
-    },
-    {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import("../views/AboutView.vue"),
-    },
+    }
   ],
 });
 
