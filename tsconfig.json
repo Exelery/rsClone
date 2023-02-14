@@ -1,14 +1,31 @@
 {
-  "files": [],
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "compilerOptions": {
+    "composite": true,
+    "baseUrl": ".",
+    
+    "paths": {
+      "@/*": ["./src/*"],
+      "store/*": [
+        "src/store/*"
+      ]
+    },
+    "lib": [],
+    "types": ["node", "jsdom"]
+  },
+  "exclude": [
+    "src/**/__tests__/*"
+  ],
+  "types": [
+    "node"
+  ],
+  "typeRoots": [
+    "../node_modules/@types"
+  ],
   "references": [
     {
       "path": "./tsconfig.vite-config.json"
-    },
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.vitest.json"
     }
   ]
 }
