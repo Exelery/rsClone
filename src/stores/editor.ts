@@ -10,6 +10,7 @@ export const useEditorStore = defineStore({
     }],
     editorValue: '',
     activePage:'main',
+    activeEditor: {name:'', path: '', index: -1, id:''}
   }),
   getters: {
     value: (state) => state.activeBlock,
@@ -20,11 +21,14 @@ export const useEditorStore = defineStore({
     setActive(blockType: string) {
       this.activeBlock = blockType;
     },
-    addTab(tab: {type: string; name: string }) {
+    addTab(tab: {type: string; name: string, path?: string; index?: number, id: string }) {
       this.tabs.push(tab);
     },
-    editorSetValue(data: {params: {path: string; index: number}; text: string}){
+    editorSetValue(data: {params: {path: string; index: number; id: string}; text: string}){
        this.editorValue = data.text
+    },
+    setActiveEditor(data: {name:string, path: string; index: number, id: string}){
+        this.activeEditor = data
     },
     setActivePage(name: string){
       this.activePage = name

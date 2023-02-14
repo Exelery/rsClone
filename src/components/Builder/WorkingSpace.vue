@@ -59,6 +59,9 @@ export default {
         editBlock(){
             this.blocks[this.editIndex].data = document.querySelector(".working-space")!.querySelectorAll('[data-draggable]')[this.editIndex].innerHTML
         },
+        saveBlocks(){
+            localStorage.setItem(this.activePage + `/${this.activeProject}/page`, JSON.stringify(this.blocks))
+        },
         darragableClick(event: Event){
             document.querySelector(".working-space")!.querySelectorAll('[data-draggable]').forEach((listElement, index) =>{
                 if (event.currentTarget == listElement) {
@@ -78,9 +81,9 @@ export default {
         },
         drag(isStart: boolean){
             if(!isStart){
-                localStorage.setItem(this.activePage + `/${this.activeProject}/page`, JSON.stringify(this.blocks))
+                this.saveBlocks();
             }
-            useEditorStore().setActive(isStart?"delete":"navBar")
+            useEditorStore().setActive(isStart?"delete":"navBar");
         },
       show() {
             let workingSpace = this.$refs.workingSpace as HTMLElement;
@@ -91,9 +94,19 @@ export default {
             }  
         },
         getParent(){
-            return this.$refs.workingSpace
+            return this.$refs.workingSpace;
         }
 
+    },
+    watch:{
+        blocks(newList){
+            newList.forEach( (block : any, index: number) => {
+                if(block.id == null){
+                    block.id = Math.random().toString(36).slice(-10)
+                }
+            })
+            this.saveBlocks()
+        }
     },
     components:{
         draggable,

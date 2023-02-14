@@ -8,7 +8,10 @@
             </p>
         </section>
         <div class="page">
-            <section  v-for="component, index in page.components" @click="SetEditor(page.page, index)">
+            <section  v-for="component, index in page.components" 
+            :class="{'active': component.id  == activeId}" 
+            @click="SetEditor(page.page, index, component.id)"
+            >
                 <i class="bi bi-body-text"></i>
                 <p>
                     {{component.name}}.block
@@ -25,20 +28,34 @@ import { useEditorStore } from "@/stores/editor";
         data(){
             let data: any = {
                 list: [],
-                activeProject: ''
+                activeProject: '',
+                activeButton: '',
+                activeId: 0,
             }
             return data
         },
         methods:{
-            SetEditor(path: string, index: number) {
-                let pageList = String(localStorage.getItem(path));
+            SetEditor(path: string, index: number, id : string) {
+                this.activeId = id;
+                let pageList = JSON.parse(String(localStorage.getItem(path)))[index];
+                useEditorStore().setActiveEditor({name: path.split("/")[0], path, index, id})
+
+                useEditorStore().addTab({
+                    name: pageList.name,
+                    type: "script",
+                    id,
+                    index,
+                    path
+                })
+
                 useEditorStore().editorSetValue({
-                    params: {path, index},
-                    text: JSON.parse(String(pageList))[index].data
-            })
+                    params: {path, index, id},
+                    text:pageList.data
+                })
             }
         },
         created(){
+            this.activeId = useEditorStore().activeEditor.id;
             this.activeProject = localStorage.getItem("activeProject");
             for(let page in localStorage){
                 if(page.includes(`/${this.activeProject}/page`)){
@@ -50,7 +67,13 @@ import { useEditorStore } from "@/stores/editor";
                         }
                         )
                 }
+            }
+
+            useEditorStore().$onAction((e)=>{
+                if(e.name === 'setActiveEditor'){
+                    this.activeId = e.args[0].id;
                 }
+            },true)
             
         }
     }
@@ -61,13 +84,11 @@ import { useEditorStore } from "@/stores/editor";
     .folders p{
         color: #cdcdcd;
         margin-bottom: 0px;
-
     }
     .page{
         padding-left: 20px;
     }
     .folders section{
-        
         padding: 0;
         display: flex;
         margin-bottom: 2px;
@@ -78,6 +99,10 @@ import { useEditorStore } from "@/stores/editor";
     .folders section:hover{
         background: #5d5d5d;
         
+    }
+
+    .folders section.active {
+        background: #0776de;
     }
 
     .folders section i {

@@ -60,4 +60,23 @@ export default {
 .mr-2{
   margin-right: 10px;
 }
+
+
+.left-bar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.left-bar::-webkit-scrollbar-track {
+  background: #212529; 
+}
+ 
+
+.left-bar::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+
+.left-bar::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 </style>
