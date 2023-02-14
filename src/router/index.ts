@@ -3,7 +3,6 @@ import HomeView from "../views/HomeView.vue";
 import BuilderPage from "../pages/builder/BuilderPage.vue"
 import BuilderEditor from "../pages/builder/BuilderEditor.vue"
 import BuilderConstuctor from "../pages/builder/BuilderConstructor.vue"
-import Registration from "@/components/registration.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,11 +12,11 @@ const router = createRouter({
       name: "home",
       component: HomeView,
     },
-    {
-      path: "/registration",
-      name: "Registration" ,
-      component: Registration
-    },
+    // {
+    //   path: "/registration",
+    //   name: "Registration" ,
+    //   component: Registration
+    // },
     {
       path: "/builder/",
       name: "builder",
