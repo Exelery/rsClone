@@ -33,7 +33,7 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Modal -->
-  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <!-- <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -63,16 +63,20 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+  <Registration></Registration>
   </div>
 </template>
-<script >
+
+<script lang="ts">
 import HeaderBox from "@/components/HeaderBox.vue";
 import FooterBox from "@/components/FooterBox.vue";
+import Registration from "@/components/Registration.vue";
 export default {
   components:{
     HeaderBox,
-    FooterBox
+    FooterBox,
+    Registration
   },
 
 }

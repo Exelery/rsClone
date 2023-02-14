@@ -11,8 +11,8 @@
 
 <script lang="ts">
 import { RouterView } from "vue-router";
-import LeftBar from '../../components/builder/LeftBar.vue'
-import BuilderTabs from "../../components/builder/BuilderTabs.vue";
+import LeftBar from '@/components/Builder/LeftBar.vue'
+import BuilderTabs from "@/components/Builder/BuilderTabs.vue";
 import draggable from 'vuedraggable'
 declare var require: any
 
@@ -43,7 +43,7 @@ declare var require: any
 </script>
 
 <style>
-@import '../../blocks/style/blocks.css';
+@import '@/blocks/style/blocks.css';
 .builder{
     overflow-y: hidden;
 }
