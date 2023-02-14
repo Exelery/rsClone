@@ -64,6 +64,7 @@
       </div>
     </div>
   </div> -->
+
   <Registration></Registration>
   </div>
 </template>
