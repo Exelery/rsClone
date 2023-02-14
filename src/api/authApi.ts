@@ -1,19 +1,24 @@
 import { api } from "./http"
 import type { AxiosResponse } from "axios"
-import type { IAuthResponse } from "@/utils/types"
+import type { IAuthResponse, ILoginInput, IResponse, ISignUpInput } from "@/utils/types"
 export default class Auth {
-  static async login(email: string, password: string):
-    Promise<AxiosResponse<IAuthResponse>> {
-    return api.post("/auth/login", {email, password})
+   
+  static async registration(user: ISignUpInput) {
+    const response = await api.post<IResponse<IAuthResponse>>("/auth/registration", user)
+    return response.data
   }
   
-  static async registration(username: string, email: string, password: string):
+  static async login(user: ILoginInput):
     Promise<AxiosResponse<IAuthResponse>> {
-    return api.post("/auth/registration", {username, email, password})
+    return api.post("/auth/login", user)
   }
   
-  static async logout():
-    Promise<void> {
-    return api.post("/auth/logout",)
+  static async logout() {
+    return api.get("/auth/logout",)
   }
+  
+  // static async verify(user: ILoginInput):
+  //   Promise<AxiosResponse<IAuthResponse>> {
+  //   return api.post("/auth/login", user)
+  // }
 }
