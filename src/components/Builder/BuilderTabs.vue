@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex p-2 btn-tab text-bg-dark">
+<div class="d-flex p-2 btn-tab text-bg-dark">
         <div v-for="tab in tabsList">
             <button v-if="tab.type === 'page'"  @click="()=> setActivePage(tab.name)" class="tab btn btn-primary">{{tab.name}}</button>
             <button v-else  @click="()=> setActiveEditor(tab.name, String(tab.path), Number(tab.index), String(tab.id))" class="tab btn btn-primary btn-script" :class="{'tabs-active':activeTabId === tab.id}">{{tab.name}} <i class="bi bi-code-slash"></i></button>
@@ -76,7 +76,9 @@ import { useEditorStore } from '@/stores/editor'
                 }
             },true)
         }
+
     }
+    
 </script>
 
 <style>
