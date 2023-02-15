@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import { useEditorStore } from "@/stores/editor";
+import { useEditorStore } from "../../stores/editor";
 import Codemirror from "codemirror-editor-vue3";
 
 import "codemirror/mode/htmlmixed/htmlmixed.js";

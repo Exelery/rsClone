@@ -3,14 +3,23 @@ import { fileURLToPath, URL } from "url";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
+import reactRefresh from '@vitejs/plugin-react-refresh'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), vueJsx()],
+  plugins: [vue(), vueJsx(), reactRefresh()],
   resolve: {
-    alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
-    },
+    alias: [
+      {
+        find: "@vue/runtime-core",
+        replacement: "@vue/runtime-core/dist/runtime-core.esm-bundler.js",
+      },
+    ],
   },
-  base: ''
+  base: '',
+  server:{
+    watch: {
+      usePolling: true
+    }
+  }
 });

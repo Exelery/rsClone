@@ -14,7 +14,7 @@
             >
                 <i class="bi bi-body-text"></i>
                 <p>
-                    {{component.name}}.block
+                    {{component.name}}.block dsfd
                 </p>
             </section>
         </div>
@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts">
-import { useEditorStore } from "@/stores/editor";
+import { useEditorStore } from "../../stores/editor";
     export default {
         data(){
             let data: any = {

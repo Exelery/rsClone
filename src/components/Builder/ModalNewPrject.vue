@@ -26,7 +26,7 @@
 </template>
 
 <script lang="ts">
-import { useEditorStore } from '@/stores/editor'
+import { useEditorStore } from '../../stores/editor'
   export default {
     data(){
       return {

@@ -8,7 +8,7 @@
         </div>
         <div class="edit-button">
             <i class="bi bi-card-image"></i>
-        </div>
+        </div> 
     </div>
 </template>
 

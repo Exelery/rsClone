@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import mainEditor from '@/components/editor/mainEditor.vue'
+import mainEditor from '../../components/editor/mainEditor.vue'
 declare var require: any
 
  export default {

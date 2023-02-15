@@ -35,9 +35,9 @@
 </template>
 
 <script lang="ts">
-import { useEditorStore } from '@/stores/editor'
+import { useEditorStore } from '../../stores/editor'
 import draggable from 'vuedraggable'
-import blocks from '@/blocks/';
+import blocks from '../../blocks/';
 import EditMenu from './EditMenu.vue';
 import ModalNewPrject from './ModalNewPrject.vue';
 

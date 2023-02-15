@@ -16,7 +16,7 @@
             </div>
           </div>
           <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-            <img src="@/layout/assets/img/hero-img.png" class="img-fluid animated" alt="">
+            <img src="../../layout/assets/img/hero-img.png" class="img-fluid animated" alt="">
           </div>
         </div>
       </div>
@@ -70,9 +70,9 @@
 </template>
 
 <script lang="ts">
-import HeaderBox from "@/components/HeaderBox.vue";
-import FooterBox from "@/components/FooterBox.vue";
-import Registration from "@/components/Registration.vue";
+import HeaderBox from "../components/HeaderBox.vue";
+import FooterBox from "../components/FooterBox.vue";
+import Registration from "../components/Registration.vue";
 export default {
   components:{
     HeaderBox,
@@ -83,7 +83,7 @@ export default {
 }
 </script>
 <style >
-@import "@/layout/assets/css/style.css";
+@import "../layout/assets/css/style.css";
 a {
   text-decoration: none !important;
 }
