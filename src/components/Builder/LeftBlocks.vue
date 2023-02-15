@@ -17,11 +17,11 @@
 </template>
 
 <script lang="ts">
-import { useEditorStore } from '@/stores/editor'
+import { useEditorStore } from '../../stores/editor'
 import draggable  from 'vuedraggable'
 import nestedDraggable  from 'vuedraggable'
 
-import blocks from '@/blocks/'
+import blocks from '../../blocks/'
 export default {
     data() {
         let data : {

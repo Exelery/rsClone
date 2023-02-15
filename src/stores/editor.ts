@@ -21,10 +21,10 @@ export const useEditorStore = defineStore({
     setActive(blockType: string) {
       this.activeBlock = blockType;
     },
-    addTab(tab: {type: string; name: string, path?: string; index?: number, id: string }) {
+    addTab(tab: {type: string; name: string, path?: string; index?: number, id?: string }) {
       this.tabs.push(tab);
     },
-    editorSetValue(data: {params: {path: string; index: number; id: string}; text: string}){
+    editorSetValue(data: {params: {path: string; index: number; id?: string}; text: string}){
        this.editorValue = data.text
     },
     setActiveEditor(data: {name:string, path: string; index: number, id: string}){
