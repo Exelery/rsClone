@@ -1,174 +1,102 @@
 export default [
   {
-    html: true,
-    name: 'NavbarWhite',
-    data: 
-  `<header class="bl-nav">
-    <div class="bl-nav d-flex justify-content-center py-3">
-    <ul class="nav nav-pills">
-      <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-    </ul>
-    </div>
-  </header>`
-},
-{
-  html: true,
-  name: 'NavbarBlack',
-  data: 
-`<nav class="navbar navbar-expand-md navbar-dark  bg-dark">
-<div class="container-fluid">
-  <a class="navbar-brand" href="#">Carousel</a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-    </ul>
-    <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-  </div>
-</div>
-</nav>`
-},
-{
-  html: true,
-  name:'FooterWhite',
-  data: `<!-- Footer -->
-  <footer class="text-center text-lg-start bg-light text-muted">
-    <!-- Section: Social media -->
-    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-      <!-- Left -->
-      <div class="me-5 d-none d-lg-block">
-        <span>Get connected with us on social networks:</span>
-      </div>
-      <!-- Left -->
-  
-      <!-- Right -->
-      <div>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-      <!-- Right -->
-    </section>
-    <!-- Section: Social media -->
-  
-    <!-- Section: Links  -->
-    <section class="">
-      <div class="container text-center text-md-start mt-5">
-        <!-- Grid row -->
-        <div class="row mt-3">
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <!-- Content -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              <i class="fas fa-gem me-3"></i>Company name
-            </h6>
-            <p>
-              Here you can use rows and columns to organize your footer content. Lorem ipsum
-              dolor sit amet, consectetur adipisicing elit.
-            </p>
-          </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Products
-            </h6>
-            <p>
-              <a href="#!" class="text-reset">Angular</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">React</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Vue</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Laravel</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Useful links
-            </h6>
-            <p>
-              <a href="#!" class="text-reset">Pricing</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Settings</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Orders</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Help</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-            <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-            <p>
-              <i class="fas fa-envelope me-3"></i>
-              info@example.com
-            </p>
-            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-          </div>
-          <!-- Grid column -->
-        </div>
-        <!-- Grid row -->
-      </div>
-    </section>
-    <!-- Section: Links  -->
-  
-    <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2021 Copyright:
-      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Footer -->`
-}
+      "html": true,
+      "name": "CallToAction_01",
+      "data": "<div class=\"container bg-white\">\n        <nav class=\"navbar\">\n          <a href=\"https://www.froala.com\">\n            <img src=\"https://heroic-empanada-f5b342.netlify.app/logo.png\" height=\"30\" alt=\"image\">\n          </a>\n        </nav>\n      </div>"
+  },
+  {
+      "html": true,
+      "name": "CallToAction_11",
+      "data": "<div class=\"container text-center bg-white\">\n        <nav class=\"navbar\">\n          <a class=\"ml-auto mr-auto\" href=\"https://www.froala.com\">\n            <img src=\"https://heroic-empanada-f5b342.netlify.app/logo.png\" height=\"30\" alt=\"image\">\n          </a>\n        </nav>\n      </div>"
+  },
+  {
+      "html": true,
+      "name": "CallToAction_21",
+      "data": "<div class=\"container bg-white\">\n        <nav class=\"navbar navbar-expand-md\">\n          <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav0\" aria-controls=\"navbarNav0\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n          </button>\n    \n          <div class=\"collapse navbar-collapse\" id=\"navbarNav0\">\n            <ul class=\"navbar-nav mr-auto ml-auto\">\n              <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Home <span class=\"sr-only\">(current)</span></a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Features</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Pricing</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Team</a>\n              </li>\n            </ul>\n          </div>\n        </nav>\n      </div>"
+  },
+  {
+      "html": true,
+      "name": "CallToAction_31",
+      "data": "<div class=\"container bg-white\">\n        <nav class=\"navbar navbar-expand-md\">\n          <a class=\"navbar-brand\" href=\"https://www.froala.com\">\n            <img src=\"https://heroic-empanada-f5b342.netlify.app/logo.png\" height=\"30\" alt=\"image\">\n          </a>\n    \n          <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav1\" aria-controls=\"navbarNav1\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n          </button>\n    \n          <div class=\"collapse navbar-collapse\" id=\"navbarNav1\">\n            <ul class=\"navbar-nav mr-auto\">\n              <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Home <span class=\"sr-only\">(current)</span></a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Features</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Pricing</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Team</a>\n              </li>\n            </ul>\n    \n            <ul class=\"navbar-nav justify-content-end d-none d-lg-flex ml-md-auto\">\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\"><i class=\"fab fa-slack\"></i></a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\"><i class=\"fab fa-twitter\"></i></a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\"><i class=\"fab fa-github\"></i></a>\n              </li>\n            </ul>\n    \n            <a class=\"btn btn-outline-primary ml-md-3\" href=\"https://www.froala.com\">Button</a>\n          </div>\n        </nav>\n      </div>"
+  },
+  {
+      "html": true,
+      "name": "CallToAction_41",
+      "data": "<div class=\"container bg-white\">\n        <nav class=\"navbar navbar-expand-md no-gutters\">\n          <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav2\" aria-controls=\"navbarNav2\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n          </button>\n    \n          <div class=\"col-4 col-md-2 text-right text-md-center order-lg-6\">\n            <a href=\"https://www.froala.com\">\n              <img src=\"https://heroic-empanada-f5b342.netlify.app/logo.png\" height=\"30\" alt=\"image\">\n            </a>\n          </div>\n    \n          <div class=\"collapse navbar-collapse col-12 col-md-5 order-lg-1\" id=\"navbarNav2\">\n            <ul class=\"navbar-nav col-5\">\n              <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Home <span class=\"sr-only\">(current)</span></a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Features</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Pricing</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Team</a>\n              </li>\n            </ul>\n          </div>\n    \n          <ul class=\"navbar-nav justify-content-end col-sm-5 order-lg-12 d-none d-md-flex\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"https://www.froala.com\"><i class=\"fab fa-twitter\"></i></a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"https://www.froala.com\"><i class=\"fab fa-github\"></i></a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"https://www.froala.com\"><i class=\"fab fa-slack\"></i></a>\n            </li>\n          </ul>\n        </nav>\n      </div>"
+  },
+  {
+      "html": true,
+      "name": "CallToAction_51",
+      "data": "<div class=\"container bg-white\">\n        <nav class=\"navbar navbar-expand-md\">\n          <a class=\"navbar-brand\" href=\"https://www.froala.com\">\n            <img src=\"https://heroic-empanada-f5b342.netlify.app/logo.png\" height=\"30\" alt=\"image\">\n          </a>\n    \n          <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav3\" aria-controls=\"navbarNav3\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n          </button>\n    \n          <div class=\"collapse navbar-collapse\" id=\"navbarNav3\">\n            <ul class=\"navbar-nav ml-auto\">\n              <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Home <span class=\"sr-only\">(current)</span></a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Features</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Pricing</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Team</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">About</a>\n              </li>\n            </ul>\n    \n            <a class=\"btn btn-outline-primary ml-md-3\" href=\"https://www.froala.com\">Button</a>\n          </div>\n        </nav>\n      </div>"
+  },
+  {
+      "html": true,
+      "name": "CallToAction_61",
+      "data": "<div class=\"container bg-white\">\n        <nav class=\"navbar navbar-expand-md no-gutters\">\n          <div class=\"col-2 text-left\">\n            <a href=\"https://www.froala.com\">\n              <img src=\"https://heroic-empanada-f5b342.netlify.app/logo.png\" height=\"30\" alt=\"image\">\n            </a>\n          </div>\n    \n          <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav4\" aria-controls=\"navbarNav4\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n          </button>\n    \n          <div class=\"collapse navbar-collapse justify-content-center col-md-8\" id=\"navbarNav4\">\n            <ul class=\"navbar-nav justify-content-center\">\n              <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Home <span class=\"sr-only\">(current)</span></a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Features</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Pricing</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Team</a>\n              </li>\n            </ul>\n          </div>\n    \n          <ul class=\"navbar-nav col-2 justify-content-end d-none d-md-flex\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"https://www.froala.com\"><i class=\"fab fa-facebook\"></i></a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"https://www.froala.com\"><i class=\"fab fa-twitter\"></i></a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"https://www.froala.com\"><i class=\"fab fa-github\"></i></a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"https://www.froala.com\"><i class=\"fab fa-google\"></i></a>\n            </li>\n          </ul>\n        </nav>\n      </div>"
+  },
+  {
+      "html": true,
+      "name": "CallToAction_71",
+      "data": "<div class=\"container bg-white\">\n        <nav class=\"navbar navbar-expand-lg\">\n          <a class=\"navbar-brand\" href=\"https://www.froala.com\">\n            <img src=\"https://heroic-empanada-f5b342.netlify.app/logo.png\" height=\"30\" alt=\"image\">\n          </a>\n    \n          <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav5\" aria-controls=\"navbarNav5\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n          </button>\n    \n          <div class=\"collapse navbar-collapse\" id=\"navbarNav5\">\n            <ul class=\"navbar-nav mr-auto\">\n              <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Home <span class=\"sr-only\">(current)</span></a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Features</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Pricing</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Team</a>\n              </li>\n            </ul>\n    \n            <ul class=\"navbar-nav justify-content-end ml-auto\">\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Docs</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Contact</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Log In</a>\n              </li>\n            </ul>\n    \n            <a class=\"btn btn-primary ml-md-3\" href=\"https://www.froala.com\">Button</a>\n          </div>\n        </nav>\n      </div>"
+  },
+  {
+      "html": true,
+      "name": "CallToAction_81",
+      "data": "<div class=\"container bg-white\">\n        <nav class=\"navbar navbar-expand-md no-gutters\">\n          <div class=\"col-2 text-left\">\n            <a href=\"https://www.froala.com\">\n              <img src=\"https://heroic-empanada-f5b342.netlify.app/logo.png\" height=\"30\" alt=\"image\">\n            </a>\n          </div>\n    \n          <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\".navbar-collapse-1\" aria-controls=\"navbarNav6\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n          </button>\n    \n          <div class=\"collapse navbar-collapse justify-content-center col-md-8 navbar-collapse-1\">\n            <ul class=\"navbar-nav justify-content-center\">\n              <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Home <span class=\"sr-only\">(current)</span></a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Features</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Pricing</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Team</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Contact</a>\n              </li>\n            </ul>\n          </div>\n    \n          <div class=\"collapse navbar-collapse justify-content-end col-md-2 navbar-collapse-1\">\n            <ul class=\"navbar-nav\">\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Log In <i class=\"fas fa-sign-in-alt\"></i></a>\n              </li>\n            </ul>\n          </div>\n        </nav>\n      </div>"
+  },
+  {
+      "html": true,
+      "name": "CallToAction_91",
+      "data": "<div class=\"container bg-white\">\n        <nav class=\"navbar navbar-expand-md no-gutters\">\n          <div class=\"col-3 text-left\">\n            <a href=\"https://www.froala.com\">\n              <img src=\"https://heroic-empanada-f5b342.netlify.app/logo.png\" height=\"30\" alt=\"image\">\n            </a>\n          </div>\n    \n          <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\".navbar-collapse-2\" aria-controls=\"navbarNav7\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n          </button>\n    \n          <div class=\"collapse navbar-collapse navbar-collapse-2 justify-content-center col-md-6\" id=\"navbarNav7\">\n            <ul class=\"navbar-nav justify-content-center\">\n              <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Home <span class=\"sr-only\">(current)</span></a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Features</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Pricing</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Team</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Contact</a>\n              </li>\n            </ul>\n          </div>\n    \n          <div class=\"collapse navbar-collapse navbar-collapse-2\">\n            <ul class=\"navbar-nav ml-auto justify-content-end\">\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Log In</a>\n              </li>\n            </ul>\n    \n            <a class=\"btn btn-primary ml-md-3\" href=\"https://www.froala.com\">Register</a>\n          </div>\n        </nav>\n      </div>"
+  },
+  {
+      "html": true,
+      "name": "CallToAction_101",
+      "data": "<div class=\"container bg-white\">\n        <nav class=\"navbar\">\n          <a href=\"https://www.froala.com\">\n            <img src=\"https://heroic-empanada-f5b342.netlify.app/logo.png\" height=\"30\" alt=\"image\">\n          </a>\n        </nav>\n      </div>"
+  },
+  {
+      "html": true,
+      "name": "CallToAction_111",
+      "data": "<div class=\"container text-center bg-white\">\n        <nav class=\"navbar\">\n          <a class=\"ml-auto mr-auto\" href=\"https://www.froala.com\">\n            <img src=\"https://heroic-empanada-f5b342.netlify.app/logo.png\" height=\"30\" alt=\"image\">\n          </a>\n        </nav>\n      </div>"
+  },
+  {
+      "html": true,
+      "name": "CallToAction_121",
+      "data": "<div class=\"container bg-white\">\n        <nav class=\"navbar navbar-expand-md\">\n          <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav8\" aria-controls=\"navbarNav8\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n          </button>\n    \n          <div class=\"collapse navbar-collapse\" id=\"navbarNav8\">\n            <ul class=\"navbar-nav mr-auto ml-auto\">\n              <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Home <span class=\"sr-only\">(current)</span></a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Features</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Pricing</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Team</a>\n              </li>\n            </ul>\n          </div>\n        </nav>\n      </div>"
+  },
+  {
+      "html": true,
+      "name": "CallToAction_131",
+      "data": "<div class=\"container bg-white\">\n        <nav class=\"navbar navbar-expand-md\">\n          <a class=\"navbar-brand\" href=\"https://www.froala.com\">\n            <img src=\"https://heroic-empanada-f5b342.netlify.app/logo.png\" height=\"30\" alt=\"image\">\n          </a>\n    \n          <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav9\" aria-controls=\"navbarNav9\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n          </button>\n    \n          <div class=\"collapse navbar-collapse\" id=\"navbarNav9\">\n            <ul class=\"navbar-nav mr-auto\">\n              <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Home <span class=\"sr-only\">(current)</span></a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Features</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Pricing</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Team</a>\n              </li>\n            </ul>\n    \n            <ul class=\"navbar-nav justify-content-end d-none d-lg-flex ml-md-auto\">\n              <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\"><i class=\"fab fa-slack\"></i></a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\"><i class=\"fab fa-twitter\"></i></a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\"><i class=\"fab fa-github\"></i></a>\n              </li>\n            </ul>\n    \n            <a class=\"btn btn-outline-light ml-md-3\" href=\"https://www.froala.com\">Button</a>\n          </div>\n        </nav>\n      </div>"
+  },
+  {
+      "html": true,
+      "name": "CallToAction_141",
+      "data": "<div class=\"container bg-white\">\n        <nav class=\"navbar navbar-expand-md no-gutters\">\n          <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav10\" aria-controls=\"navbarNav10\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n          </button>\n    \n          <div class=\"col-4 col-sm-2 text-center order-lg-6\">\n            <a href=\"https://www.froala.com\">\n              <img src=\"https://heroic-empanada-f5b342.netlify.app/logo.png\" height=\"30\" alt=\"image\">\n            </a>\n          </div>\n    \n          <div class=\"collapse navbar-collapse col-12 col-md-5 order-lg-1\" id=\"navbarNav10\">\n            <ul class=\"navbar-nav col-5\">\n              <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Home <span class=\"sr-only\">(current)</span></a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Features</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Pricing</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Team</a>\n              </li>\n            </ul>\n          </div>\n    \n          <ul class=\"navbar-nav justify-content-end col-sm-5 order-lg-12 d-none d-md-flex\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"https://www.froala.com\"><i class=\"fab fa-twitter\"></i></a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"https://www.froala.com\"><i class=\"fab fa-github\"></i></a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"https://www.froala.com\"><i class=\"fab fa-slack\"></i></a>\n            </li>\n          </ul>\n        </nav>\n      </div>"
+  },
+  {
+      "html": true,
+      "name": "CallToAction_151",
+      "data": "<div class=\"container bg-white\">\n        <nav class=\"navbar navbar-expand-md\">\n          <a class=\"navbar-brand\" href=\"https://www.froala.com\">\n            <img src=\"https://heroic-empanada-f5b342.netlify.app/logo.png\" height=\"30\" alt=\"image\">\n          </a>\n    \n          <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav11\" aria-controls=\"navbarNav11\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n          </button>\n    \n          <div class=\"collapse navbar-collapse\" id=\"navbarNav11\">\n            <ul class=\"navbar-nav ml-auto\">\n              <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Home <span class=\"sr-only\">(current)</span></a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Features</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Pricing</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Team</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">About</a>\n              </li>\n            </ul>\n    \n            <a class=\"btn btn-outline-light ml-md-3\" href=\"https://www.froala.com\">Button</a>\n          </div>\n        </nav>\n      </div>"
+  },
+  {
+      "html": true,
+      "name": "CallToAction_161",
+      "data": "<div class=\"container bg-white\">\n        <nav class=\"navbar navbar-expand-md no-gutters\">\n          <div class=\"col-2 text-left\">\n            <a href=\"https://www.froala.com\">\n              <img src=\"https://heroic-empanada-f5b342.netlify.app/logo.png\" height=\"30\" alt=\"image\">\n            </a>\n          </div>\n    \n          <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav12\" aria-controls=\"navbarNav12\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n          </button>\n    \n          <div class=\"collapse navbar-collapse justify-content-center col-md-8\" id=\"navbarNav12\">\n            <ul class=\"navbar-nav justify-content-center\">\n              <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Home <span class=\"sr-only\">(current)</span></a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Features</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Pricing</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Team</a>\n              </li>\n            </ul>\n          </div>\n    \n          <ul class=\"navbar-nav col-2 justify-content-end d-none d-md-flex\">\n            <li class=\"nav-item active\">\n              <a class=\"nav-link\" href=\"https://www.froala.com\"><i class=\"fab fa-facebook\"></i></a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"https://www.froala.com\"><i class=\"fab fa-twitter\"></i></a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"https://www.froala.com\"><i class=\"fab fa-github\"></i></a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" href=\"https://www.froala.com\"><i class=\"fab fa-google\"></i></a>\n            </li>\n          </ul>\n        </nav>\n      </div>"
+  },
+  {
+      "html": true,
+      "name": "CallToAction_171",
+      "data": "<div class=\"container bg-white\">\n        <nav class=\"navbar navbar-expand-lg\">\n          <a class=\"navbar-brand\" href=\"https://www.froala.com\">\n            <img src=\"https://heroic-empanada-f5b342.netlify.app/logo.png\" height=\"30\" alt=\"image\">\n          </a>\n    \n          <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav13\" aria-controls=\"navbarNav13\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n          </button>\n    \n          <div class=\"collapse navbar-collapse\" id=\"navbarNav13\">\n            <ul class=\"navbar-nav mr-auto\">\n              <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Home <span class=\"sr-only\">(current)</span></a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Features</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Pricing</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Team</a>\n              </li>\n            </ul>\n    \n            <ul class=\"navbar-nav justify-content-end ml-auto\">\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Docs</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Contact</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Log In</a>\n              </li>\n            </ul>\n    \n            <a class=\"btn btn-light ml-md-3\" href=\"https://www.froala.com\">Button</a>\n          </div>\n        </nav>\n      </div>"
+  },
+  {
+      "html": true,
+      "name": "CallToAction_181",
+      "data": "<div class=\"container bg-white\">\n        <nav class=\"navbar navbar-expand-md no-gutters\">\n          <div class=\"col-2 text-left\">\n            <a href=\"https://www.froala.com\">\n              <img src=\"https://heroic-empanada-f5b342.netlify.app/logo.png\" height=\"30\" alt=\"image\">\n            </a>\n          </div>\n    \n          <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\".navbar-collapse-3\" aria-controls=\"navbarNav14\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n          </button>\n    \n          <div class=\"collapse navbar-collapse justify-content-center col-md-8 navbar-collapse-3\" id=\"navbarNav14\">\n            <ul class=\"navbar-nav justify-content-center\">\n              <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Home <span class=\"sr-only\">(current)</span></a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Features</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Pricing</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Team</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Contact</a>\n              </li>\n            </ul>\n          </div>\n    \n          <div class=\"collapse navbar-collapse justify-content-end col-md-2 navbar-collapse-3\">\n            <ul class=\"navbar-nav\">\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Log In <i class=\"fas fa-sign-in-alt\"></i></a>\n              </li>\n            </ul>\n          </div>\n        </nav>\n      </div>"
+  },
+  {
+      "html": true,
+      "name": "CallToAction_191",
+      "data": "<div class=\"container bg-white\">\n        <nav class=\"navbar navbar-expand-md no-gutters\">\n          <div class=\"col-3 text-left\">\n            <a href=\"https://www.froala.com\">\n              <img src=\"https://heroic-empanada-f5b342.netlify.app/logo.png\" height=\"30\" alt=\"image\">\n            </a>\n          </div>\n    \n          <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\".navbar-collapse-4\" aria-controls=\"navbarNav15\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n          </button>\n    \n          <div class=\"collapse navbar-collapse navbar-collapse-4 justify-content-center col-md-6\" id=\"navbarNav15\">\n            <ul class=\"navbar-nav justify-content-center\">\n              <li class=\"nav-item active\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Home <span class=\"sr-only\">(current)</span></a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Features</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Pricing</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Team</a>\n              </li>\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Contact</a>\n              </li>\n            </ul>\n          </div>\n    \n          <div class=\"collapse navbar-collapse navbar-collapse-4\">\n            <ul class=\"navbar-nav ml-auto justify-content-end\">\n              <li class=\"nav-item\">\n                <a class=\"nav-link\" href=\"https://www.froala.com\">Log In</a>\n              </li>\n            </ul>\n    \n            <a class=\"btn btn-primary ml-md-3\" href=\"https://www.froala.com\">Register</a>\n          </div>\n        </nav>\n      </div>"
+  }
 ]
