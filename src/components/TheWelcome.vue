@@ -16,7 +16,7 @@
             </div>
           </div>
           <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-            <img src="../../layout/assets/img/hero-img.png" class="img-fluid animated" alt="">
+            <img src="../layout/assets/img/hero-img.png" class="img-fluid animated" alt="">
           </div>
         </div>
       </div>
