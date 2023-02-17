@@ -33,7 +33,7 @@
 </template> -->
 
 <template>
-  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -44,11 +44,6 @@
           <form @submit="onSubmit"
             class="max-w-[27rem] mx-auto overflow-hidden shadow-lg bg-ct-dark-200 rounded-2xl p-8 space-y-5">
             <div class="mb-3">
-              <div class="">
-                <label for="name" class="block text-ct-blue-600 mb-3 form-label">Full Name</label>
-                <input v-model="name" type="text" placeholder=" " class=" form-control" id="name" />
-                <span class="text-red-500 text-xs pt-1 block">{{ errors.name }}</span>
-              </div>
               <div class="">
                 <label for="email" class="block text-ct-blue-600 mb-3 form-label">Email Address</label>
                 <input v-model="email" type="email" placeholder=" " class="form-control" id="email" />
@@ -63,19 +58,11 @@
                   errors.password
                 }}</span>
               </div>
-              <div class="">
-                <label for="passwordConfirm" class="block text-ct-blue-600 mb-3 form-label">Confirm Password</label>
-                <input v-model="passwordConfirm" type="password" placeholder=" " class=" form-control"
-                  id="passwordConfirm" />
-                <span class="text-red-500 text-xs pt-1 block">{{
-                  errors.passwordConfirm
-                }}</span>
-              </div>
             </div>
 
             <!-- <span class="block">Already have an account?
-                <router-link :to="{ name: 'login' }" class="text-ct-blue-600">Login Here</router-link></span> -->
-            <button :loading="isLoading" class="btn btn-primary">Create account</button>
+                  <router-link :to="{ name: 'login' }" class="text-ct-blue-600">Login Here</router-link></span> -->
+            <button :loading="isLoading" class="btn btn-primary">Log in</button>
           </form>
         </div>
       </div>
@@ -85,19 +72,19 @@
 </template>
 
 <script setup lang="ts">
+import { onBeforeUpdate } from 'vue';
 import { Form, useField, useForm } from 'vee-validate';
 import { toFormValidator } from '@vee-validate/zod';
 import * as zod from 'zod';
-import { useMutation } from '@tanstack/vue-query';
+import { useMutation, useQuery, useQueryClient  } from '@tanstack/vue-query';
 import Auth from '../api/authApi';
-import type { IAuthResponse, IResponse, ISignUpInput } from '@/utils/types';
+import type { IAuthResponse, ILoginInput, IResponse, ISignUpInput } from '@/utils/types';
 import type { AxiosError } from 'axios';
 // import router from '@/router';
 // import LoadingButton from '../components/LoadingButton.vue';
 const registerSchema = toFormValidator(
   zod
     .object({
-      name: zod.string().min(1, 'Full name is required'),
       email: zod
         .string()
         .min(1, 'Email address is required')
@@ -107,22 +94,24 @@ const registerSchema = toFormValidator(
         .min(1, 'Password is required')
         .min(6, 'Password must be more than 8 characters')
         .max(32, 'Password must be less than 32 characters'),
-      passwordConfirm: zod.string().min(1, 'Please confirm your password'),
-    })
-    .refine((data) => data.password === data.passwordConfirm, {
-      path: ['passwordConfirm'],
-      message: 'Passwords do not match',
     })
 );
 const { handleSubmit, errors, resetForm } = useForm({
   validationSchema: registerSchema,
 });
-const { value: name } = useField('name');
 const { value: email } = useField('email');
 const { value: password } = useField('password');
-const { value: passwordConfirm } = useField('passwordConfirm');
+
+// const authResult = useQuery('authStore', () => getMeFn(), {
+//   enabled: false,
+//   retry: 1,
+// });
+
+const queryClient = useQueryClient();
+
+
 const { isLoading, mutate } = useMutation(
-  (credentials: ISignUpInput) => Auth.registration(credentials),
+  (credentials: ILoginInput) => Auth.login(credentials),
   {
     onError: (error: AxiosError) => {
       console.log(Array.isArray((error)))
@@ -142,11 +131,18 @@ const { isLoading, mutate } = useMutation(
 );
 const onSubmit = handleSubmit((values: { name: any; email: any; password: any; }) => {
   mutate({
-    username: values.name,
     email: values.email,
     password: values.password
   });
 });
+
+// onBeforeUpdate(() => {
+//   if (authResult.isSuccess.value) {
+//     const authUser = Object.assign({}, authResult.data.value?.data.user);
+//     authStore.setAuthUser(authUser);
+//   }
+// });
+
 </script>
 
 <style></style>
