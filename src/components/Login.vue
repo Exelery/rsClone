@@ -78,7 +78,7 @@ import { toFormValidator } from '@vee-validate/zod';
 import * as zod from 'zod';
 import { useMutation, useQuery, useQueryClient  } from '@tanstack/vue-query';
 import Auth from '../api/authApi';
-import type { IAuthResponse, ILoginInput, IResponse, ISignUpInput } from '@/utils/types';
+import type {ILoginInput, IResponse, ISignUpInput } from '@/utils/types';
 import type { AxiosError } from 'axios';
 // import router from '@/router';
 // import LoadingButton from '../components/LoadingButton.vue';

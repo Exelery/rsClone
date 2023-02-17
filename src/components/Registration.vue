@@ -90,9 +90,8 @@ import { toFormValidator } from '@vee-validate/zod';
 import * as zod from 'zod';
 import { useMutation } from '@tanstack/vue-query';
 import Auth from '../api/authApi';
-import type { IAuthResponse, IResponse, ISignUpInput } from '@/utils/types';
+import type { IResponse, ISignUpInput } from '@/utils/types';
 import type { AxiosError } from 'axios';
-// import router from '@/router';
 // import LoadingButton from '../components/LoadingButton.vue';
 const registerSchema = toFormValidator(
   zod

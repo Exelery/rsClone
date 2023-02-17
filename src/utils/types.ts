@@ -3,11 +3,11 @@ export interface IResponse<T> {
   value: T
 }
 
-export interface IAuthResponse {
-  accessToken: string;
-  refreshToken: string;
-  user: IUser
-}
+// export interface IAuthResponse {
+//   accessToken: string;
+//   refreshToken: string;
+//   user: IUser
+// }
 
 export interface IRefreshResponse {
   id: number;
@@ -36,3 +36,22 @@ export interface ISignUpInput {
 export type IAuthStoreState = {
   authUser: IUser | null;
 };
+
+export interface IFile {
+  [name: string]: string;
+}
+export interface IProject {
+  userId: number,
+  projectName: string,
+  data: IFile[]
+}
+
+export interface IResponseUserProject {
+  projectId: number,
+  projectName: string,
+  projectFiles: IFile[]
+}
+
+export interface IResponseIdProject {
+  projectId: number
+}
