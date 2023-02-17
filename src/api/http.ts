@@ -1,8 +1,10 @@
 import type { IRefreshResponse, IResponse } from "@/utils/types";
 import axios, { type InternalAxiosRequestConfig } from "axios";
-export const API_URL = "http://localhost:5000/api"
+// export const API_URL = "http://localhost:5000/api" // https://rscloneserver-production.up.railway.app/api/
+export const API_URL = "https://rscloneserver-production.up.railway.app/api/" // http://localhost:5000/api
+
 export const api = axios.create({
-  withCredentials: true,
+  withCredentials: false,
   baseURL: API_URL
 })
 export const refreshAccessTokenFn = async () => {
