@@ -11,12 +11,12 @@
             <h1>Create web pages in one click</h1>
             <h2>We are team of talented developers give you the best webpage builder!</h2>
             <div class="d-flex justify-content-center justify-content-lg-start">
-              <RouterLink to="/builder"  class="btn-get-started scrollto">Get Started</RouterLink>
+              <RouterLink to="/builder/create"  class="btn-get-started scrollto">Get Started</RouterLink>
               <a href="#register" class="btn-get-started scrollto"  data-bs-toggle="modal" data-bs-target="#registerModal">Register</a>
             </div>
           </div>
           <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-            <img src="../../layout/assets/img/hero-img.png" class="img-fluid animated" alt="">
+            <img src="../layout/assets/img/hero-img.png" class="img-fluid animated" alt="">
           </div>
         </div>
       </div>

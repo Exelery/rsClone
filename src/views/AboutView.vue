@@ -18,7 +18,7 @@
           <div class="row">
             <div class="col-lg-4 mt-lg-0 mt-2">
               <div class="member d-flex align-items-start h-100" data-aos="zoom-in" data-aos-delay="100">
-                <div class="pic"><img src="@/layout/assets/img/no-image.jpg" class="img-fluid" alt=""></div>
+                <div class="pic"><img src="../layout/assets/img/no-image.jpg" class="img-fluid" alt=""></div>
                 <div class="member-info">
                   <h4>Jahanbayev Samandar</h4>
                   <span>Full-stack developer</span>
@@ -39,7 +39,7 @@
             </div>
             <div class="col-lg-4 mt-lg-0 mt-2 ">
               <div class="member d-flex align-items-start h-100" data-aos="zoom-in" data-aos-delay="200">
-                <div class="pic"><img src="@/layout/assets/img/no-image.jpg" class="img-fluid" alt=""></div>
+                <div class="pic"><img src="../layout/assets/img/no-image.jpg" class="img-fluid" alt=""></div>
                 <div class="member-info">
                   <h4>Aleksei Gladyshev</h4>
                   <span>Full-stack developer</span>
@@ -62,7 +62,7 @@
             </div>
             <div class="col-lg-4 mt-lg-0 mt-2 ">
               <div class="member d-flex align-items-start h-100" data-aos="zoom-in" data-aos-delay="300">
-                <div class="pic"><img src="@/layout/assets/img/team/komarov.jpg" class="img-fluid" alt=""></div>
+                <div class="pic"><img src="../layout/assets/img/team/komarov.jpg" class="img-fluid" alt=""></div>
                 <div class="member-info">
                   <h4>Anatoliy Komarov</h4>
                   <span>Full-stack developer</span>
@@ -179,7 +179,7 @@
 
           <div class="row">
             <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
-              <img src="@/layout/assets/img/skills.png" class="img-fluid" alt="">
+              <img src="../layout/assets/img/skills.png" class="img-fluid" alt="">
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
               <h3>Used technologies</h3>
@@ -247,8 +247,8 @@
 </template>
 
 <script>
-import HeaderBox from "@/components/HeaderBox.vue";
-import FooterBox from "@/components/FooterBox.vue";
+import HeaderBox from "../components/HeaderBox.vue";
+import FooterBox from "../components/FooterBox.vue";
 
 export default {
 
@@ -261,7 +261,7 @@ export default {
 
 
 <style>
-@import "@/layout/assets/css/style.css";
+@import "../layout/assets/css/style.css";
 a {
   text-decoration: none !important;
 }

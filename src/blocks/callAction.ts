@@ -1,0 +1,112 @@
+export default [
+    {
+        "html": true,
+        "name": "CallToAction_11",
+        "data": "<section class=\"fdb-block\">\n      <div class=\"container\">\n        <div class=\"row justify-content-center\">\n          <div class=\"col-12 col-md-8 text-center\">\n            <p class=\"lead\">\n              \"Separated they live in Bookmarksgrove right at the coast of the Semantics, far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast.\"\n            </p>\n    \n            <p class=\"mt-5 mt-sm-4\">\n              <a class=\"btn btn-primary\" href=\"https://www.blocks.com\">Download</a>\n            </p>\n          </div>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+        "html": true,
+        "name": "CallToAction_21",
+        "data": "<section class=\"fdb-block\">\n      <div class=\"container\">\n        <div class=\"row justify-content-center\">\n          <div class=\"col-12 col-md-6 text-center\">\n            <h1>Call to Action</h1>\n            <p class=\"lead\">\n              Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts\n            </p>\n            <p class=\"mt-5 mt-sm-4\">\n              <a class=\"btn btn-secondary\" href=\"https://www.blocks.com\">Download</a>\n            </p>\n          </div>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+        "html": true,
+        "name": "CallToAction_31",
+        "data": "<section class=\"fdb-block\">\n      <div class=\"container\">\n        <div class=\"row justify-content-center\">\n          <div class=\"col-12 col-sm-8 col-md-6 col-lg-6 text-center\">\n            <h2>\n              <strong>Right at the coast of the Semantics, a large language ocean.</strong>\n            </h2>\n            <p class=\"mt-5 mt-sm-4\">\n              <a class=\"btn btn-outline-primary\" href=\"https://www.blocks.com\">Download</a>\n            </p>\n          </div>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+        "html": true,
+        "name": "CallToAction_41",
+        "data": "<section class=\"fdb-block\">\n      <div class=\"container\">\n        <div class=\"row justify-content-center\">\n          <div class=\"col-12 col-md-8 col-lg-6 text-center\">\n            <h1>Call to Action</h1>\n            <p class=\"lead\">\n              Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts\n            </p>\n            <p class=\"mt-5 mt-sm-4\">\n              <a class=\"btn btn-primary\" href=\"https://www.blocks.com\">Download</a>\n            </p>\n          </div>\n        </div>\n    \n        <div class=\"row pt-5 pb-3\">\n          <div class=\"col-12 text-center\">\n            <p><strong>Fortune 100 companies are using our products</strong></p>\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-12 text-center\">\n            <img alt=\"image\" height=\"30\" class=\"ml-3 mr-3 mb-2 mt-2\" src=\"https://heroic-empanada-f5b342.netlify.app/customers/adobe.svg\">\n            <img alt=\"image\" height=\"30\" class=\"ml-3 mr-3 mb-2 mt-2\" src=\"https://heroic-empanada-f5b342.netlify.app/customers/amazon.svg\">\n            <img alt=\"image\" height=\"30\" class=\"ml-3 mr-3 mb-2 mt-2\" src=\"https://heroic-empanada-f5b342.netlify.app/customers/ebay.svg\">\n            <img alt=\"image\" height=\"30\" class=\"ml-3 mr-3 mb-2 mt-2\" src=\"https://heroic-empanada-f5b342.netlify.app/customers/samsung.svg\">\n            <img alt=\"image\" height=\"30\" class=\"ml-3 mr-3 mb-2 mt-2\" src=\"https://heroic-empanada-f5b342.netlify.app/customers/orange.svg\">\n            <img alt=\"image\" height=\"30\" class=\"ml-3 mr-3 mb-2 mt-2\" src=\"https://heroic-empanada-f5b342.netlify.app/customers/salesforce.svg\">\n          </div>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+        "html": true,
+        "name": "CallToAction_51",
+        "data": "<section class=\"fdb-block\">\n      <div class=\"container\">\n        <div class=\"row justify-content-center\">\n          <div class=\"col-12 col-md-8 text-center\">\n            <h1>Far far away, behind the word mountains, far from</h1>\n            <p class=\"mt-5\">\n              <a class=\"btn btn-secondary\" href=\"https://www.blocks.com\">Download</a>\n            </p>\n          </div>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+        "html": true,
+        "name": "CallToAction_61",
+        "data": "<section class=\"fdb-block\">\n      <div class=\"container\">\n        <div class=\"row justify-content-center\">\n          <div class=\"col-12 col-sm-10 col-md-8 col-lg-4 text-center\">\n            <p class=\"lead\">\n              Follow us and ask more on:\n            </p>\n            <p class=\"h2\">\n              <a href=\"https://www.blocks.com\" class=\"mx-2\"><i class=\"fab fa-facebook\"></i></a>\n              <a href=\"https://www.blocks.com\" class=\"mx-2\"><i class=\"fab fa-twitter\"></i></a>\n              <a href=\"https://www.blocks.com\" class=\"mx-2\"><i class=\"fab fa-instagram\"></i></a>\n              <a href=\"https://www.blocks.com\" class=\"mx-2\"><i class=\"fab fa-google\"></i></a>\n              <a href=\"https://www.blocks.com\" class=\"mx-2\"><i class=\"fab fa-pinterest\"></i></a>\n            </p>\n          </div>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+        "html": true,
+        "name": "CallToAction_71",
+        "data": "<section class=\"fdb-block\">\n      <div class=\"container\">\n        <div class=\"row text-center pb-0 pb-lg-4\">\n          <div class=\"col-12\">\n            <h1>Call to action</h1>\n          </div>\n        </div>\n        <div class=\"row text-center pt-4 pt-md-5\">\n          <div class=\"col-12 col-sm-10 col-md-6 col-lg-4 m-sm-auto\">\n            <img alt=\"image\" class=\"fdb-icon\" src=\"https://heroic-empanada-f5b342.netlify.app/icons/gift.svg\">\n            <h3>First Action</h3>\n            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts</p>\n            <p class=\"mt-3\"><a class=\"btn btn-light sl-1\" href=\"https://www.blocks.com\">Button</a></p>\n          </div>\n    \n          <div class=\"col-12 col-sm-10 col-md-6 col-lg-4 ml-sm-auto mr-sm-auto mt-5 mt-md-0\">\n            <img alt=\"image\" class=\"fdb-icon\" src=\"https://heroic-empanada-f5b342.netlify.app/icons/cloud.svg\">\n            <h3>Second Action</h3>\n            <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>\n            <p class=\"mt-3\"><a class=\"btn btn-light sl-1\" href=\"https://www.blocks.com\">Button</a></p>\n          </div>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+        "html": true,
+        "name": "CallToAction_81",
+        "data": "<section class=\"fdb-block py-0\">\n      <div class=\"container py-5 my-5\" style=\"background-image: url(https://heroic-empanada-f5b342.netlify.app/shapes/2.svg);\">\n        <div class=\"row justify-content-center py-5\">\n          <div class=\"col-12 col-md-10 col-lg-8 text-center\">\n            <div class=\"fdb-box\">\n              <h1>Call to Action</h1>\n              <p class=\"lead\">\n                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts\n              </p>\n              <p class=\"mt-4\">\n                <a class=\"btn btn-primary\" href=\"https://www.blocks.com\">Download</a>\n              </p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+        "html": true,
+        "name": "CallToAction_91",
+        "data": "<section class=\"fdb-block\">\n      <div class=\"container\">\n        <div class=\"row align-items-center justify-content-center\">\n          <div class=\"col-auto\">\n            <h2>Use blocks Design Blocks for free in your project</h2>\n          </div>\n          <div class=\"col-auto mt-4 mt-sm-0\">\n            <a class=\"btn btn-primary\" href=\"https://www.blocks.com\">Download</a>\n          </div>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+        "html": true,
+        "name": "CallToAction_101",
+        "data": "<section class=\"fdb-block py-0\">\n      <div class=\"container py-5 my-5 bg-r\" style=\"background-image: url(https://heroic-empanada-f5b342.netlify.app/shapes/4.svg);\">\n        <div class=\"row justify-content-end py-5\">\n          <div class=\"col-12 col-md-8 col-lg-6 mr-5 text-center\">\n            <div class=\"fdb-box\">\n              <h1>Call to Action</h1>\n              <p class=\"lead\">\n                When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove\n              </p>\n              <p class=\"mt-4\">\n                <a class=\"btn btn-secondary\" href=\"https://www.blocks.com\">Download</a>\n              </p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+        "html": true,
+        "name": "CallToAction_111",
+        "data": "<section class=\"fdb-block\">\n      <div class=\"container\">\n        <div class=\"row align-items-center justify-content-center\">\n          <div class=\"col-auto text-center\">\n            <a class=\"btn btn-outline-secondary\" href=\"https://www.blocks.com\">Download</a>\n          </div>\n    \n          <div class=\"col-auto mt-4 mt-sm-0\">\n            <h2>Use blocks Design Blocks for free in your project</h2>\n          </div>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+        "html": true,
+        "name": "CallToAction_121",
+        "data": "<section class=\"fdb-block\">\n      <div class=\"container\">\n        <div class=\"row\">\n          <div class=\"col-12 text-center\">\n            <h1>blocks Design Blocks</h1>\n            <p class=\"h2\">\n              Far far away, behind the word mountains, far from.\n            </p>\n          </div>\n        </div>\n    \n        <div class=\"row align-items-center pt-2 pt-lg-5\">\n          <div class=\"col-12 col-md-8 col-lg-7\">\n            <h2>Call to action</h2>\n            <p class=\"lead\">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>\n            <p class=\"mt-4\"><a class=\"btn btn-primary\" href=\"https://www.blocks.com\">Take a Tour</a></p>\n          </div>\n    \n          <div class=\"col-8 col-md-4 m-auto m-md-0 ml-md-auto pt-5\">\n            <img alt=\"image\" class=\"img-fluid\" src=\"https://heroic-empanada-f5b342.netlify.app/draws/git.svg\">\n          </div>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+        "html": true,
+        "name": "CallToAction_131",
+        "data": "<section class=\"fdb-block fdb-viewport bg-dark\" style=\"background-image: url(https://heroic-empanada-f5b342.netlify.app/hero/purple.svg);\">\n      <div class=\"container justify-content-center align-items-center d-flex\">\n        <div class=\"row justify-content-center text-center\">\n          <div class=\"col-12 col-md-8\">\n            <img alt=\"image\" class=\"fdb-icon\" src=\"https://heroic-empanada-f5b342.netlify.app/icons/coffee.svg\">\n            <h1>blocks Design Blocks</h1>\n            <p class=\"lead\">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>\n            <p class=\"mt-5\"><a href=\"https://www.blocks.com\" class=\"btn btn-dark\">Call to Action</a></p>\n          </div>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+        "html": true,
+        "name": "CallToAction_141",
+        "data": "<section class=\"fdb-block py-0\">\n      <div class=\"container bg-r py-5 my-5\" style=\"background-image: url(https://heroic-empanada-f5b342.netlify.app/shapes/1.svg);\">\n        <div class=\"row py-5\">\n          <div class=\"col-12 col-sm-10 col-md-8 col-lg-6 text-left\">\n            <h1>Call to Action</h1>\n            <p class=\"lead\">\n              A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.\n            </p>\n            <p class=\"mt-4\">\n              <a class=\"btn btn-primary\" href=\"https://www.blocks.com\">Download</a>\n            </p>\n          </div>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+        "html": true,
+        "name": "CallToAction_151",
+        "data": "<section class=\"fdb-block\">\n      <div class=\"container\">\n        <div class=\"row align-items-center\">\n          <div class=\"col-10 col-sm-6 col-md-4 col-lg-3 m-auto m-md-0\">\n            <img alt=\"image\" class=\"img-fluid\" src=\"https://heroic-empanada-f5b342.netlify.app/draws/smile.svg\">\n          </div>\n    \n          <div class=\"col-12 col-md-8 ml-auto pt-5 pt-md-0\">\n            <h2>Call to action</h2>\n            <p class=\"lead\">On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word \"and\" and the Little Blind Text should turn\n              around and return to its own, safe country.</p>\n            <p class=\"mt-4\"><a class=\"btn btn-secondary\" href=\"https://www.blocks.com\">Take a Tour</a></p>\n          </div>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+        "html": true,
+        "name": "CallToAction_161",
+        "data": "<section class=\"fdb-block bg-dark fdb-viewport\" style=\"background-image: url(https://heroic-empanada-f5b342.netlify.app/hero/blue.svg);\">\n      <div class=\"container align-items-center justify-content-center d-flex\">\n        <div class=\"row justify-content-center text-center\">\n          <div class=\"col-12 col-md-10 col-lg-8\">\n            <h1>blocks Design Blocks is Open Source and free to use in your apps</h1>\n            <p class=\"mt-5\"><a href=\"https://www.blocks.com\" class=\"btn btn-outline-light\">Call to Action</a></p>\n          </div>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+        "html": true,
+        "name": "CallToAction_171",
+        "data": "<section class=\"fdb-block\">\n      <div class=\"container\">\n        <div class=\"row\">\n          <div class=\"col-12\">\n            <h1>blocks Design Blocks</h1>\n            <p class=\"lead\">\n              Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by\n              their place and supplies it with the necessary regelialia.\n            </p>\n          </div>\n        </div>\n    \n        <div class=\"row justify-content-center align-items-center pt-5\">\n          <div class=\"col-8 col-sm-3\">\n            <img alt=\"image\" class=\"img-fluid\" src=\"https://heroic-empanada-f5b342.netlify.app/draws/code.svg\">\n          </div>\n          <div class=\"col-12 col-sm-6 m-auto pt-4 pt-sm-0\">\n            <h2><strong>Bootstrap</strong></h2>\n            <p class=\"lead\">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life.</p>\n          </div>\n          <div class=\"col-12 col-sm-3 text-center pt-4 pt-sm-0\">\n            <p><a class=\"btn btn-outline-primary\" href=\"https://www.blocks.com\">Take a Tour</a></p>\n            <p><a class=\"btn btn-primary\" href=\"https://www.blocks.com\">Start Now</a></p>\n            <p class=\"h5\"><em>Some foo text</em></p>\n          </div>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+        "html": true,
+        "name": "CallToAction_181",
+        "data": "<section class=\"fdb-block\">\n      <div class=\"container align-items-end justify-content-center d-flex\">\n        <div class=\"row align-items-top text-left\">\n          <div class=\"col-12 col-md-6 col-lg-5\">\n            <p class=\"mb-5 mt-5\"><img alt=\"image\" height=\"40\" src=\"https://heroic-empanada-f5b342.netlify.app/logo.png\"></p>\n            <h1>Design Blocks</h1>\n            <p class=\"lead\">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>\n            <p class=\"mt-4\"><a href=\"https://www.blocks.com\" class=\"btn btn-primary\">Call to Action</a></p>\n          </div>\n    \n          <div class=\"col-12 col-sm-4 col-md-6 col-lg-4 m-auto pt-5\">\n            <img alt=\"image\" class=\"img-fluid rounded-0\" src=\"https://heroic-empanada-f5b342.netlify.app/draws/sync.svg\">\n          </div>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+        "html": true,
+        "name": "CallToAction_191",
+        "data": "<section class=\"fdb-block\">\n      <div class=\"container align-items-center justify-content-center d-flex\">\n        <div class=\"row align-items-center text-left\">\n          <div class=\"col-12 col-sm-6\">\n            <img alt=\"image\" class=\"img-fluid\" src=\"https://heroic-empanada-f5b342.netlify.app/draws/sync2.svg\">\n          </div>\n    \n          <div class=\"col-12 col-lg-5 ml-auto pt-5 pt-lg-0\">\n            <h1>blocks Design Blocks</h1>\n            <p class=\"lead\">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>\n            <p class=\"mt-4\"><a href=\"https://www.blocks.com\" class=\"btn btn-secondary\">Call to Action</a></p>\n          </div>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+        "html": true,
+        "name": "CallToAction_201",
+        "data": "<section class=\"fdb-block\">\n      <div class=\"container\">\n        <div class=\"row align-items-center text-left\">\n          <div class=\"col-12 col-md-8\">\n            <h1>blocks Design Blocks</h1>\n            <p class=\"lead\">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>\n          </div>\n          <div class=\"col-12 col-md-3 ml-auto text-left text-md-right\">\n            <p><a href=\"https://www.blocks.com\" class=\"btn btn-primary\">Call to Action</a></p>\n          </div>\n        </div>\n    \n        <div class=\"row pt-5\">\n          <div class=\"col-6 offset-3\">\n            <img alt=\"image\" class=\"img-fluid\" src=\"https://heroic-empanada-f5b342.netlify.app/draws/rocket.svg\">\n          </div>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+        "html": true,
+        "name": "CallToAction_211",
+        "data": "<section class=\"fdb-block fdb-viewport bg-dark\" style=\"background-image: url(https://heroic-empanada-f5b342.netlify.app/hero/red.svg);\">\n      <div class=\"container align-items-center justify-content-center d-flex\">\n        <div class=\"row align-items-center text-left\">\n          <div class=\"col-12 col-sm-10 col-md-8 col-lg-8\">\n            <h1>blocks Design Blocks is build on Boostrap Framework</h1>\n            <p class=\"lead\">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there.</p>\n            <p class=\"mt-5\">\n              <a href=\"https://www.blocks.com\" class=\"btn btn-light\">Call to Action</a>\n              <a href=\"https://www.blocks.com\" class=\"btn btn-dark ml-4\">Button</a>\n            </p>\n          </div>\n        </div>\n      </div>\n    </section>"
+    },
+    {
+        "html": true,
+        "name": "CallToAction_221",
+        "data": "<section class=\"fdb-block\">\n      <div class=\"container\">\n        <div class=\"row justify-content-center\">\n          <div class=\"col-12 col-md-8 col-lg-5 text-center pb-md-5\">\n            <h1>blocks Design Blocks</h1>\n            <p class=\"lead\">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>\n            <p class=\"mt-4\"><a href=\"https://www.blocks.com\" class=\"btn btn-primary\">Call to Action</a></p>\n          </div>\n        </div>\n    \n        <div class=\"row text-center justify-content-center pt-5\">\n          <div class=\"col-12 col-sm-6 col-lg-3\">\n            <img alt=\"image\" class=\"fdb-icon\" src=\"https://heroic-empanada-f5b342.netlify.app/icons/cloud.svg\">\n    \n            <h3><strong>Feature One</strong></h3>\n    \n            <p>Far far away, behind the word mountains, far from the countries</p>\n          </div>\n          <div class=\"col-12 col-sm-6 col-lg-3 pt-4 pt-sm-0\">\n            <img alt=\"image\" class=\"fdb-icon\" src=\"https://heroic-empanada-f5b342.netlify.app/icons/gift.svg\">\n    \n            <h3><strong>Feature Two</strong></h3>\n    \n            <p>Separated they live in Bookmarksgrove right at the coast</p>\n          </div>\n    \n          <div class=\"col-12 col-sm-6 col-lg-3 pt-4 pt-lg-0\">\n            <img alt=\"image\" class=\"fdb-icon\" src=\"https://heroic-empanada-f5b342.netlify.app/icons/github.svg\">\n    \n            <h3><strong>Feature Three</strong></h3>\n    \n            <p>A small river named Duden flows by their place and supplies it</p>\n          </div>\n    \n          <div class=\"col-12 col-sm-6 col-lg-3 pt-4 pt-lg-0\">\n            <img alt=\"image\" class=\"fdb-icon\" src=\"https://heroic-empanada-f5b342.netlify.app/icons/compass.svg\">\n    \n            <h3><strong>Feature Four</strong></h3>\n    \n            <p>Far far away, behind the word mountains, far from the countries</p>\n          </div>\n        </div>\n      </div>\n    </section>"
+    }
+]
