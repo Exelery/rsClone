@@ -14,6 +14,7 @@
               <RouterLink to="/builder/create"  class="btn-get-started scrollto">Get Started</RouterLink>
               <a href="#register" class="btn-get-started scrollto"  data-bs-toggle="modal" data-bs-target="#registerModal">Register</a>
               <a href="#login" class="btn-get-started scrollto"  data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+              <RouterLink to="/account" class="btn-get-started scrollto">Account</RouterLink>
             </div>
           </div>
           <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">

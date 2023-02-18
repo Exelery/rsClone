@@ -4,6 +4,7 @@ import AboutView from "../views/AboutView.vue";
 import BuilderPage from "../pages/builder/BuilderPage.vue"
 import BuilderEditor from "../pages/builder/BuilderEditor.vue"
 import BuilderConstuctor from "../pages/builder/BuilderConstructor.vue"
+import AccountPage from "../pages/AccountPage.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,6 +18,11 @@ const router = createRouter({
       path: "/about",
       name: "about",
       component: AboutView,
+    },
+    {
+      path: "/account",
+      name: "account",
+      component: AccountPage,
     },
     // {
     //   path: "/registration",

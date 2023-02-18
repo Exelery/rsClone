@@ -38,10 +38,11 @@ export type IAuthStoreState = {
 };
 
 export interface IFile {
-  [name: string]: string;
+  fileName: string;
+  content: string
 }
 export interface IProject {
-  userId: number,
+  projectId: number,
   projectName: string,
   data: IFile[]
 }
