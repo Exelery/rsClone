@@ -1,19 +1,25 @@
 import { api } from "./http"
 import type { AxiosResponse } from "axios"
-import type { IAuthResponse } from "@/utils/types"
-export default class Auth {
-  static async login(email: string, password: string):
-    Promise<AxiosResponse<IAuthResponse>> {
-    return api.post("/data/login", {email, password})
+import type { IProject, IResponse, IResponseUserProject, IResponseIdProject } from "@/utils/types"
+export default class DataApi {
+  static async addProject(project: IProject):
+    Promise<AxiosResponse<IResponse<IResponseIdProject>>> {
+    return api.post("/data", project)
   }
   
-  static async registration(username: string, email: string, password: string):
-    Promise<AxiosResponse<IAuthResponse>> {
-    return api.post("/data/registration", {email, password})
+  static async updateProject(project: IProject):
+    Promise<AxiosResponse<IResponse<string>>> {
+    return api.put("/data", project)
   }
   
-  static async logout():
-    Promise<void> {
-    return api.post("/data/logout",)
+  static async getUserProjects():
+    Promise<AxiosResponse<IResponse<IResponseUserProject[]>>> {
+    return api.get("/data")
   }
+  
+  static async deleteProject( projectId: number):
+  Promise<AxiosResponse<IResponse<string>>> {
+  return api.delete("/data", {data: {projectId: projectId} })
+}
+  
 }

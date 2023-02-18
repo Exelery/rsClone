@@ -1,6 +1,5 @@
 import { defineStore } from "pinia";
 
-import { API_URL } from "@/api/http";
 import type { IAuthStoreState, IUser } from "@/utils/types";
 
 export const useAuthStore = defineStore({
@@ -11,7 +10,9 @@ export const useAuthStore = defineStore({
   getters: {},
   actions: {
     setAuthUser(user: IUser | null) {
+      
       this.authUser = user;
+      console.log('user', this.authUser)
     },
   },
 })
