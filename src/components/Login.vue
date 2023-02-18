@@ -62,7 +62,8 @@
 
             <!-- <span class="block">Already have an account?
                   <router-link :to="{ name: 'login' }" class="text-ct-blue-600">Login Here</router-link></span> -->
-            <button :loading="isLoading" class="btn btn-primary">Log in</button>
+            <!-- <button :loading="isLoading" class="btn btn-primary">Log in</button> -->
+            <LoadButton :loading="isLoading" class="btn btn-primary">Log in</LoadButton>
           </form>
         </div>
       </div>
@@ -81,7 +82,7 @@ import Auth from '../api/authApi';
 import type {ILoginInput, IResponse, ISignUpInput } from '@/utils/types';
 import type { AxiosError } from 'axios';
 // import router from '@/router';
-// import LoadingButton from '../components/LoadingButton.vue';
+import LoadButton from './LoadButton.vue';
 const registerSchema = toFormValidator(
   zod
     .object({
@@ -114,7 +115,6 @@ const { isLoading, mutate } = useMutation(
   (credentials: ILoginInput) => Auth.login(credentials),
   {
     onError: (error: AxiosError) => {
-      console.log(Array.isArray((error)))
       if (Array.isArray((error as any).response.data.error)) {
         (error as any).response.data.error.forEach((el: any) =>
           console.log('140', error.message)

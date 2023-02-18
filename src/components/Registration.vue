@@ -75,7 +75,7 @@
 
             <!-- <span class="block">Already have an account?
                 <router-link :to="{ name: 'login' }" class="text-ct-blue-600">Login Here</router-link></span> -->
-            <button :loading="isLoading" class="btn btn-primary">Create account</button>
+            <LoadButton :loading="isLoading" class="btn btn-primary">Create account</LoadButton>
           </form>
         </div>
       </div>
@@ -92,7 +92,7 @@ import { useMutation } from '@tanstack/vue-query';
 import Auth from '../api/authApi';
 import type { IResponse, ISignUpInput } from '@/utils/types';
 import type { AxiosError } from 'axios';
-// import LoadingButton from '../components/LoadingButton.vue';
+import LoadButton from './LoadButton.vue';
 const registerSchema = toFormValidator(
   zod
     .object({
