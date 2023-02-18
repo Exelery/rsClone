@@ -8,8 +8,9 @@ export const api = axios.create({
   baseURL: API_URL
 })
 export const refreshAccessTokenFn = async () => {
-  const response = await api.get<IResponse<IRefreshResponse>>('/auth/refresh');
+  const response = await api.post<IResponse<IRefreshResponse>>('/auth/refresh');
   console.log('refresh', response)
+  localStorage.setItem('token', response.data.value)
   return response.data;
 };
 

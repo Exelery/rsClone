@@ -61,7 +61,7 @@
             </div>
 
             <!-- <span class="block">Already have an account?
-                  <router-link :to="{ name: 'login' }" class="text-ct-blue-600">Login Here</router-link></span> -->
+                        <router-link :to="{ name: 'login' }" class="text-ct-blue-600">Login Here</router-link></span> -->
             <!-- <button :loading="isLoading" class="btn btn-primary">Log in</button> -->
             <LoadButton :loading="isLoading" class="btn btn-primary">Log in</LoadButton>
           </form>
@@ -77,12 +77,16 @@ import { onBeforeUpdate } from 'vue';
 import { Form, useField, useForm } from 'vee-validate';
 import { toFormValidator } from '@vee-validate/zod';
 import * as zod from 'zod';
-import { useMutation, useQuery, useQueryClient  } from '@tanstack/vue-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/vue-query';
 import Auth from '../api/authApi';
-import type {ILoginInput, IResponse, ISignUpInput } from '@/utils/types';
+import type { ILoginInput, IResponse, ISignUpInput } from '@/utils/types';
 import type { AxiosError } from 'axios';
+import { useAuthStore } from '../stores/authStore';
 // import router from '@/router';
 import LoadButton from './LoadButton.vue';
+
+const authStore = useAuthStore();
+
 const registerSchema = toFormValidator(
   zod
     .object({
@@ -103,12 +107,14 @@ const { handleSubmit, errors, resetForm } = useForm({
 const { value: email } = useField('email');
 const { value: password } = useField('password');
 
-// const authResult = useQuery('authStore', () => getMeFn(), {
-//   enabled: false,
+// const authResult = useQuery({
+//   queryKey: ['authStore'],
+//   queryFn: Auth.getUserInfo,
 //   retry: 1,
+//   enabled: false
 // });
 
-const queryClient = useQueryClient();
+// const queryClient = useQueryClient();
 
 
 const { isLoading, mutate } = useMutation(
@@ -125,10 +131,19 @@ const { isLoading, mutate } = useMutation(
     },
     onSuccess: (data: any) => {
       console.log('sucess', data)
-      resetForm();
+      // queryClient.refetchQueries({queryKey: ['authStore']});
+      addUserParams()
+      // resetForm();
+      
     },
   }
 );
+
+const addUserParams = async() => {
+  const response = await Auth.getUserInfo()
+  console.log('pinia', response)
+  authStore.setAuthUser(response.data.value)
+}
 const onSubmit = handleSubmit((values: { name: any; email: any; password: any; }) => {
   mutate({
     email: values.email,
@@ -138,10 +153,12 @@ const onSubmit = handleSubmit((values: { name: any; email: any; password: any; }
 
 // onBeforeUpdate(() => {
 //   if (authResult.isSuccess.value) {
-//     const authUser = Object.assign({}, authResult.data.value?.data.user);
+//     console.log('onbefore', authResult)
+//     const authUser = Object.assign({}, authResult.data.value?.data.value);
 //     authStore.setAuthUser(authUser);
 //   }
 // });
+
 
 </script>
 

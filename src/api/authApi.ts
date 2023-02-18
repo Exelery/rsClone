@@ -1,6 +1,6 @@
 import { api } from "./http"
 import type { AxiosResponse } from "axios"
-import type { ILoginInput, IRefreshResponse, IResponse, ISignUpInput } from "@/utils/types"
+import type { ILoginInput, IRefreshResponse, IResponse, ISignUpInput, IUser } from "@/utils/types"
 export default class Auth {
 
   static async registration(user: ISignUpInput): Promise<AxiosResponse<IResponse<string>>> {
@@ -15,6 +15,12 @@ export default class Auth {
   static async logout():
     Promise<AxiosResponse<IResponse<string>>> {
     return api.get("/auth/logout",)
+  }
+  
+  static async getUserInfo():
+    Promise<AxiosResponse<IResponse<IUser>>> {
+      console.log('getting user data')
+    return api.get("/user",)
   }
   
 
