@@ -18,7 +18,7 @@ export interface IRefreshResponse {
 export interface IUser {
   username: string;
   email: string;
-  isAvtivated: boolean;
+  isActivated: boolean;
   id: string;
 }
 
@@ -28,7 +28,7 @@ export interface ILoginInput {
 }
 
 export interface ISignUpInput {
-  username: string;
+  name: string;
   email: string;
   password: string;
 }
@@ -41,10 +41,14 @@ export interface IFile {
   fileName: string;
   content: string
 }
-export interface IProject {
-  projectId: number,
+
+export interface INewProject {
   projectName: string,
   data: IFile[]
+}
+export interface IProject extends INewProject{
+  projectId: number,
+  
 }
 
 export interface IResponseUserProject {

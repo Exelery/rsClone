@@ -1,8 +1,8 @@
 import { api } from "./http"
 import type { AxiosResponse } from "axios"
-import type { IProject, IResponse, IResponseUserProject, IResponseIdProject } from "@/utils/types"
+import type { IProject, IResponse, IResponseUserProject, IResponseIdProject, INewProject } from "@/utils/types"
 export default class DataApi {
-  static async addProject(project: IProject):
+  static async addProject(project: INewProject):
     Promise<AxiosResponse<IResponse<IResponseIdProject>>> {
     return api.post("/data", project)
   }

@@ -74,7 +74,7 @@
             </div>
 
             <!-- <span class="block">Already have an account?
-                <router-link :to="{ name: 'login' }" class="text-ct-blue-600">Login Here</router-link></span> -->
+                  <router-link :to="{ name: 'login' }" class="text-ct-blue-600">Login Here</router-link></span> -->
             <LoadButton :loading="isLoading" class="btn btn-primary">Create account</LoadButton>
           </form>
         </div>
@@ -93,6 +93,10 @@ import Auth from '../api/authApi';
 import type { IResponse, ISignUpInput } from '@/utils/types';
 import type { AxiosError } from 'axios';
 import LoadButton from './LoadButton.vue';
+import { useAuthStore } from '../stores/authStore';
+// import router from '@/router';
+
+const authStore = useAuthStore();
 const registerSchema = toFormValidator(
   zod
     .object({
@@ -136,12 +140,21 @@ const { isLoading, mutate } = useMutation(
     onSuccess: (data: any) => {
       console.log('sucess', data)
       resetForm();
+      addUserParams()
+
     },
   }
 );
+
+const addUserParams = async () => {
+  const response = await Auth.getUserInfo()
+  console.log('pinia', response)
+  authStore.setLoginState(response.data.value)
+}
+
 const onSubmit = handleSubmit((values: { name: any; email: any; password: any; }) => {
   mutate({
-    username: values.name,
+    name: values.name,
     email: values.email,
     password: values.password
   });
