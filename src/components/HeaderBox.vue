@@ -6,7 +6,8 @@
         <ul>
           <li><RouterLink to="/" class="nav-link scrollto" :class="{active: $route.name==='home'}">Home</RouterLink></li>
           <li><RouterLink to="/about" class="nav-link scrollto " :class="{active: $route.name==='about'}">About</RouterLink></li>
-          <li><RouterLink to="/builder" class="nav-link scrollto " :class="{active: $route.name==='builder'}">Builder</RouterLink></li>
+          <li v-if="isAuth"><RouterLink to="/builder/create" class="nav-link scrollto " :class="{active: $route.name==='creator'}">Builder</RouterLink></li>
+          <li v-if="isAuth"><RouterLink to="/account" class="nav-link scrollto " :class="{active: $route.name==='account'}">Account</RouterLink></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -17,7 +18,11 @@
 
 <script>
 export default {
-  name: "HeaderBox",
+  data(){
+    return{
+      isAuth: false
+    }
+  },
   mounted() {
     document.querySelector(".mobile-nav-toggle").addEventListener('click', function(e) {
       document.querySelector('#navbar').classList.toggle('navbar-mobile')

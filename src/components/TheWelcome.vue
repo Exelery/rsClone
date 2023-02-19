@@ -11,10 +11,11 @@
             <h1>Create web pages in one click</h1>
             <h2>We are team of talented developers give you the best webpage builder!</h2>
             <div class="d-flex justify-content-center justify-content-lg-start">
-              <RouterLink to="/builder/create"  class="btn-get-started scrollto">Get Started</RouterLink>
-              <a href="#register" class="btn-get-started scrollto"  data-bs-toggle="modal" data-bs-target="#registerModal">Register</a>
-              <a href="#login" class="btn-get-started scrollto"  data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
-              <RouterLink to="/account" class="btn-get-started scrollto">Account</RouterLink>
+              <RouterLink v-if="isAuth" to="/builder/create"  class="btn-get-started scrollto me-2">Get Started</RouterLink>
+              <a v-if="!isAuth" href="#register" class="btn-get-started scrollto me-2"  data-bs-toggle="modal" data-bs-target="#registerModal">Register</a>
+              <a v-if="!isAuth" href="#login" class="btn-get-started scrollto me-2"  data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+              <a v-if="isAuth" href="#logout" @click="logout()" class="btn-get-started scrollto me-2" >Logout</a>
+              <RouterLink  v-if="isAuth" to="/account" class="btn-get-started scrollto me-2">Account</RouterLink>
             </div>
           </div>
           <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
@@ -45,6 +46,16 @@ import FooterBox from "../components/FooterBox.vue";
 import Registration from "../components/Registration.vue";
 import Login from "../components/Login.vue";
 export default {
+  data(){
+    return{
+      isAuth: false
+    }
+  },
+  methods:{
+    logout(){
+      // выбрасываем юзера
+    }
+  },
   components:{
     HeaderBox,
     FooterBox,

@@ -1,23 +1,20 @@
 <template>
-  <div class="content">
-    <div class="fix-10-12">
-
-      <div class="woocommerce">
-
-        <div class="woocommerce-MyAccount-content">
-          <div class="woocommerce-notices-wrapper"></div>
-          <div class="personal-information">
+  <HeaderBox></HeaderBox>
+  <div class="content container mt-5 mb-5">
+    <div class="pt-5 ">
+        <div class="py-2">
+          <div class="personal-information row">
             <form name="profile" method="post">
 
-              <ul class="flex fixedSpaces">
+
 
                 <!-- PERSONAL INFO -->
-                <li class="col-4-12">
-                  <h5 class="small">User Profile</h5>
-                </li>
-                <li class="col-8-12">
-                  <ul class="flex fixedSpaces">
-                    <li class="col-6-12 desktop-col-1-2 phablet-col-1-1">
+                <div class="col-12">
+                  <h2>User Profile</h2>
+                </div>
+                <div class="row">
+
+                    <div class="col-3">
                       <label class="margin-bottom-0">
                         <div class="label-title">Avatar Image</div>
                       </label>
@@ -30,113 +27,109 @@
                         <div class="clickable-area">
                           Upload Picture <p class="small">Max file size is 1 MB (jpg, png).</p>
                         </div>
-                        <input type="file" accept=".jpg,.jpeg,.png" id="avatar" name="avatar">
+                        <input class="form-control" type="file" accept=".jpg,.jpeg,.png" id="avatar" name="avatar">
                       </div>
-                    </li>
-                    <li class="col-6-12 desktop-col-1-2 phablet-col-1-1">
+                    </div>
+                    <div class="col-12">
                       <label for="nick_name">
                         <div class="label-title" data-note="Optional">Public Name</div>
-                        <input placeholder="Public Name" type="text" name="nick_name" id="nick_name"
+                        <input class="form-control" placeholder="Public Name" type="text" name="nick_name" id="nick_name"
                           value="">
                       </label>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
+                    </div>
+
+                </div>
+
 
               <hr>
 
               <!-- PERSONAL INFO -->
-              <ul class="flex fixedSpaces">
-                <li class="col-4-12">
-                  <h5 class="small">Personal Details</h5>
-                  <p class="note fix-3-12 margin-top-1 desktop-fix-12-12 toLeft">
+              <div class="my-2 row">
+                <div class="col-12">
+                  <h2 >Personal Details</h2>
+                  <p>
                     <i class="material-icons">lock</i> Your personal information is never shown to other users.
                   </p>
-                </li>
-                <li class="col-8-12">
-                  <ul class="flex fixedSpaces">
-                    <li class="col-6-12 desktop-col-1-2 phablet-col-1-1">
+                </div>
+                <div class="row">
+
+                    <div class="col-4 ">
                       <label for="account_first_name">
                         <div class="label-title required">First Name</div>
-                        <input placeholder="First Name" type="text" name="account_first_name" id="account_first_name"
+                        <input class="form-control"  placeholder="First Name" type="text" name="account_first_name" id="account_first_name"
                           value="">
                       </label>
-                    </li>
-                    <li class="col-6-12 desktop-col-1-2 phablet-col-1-1">
+                    </div>
+                    <div class="col-4">
                       <label for="account_last_name">
                         <div class="label-title required">Last Name</div>
-                        <input placeholder="Last Name" type="text" name="account_last_name" id="account_last_name"
+                        <input class="form-control"  placeholder="Last Name" type="text" name="account_last_name" id="account_last_name"
                           value="">
                       </label>
-                    </li>
-                    <li class="col-12-12 desktop-col-1-1">
+                    </div>
+                    <div class="col-4">
                       <label for="account_email">
                         <div class="label-title required">Email address</div>
-                        <input placeholder="Email address" type="email" name="account_email" id="account_email"
+                        <input class="form-control"  placeholder="Email address" type="email" name="account_email" id="account_email"
                           value="">
                       </label>
-                    </li>
+                    </div>
                   
-                  </ul>
-                </li>
-              </ul>
+
+                </div>
+              </div>
 
 
               <hr>
 
-              <ul class="flex fixedSpaces">
+              <div class="my-3 row">
                 <!-- ADDRESS INFO -->
-                <li class="col-4-12">
-                  <h5 class="small">Password</h5>
+                <div class="col-12">
+                  <h2>Password</h2>
                   <p class="note fix-3-12 margin-top-1 desktop-fix-12-12 toLeft">Leave password blank if don't want to
                     change.</p>
-                </li>
-                <li class="col-8-12">
-                  <ul class="flex fixedSpaces">
-                    <li class="col-6-12 desktop-col-1-2 phablet-col-1-1">
+                </div>
+                <div class="col-8-12">
+
+                    <div class="col-6-12 desktop-col-1-2 phablet-col-1-1">
                       <label for="old_password">
                         <div class="label-title">Current Password<i class="material-icons showHidePassword disableSelect"
                             data-input-id="old_password"></i></div>
                         <input placeholder="Current Password" type="text" data-type="password" name="current_password"
                           id="old_password" autocomplete="off">
                       </label>
-                    </li>
-                    <li class="col-6-12 desktop-col-1-2 phablet-col-1-1">
+                    </div>
+                    <div class="col-6-12 desktop-col-1-2 phablet-col-1-1">
                       <label for="new_password">
                         <div class="label-title">New Password<i class="material-icons showHidePassword disableSelect"
                             data-input-id="new_password"></i></div>
                         <input placeholder="New Password" type="text" data-type="password" name="new_password"
                           id="new_password" autocomplete="off">
                       </label>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
+                    </div>
+
+                </div>
+              </div>
 
               <hr>
 
-              <ul class="flex fixedSpaces">
-                <!-- ADDRESS INFO -->
-                <li class="col-4-12">
-
-                </li>
-                <li class="col-8-12">
+                <div class="col-12 my-2">
                   <LoadButton  class="btn btn-primary">SaveChanges</LoadButton> 
-                  <RouterLink to="/" class="btn-get-started scrollto">Cancel</RouterLink>
-                </li>
-              </ul>
+                  <RouterLink to="/" class="btn-get-started scrollto ms-2">Cancel</RouterLink>
+                </div>
+
             </form>
           </div>
         </div>
-      </div>
     </div>
     <TestLoadData></TestLoadData>
   </div>
-  
+  <FooterBox></FooterBox>
 </template>
 
 <script setup lang="ts">
+import HeaderBox from "../components/HeaderBox.vue";
+import FooterBox from "../components/FooterBox.vue";
 import LoadButton from '../components/LoadButton.vue'
 import { useAuthStore } from '../stores/authStore';
 import TestLoadData from '../components/TestLoadData.vue'

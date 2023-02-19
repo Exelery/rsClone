@@ -1,8 +1,8 @@
 <template>
   <div>
-    <LoadButton :loading="isLoadingAll" v-on:click="getData" class="btn btn-primary">Get Projects of User</LoadButton>
-    <LoadButton :loading="isLoadingUpdate" v-on:click="updateProject" class="btn btn-primary">Update Project</LoadButton>
-    <LoadButton :loading="isLoadingDelete" v-on:click="deleteProject" class="btn btn-primary">Delete project</LoadButton>
+    <LoadButton :loading="isLoadingAll" v-on:click="getData" class="btn btn-primary me-2">Get Projects of User</LoadButton>
+    <LoadButton :loading="isLoadingUpdate" v-on:click="updateProject" class="btn btn-primary me-2">Update Project</LoadButton>
+    <LoadButton :loading="isLoadingDelete" v-on:click="deleteProject" class="btn btn-primary me-2">Delete project</LoadButton>
   </div>
 </template>
 
