@@ -25,11 +25,15 @@
         </draggable>
     </div>
     <div class="position-absolute d-flex"  style="right: 25px; bottom: 25px;">
-        <button type="button" class="btn btn-primary button-control" data-bs-toggle="modal" data-bs-target="#myModal">
-            New page
+        <button type="button" class="btn btn-success button-control" data-bs-toggle="modal" data-bs-target="#myModal">
+            New page <i class="bi bi-file-earmark-code-fill"></i>
         </button>
-        <button type="button" @click="$router.push('/builder/editor')" class="btn btn-primary button-control">Edit page <i class="bi bi-code-slash"></i></button>
-        <button type="button" @click="show" class="btn btn-primary button-control">Preview <i class="bi bi-eye"></i></button>
+        
+        <button type="button" @click="$router.push('/builder/editor')" class="btn btn-dark button-control">Edit page <i class="bi bi-code-slash"></i></button>
+        <button type="button" @click="show" class="btn btn-primary button-control">fullScreen <i class="bi bi-eye"></i></button>
+        <button type="button" @click="preview" class="btn btn-primary button-control">
+            Preview
+        </button>
     </div>
 </div>
 </template>
@@ -44,6 +48,7 @@ import ModalNewPrject from './ModalNewPrject.vue';
 export default {
     data() {
         let data : any = {
+            htmlHeader: `<head><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"></head>`,
             enabled: true,
             blocks: [],
             blocksType: '',
@@ -56,6 +61,16 @@ export default {
         return data
     },
     methods:{
+        preview(){
+            let storeData = localStorage.getItem(`${useEditorStore().activePage}/${this.activeProject}/page`)
+            let data = JSON.parse(String(storeData))
+            let htmlString = '';
+            data.forEach((block: {data: string}) => {
+                htmlString += block.data;
+            });
+            let myWindow = window.open();
+            myWindow!.document.write(this.htmlHeader + htmlString);
+        },
         editBlock(){
             this.blocks[this.editIndex].data = document.querySelector(".working-space")!.querySelectorAll('[data-draggable]')[this.editIndex].innerHTML
         },

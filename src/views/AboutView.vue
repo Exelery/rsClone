@@ -247,8 +247,8 @@
 </template>
 
 <script>
-import HeaderBox from "../components/HeaderBox.vue";
-import FooterBox from "../components/FooterBox.vue";
+import HeaderBox from "../components/main/HeaderBox.vue";
+import FooterBox from "../components/main/FooterBox.vue";
 
 export default {
 
