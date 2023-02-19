@@ -14,7 +14,7 @@
                 </div>
                 <div class="row">
 
-                    <div class="col-3">
+                    <div class="col-12 ">
                       <label class="margin-bottom-0">
                         <div class="label-title">Avatar Image</div>
                       </label>
@@ -30,8 +30,8 @@
                         <input class="form-control" type="file" accept=".jpg,.jpeg,.png" id="avatar" name="avatar">
                       </div>
                     </div>
-                    <div class="col-12">
-                      <label for="nick_name">
+                    <div class="col-12 ">
+                      <label for="nick_name" class="w-100">
                         <div class="label-title" data-note="Optional">Public Name</div>
                         <input class="form-control" placeholder="Public Name" type="text" name="nick_name" id="nick_name"
                           value="">
@@ -53,22 +53,22 @@
                 </div>
                 <div class="row">
 
-                    <div class="col-4 ">
-                      <label for="account_first_name">
+                    <div class="col-12 col-md-4">
+                      <label for="account_first_name" class="w-100">
                         <div class="label-title required">First Name</div>
                         <input class="form-control"  placeholder="First Name" type="text" name="account_first_name" id="account_first_name"
                           value="">
                       </label>
                     </div>
-                    <div class="col-4">
-                      <label for="account_last_name">
+                    <div class="col-12 col-md-4">
+                      <label for="account_last_name" class="w-100">
                         <div class="label-title required">Last Name</div>
                         <input class="form-control"  placeholder="Last Name" type="text" name="account_last_name" id="account_last_name"
                           value="">
                       </label>
                     </div>
-                    <div class="col-4">
-                      <label for="account_email">
+                    <div class="col-12 col-md-4">
+                      <label for="account_email" class="w-100">
                         <div class="label-title required">Email address</div>
                         <input class="form-control"  placeholder="Email address" type="email" name="account_email" id="account_email"
                           value="">
@@ -89,21 +89,19 @@
                   <p class="note fix-3-12 margin-top-1 desktop-fix-12-12 toLeft">Leave password blank if don't want to
                     change.</p>
                 </div>
-                <div class="col-8-12">
+                <div class="row">
 
-                    <div class="col-6-12 desktop-col-1-2 phablet-col-1-1">
-                      <label for="old_password">
-                        <div class="label-title">Current Password<i class="material-icons showHidePassword disableSelect"
-                            data-input-id="old_password"></i></div>
-                        <input placeholder="Current Password" type="text" data-type="password" name="current_password"
+                    <div class="col-12 col-md-6">
+                      <label for="old_password" class="w-100">
+                        <div class="label-title">Current Password</div>
+                        <input class="form-control"  placeholder="Current Password" type="text" data-type="password" name="current_password"
                           id="old_password" autocomplete="off">
                       </label>
                     </div>
-                    <div class="col-6-12 desktop-col-1-2 phablet-col-1-1">
-                      <label for="new_password">
-                        <div class="label-title">New Password<i class="material-icons showHidePassword disableSelect"
-                            data-input-id="new_password"></i></div>
-                        <input placeholder="New Password" type="text" data-type="password" name="new_password"
+                    <div class="col-12 col-md-6">
+                      <label for="new_password" class="w-100">
+                        <div class="label-title">New Password</div>
+                        <input  class="form-control" placeholder="New Password" type="text" data-type="password" name="new_password"
                           id="new_password" autocomplete="off">
                       </label>
                     </div>
@@ -115,7 +113,7 @@
 
                 <div class="col-12 my-2">
                   <LoadButton  class="btn btn-primary">SaveChanges</LoadButton> 
-                  <RouterLink to="/" class="btn-get-started scrollto ms-2">Cancel</RouterLink>
+                  <RouterLink to="/" class="btn-get-started scrollto ms-2 btn btn-success">Cancel</RouterLink>
                 </div>
 
             </form>
