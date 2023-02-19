@@ -8,7 +8,7 @@
     <ul v-if="$route.name === 'creator' " class="nav nav-pills flex-column mb-auto">
       <li v-for="block in blocks">
         <a href="#" class="nav-link text-white " :val="block" @click="setActive($event)">
-          <i class="bi bi-displayport"></i>
+          <i class="bi bi-box-fill"></i>
           {{block}}
         </a> 
       </li>

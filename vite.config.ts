@@ -1,5 +1,7 @@
 import { fileURLToPath, URL } from "url";
 
+import path from "path";
+
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
@@ -14,6 +16,9 @@ export default defineConfig({
         find: "@vue/runtime-core",
         replacement: "@vue/runtime-core/dist/runtime-core.esm-bundler.js",
       },
+    
+      { find: '@', replacement: path.resolve(__dirname, '/src') }
+      
     ],
   },
   base: '',
