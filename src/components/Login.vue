@@ -45,7 +45,7 @@ import { toFormValidator } from '@vee-validate/zod';
 import * as zod from 'zod';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/vue-query';
 import Auth from '../api/authApi';
-import type { ILoginInput, IResponse, ISignUpInput } from '@/utils/types';
+import type { ILoginInput, ILoginResponse, IResponse, ISignUpInput } from '@/utils/types';
 import type { AxiosError } from 'axios';
 import { useAuthStore } from '../stores/authStore';
 // import router from '@/router';
@@ -97,6 +97,8 @@ const { isLoading, mutate } = useMutation(
     },
     onSuccess: (data: any) => {
       console.log('sucess', data)
+      console.log('sucess', data.value.token)
+      localStorage.setItem('token', data.value.token)
       // queryClient.refetchQueries({queryKey: ['authStore']});
       addUserParams()
       // resetForm();

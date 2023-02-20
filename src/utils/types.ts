@@ -8,6 +8,11 @@ export interface IResponse<T> {
 //   refreshToken: string;
 //   user: IUser
 // }
+ 
+export interface ILoginResponse {
+  text: string;
+  token: string;
+}
 
 export interface IRefreshResponse {
   id: number;

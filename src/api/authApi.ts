@@ -4,12 +4,15 @@ import type { ILoginInput, IRefreshResponse, IResponse, ISignUpInput, IUser } fr
 export default class Auth {
 
   static async registration(user: ISignUpInput): Promise<AxiosResponse<IResponse<string>>> {
-    return await api.post("/auth/registration", user)
+    const answer = await api.post("/auth/registration", user)
+    return answer.data
   }
 
   static async login(user: ILoginInput):
     Promise<AxiosResponse<IResponse<IRefreshResponse>>> {
-    return api.post("/auth/login", user)
+      const answer = await api.post("/auth/login", user)
+    return answer.data
+    
   }
 
   static async logout():
