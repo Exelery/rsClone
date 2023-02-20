@@ -17,14 +17,14 @@ export default defineConfig({
         replacement: "@vue/runtime-core/dist/runtime-core.esm-bundler.js",
       },
     
-      { find: '@', replacement: path.resolve(__dirname, '/src') }
+      { find: '@', replacement: path.resolve(__dirname, './src') }
       
     ],
   },
-  base: '',
   server:{
     watch: {
       usePolling: true
     }
-  }
+  },
+
 });

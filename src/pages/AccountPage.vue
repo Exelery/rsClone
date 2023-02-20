@@ -126,11 +126,11 @@
 </template>
 
 <script setup lang="ts">
-import HeaderBox from "../components/HeaderBox.vue";
-import FooterBox from "../components/FooterBox.vue";
-import LoadButton from '../components/LoadButton.vue'
-import { useAuthStore } from '../stores/authStore';
-import TestLoadData from '../components/TestLoadData.vue'
+import HeaderBox from "@/components/HeaderBox.vue";
+import FooterBox from "@/components/FooterBox.vue";
+import LoadButton from '@/components/LoadButton.vue'
+import { useAuthStore } from '@/stores/authStore';
+import TestLoadData from '@/components/TestLoadData.vue'
 // :loading="isLoading"
 const authStore = useAuthStore()
 console.log(authStore)

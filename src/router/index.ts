@@ -7,7 +7,7 @@ import BuilderConstuctor from "../pages/builder/BuilderConstructor.vue"
 import AccountPage from "../pages/AccountPage.vue"
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(),
   routes: [
     {
       path: "/",

@@ -39,11 +39,11 @@
 </template>
 
 <script lang="ts">
-import { useEditorStore } from '../../stores/editor'
+import { useEditorStore } from '@/stores/editor'
 import draggable from 'vuedraggable'
-import blocks from '../../blocks/';
-import EditMenu from './EditMenu.vue';
-import ModalNewPrject from './ModalNewPrject.vue';
+import blocks from '@/blocks/';
+import EditMenu from '@/components/Builder/EditMenu.vue';
+import ModalNewPrject from '@/components/Builder/ModalNewPrject.vue';
 
 export default {
     data() {

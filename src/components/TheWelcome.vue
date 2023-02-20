@@ -44,11 +44,11 @@
 </template>
 
 <script lang="ts">
-import HeaderBox from "../components/HeaderBox.vue";
-import FooterBox from "../components/FooterBox.vue";
-import Registration from "../components/Registration.vue";
-import Login from "../components/Login.vue";
-import { useAuthStore } from "../stores/authStore";
+import HeaderBox from "@/components/HeaderBox.vue";
+import FooterBox from "@/components/FooterBox.vue";
+import Registration from "@/components/Registration.vue";
+import Login from "@/components/Login.vue";
+import { useAuthStore } from "@/stores/authStore";
 export default {
   data() {
     return {
