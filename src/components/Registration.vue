@@ -105,8 +105,6 @@ const { isLoading, mutate } = useMutation(
     },
     onSuccess: (data: any) => {
       console.log('sucess', data)
-      console.log('sucess', data.value)
-      console.log('sucess', data.value.token)
       localStorage.setItem('token', data.value.token)
       resetForm();
       addUserParams();

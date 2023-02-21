@@ -5,9 +5,6 @@ import { useLocalStorage } from "@vueuse/core";
 
 export const useAuthStore = defineStore({
   id: "authStore",
-  // state: () => ({
-  //   authUser: null,
-  // } as IAuthStoreState),
   state: () => {
     return {
       authUser: useLocalStorage("authStore", {

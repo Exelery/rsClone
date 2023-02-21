@@ -33,8 +33,7 @@
                     <div class="col-12 ">
                       <label for="nick_name" class="w-100">
                         <div class="label-title" data-note="Optional">Public Name</div>
-                        <input class="form-control" placeholder="Public Name" type="text" name="nick_name" id="nick_name"
-                          value="">
+                        <input v-model="authStore.authUser.username" class="form-control" placeholder="Public Name" type="text" name="nick_name" id="nick_name">
                       </label>
                     </div>
 
@@ -134,6 +133,8 @@ import TestLoadData from '@/components/TestLoadData.vue'
 // :loading="isLoading"
 const authStore = useAuthStore()
 console.log(authStore)
+
+
 </script>
 
 <style lang="scss" scoped>
