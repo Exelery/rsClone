@@ -1,13 +1,13 @@
 <template>
     <div class="d-flex vh-100 bg-light">
         <LeftBlocks/>
-        <workingSpace ref="workingSpace"/>
+    <workingSpace ref="workingSpace"/>
     </div>
 </template>
 
 <script lang="ts">
-import LeftBlocks from '../../components/builder/LeftBlocks.vue'
-import workingSpace from '../../components/builder/WorkingSpace.vue'
+import LeftBlocks from '@/components/Builder/LeftBlocks.vue'
+import workingSpace from '@/components/Builder/WorkingSpace.vue'
 
  export default {
     data() {

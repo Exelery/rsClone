@@ -3,6 +3,7 @@
     <LoadButton :loading="isLoadingAll" v-on:click="getData" class="btn btn-primary me-2">Get Projects of User</LoadButton>
     <LoadButton :loading="isLoadingUpdate" v-on:click="updateProject" class="btn btn-primary me-2">Update Project</LoadButton>
     <LoadButton :loading="isLoadingDelete" v-on:click="deleteProject" class="btn btn-primary me-2">Delete project</LoadButton>
+    <LoadButton :loading="isLoadingAdd" v-on:click="addProject" class="btn btn-primary me-2">Add project</LoadButton>
   </div>
 </template>
 
@@ -11,6 +12,7 @@ import Auth from '../api/authApi';
 import DataApi from '../api/dataApi';
 import LoadButton from '../components/LoadButton.vue'
 let isLoadingAll = false
+let isLoadingAdd = false
 let isLoadingUpdate = false
 let isLoadingDelete = false
 
@@ -38,6 +40,19 @@ const updateProject = async () => {
     { fileName: "style.html", content: "<style><style>" }]
   }
   const answer = await DataApi.updateProject(data)
+  console.log('answer', answer.data)
+  isLoadingUpdate = false
+
+}
+
+const addProject = async () => {
+  isLoadingUpdate = true
+  const data = {
+    projectName: "zero",
+    data: [{ fileName: "html.html", content: "<html><html>" },
+    { fileName: "style.html", content: "<style><style>" }]
+  }
+  const answer = await DataApi.addProject(data)
   console.log('answer', answer.data)
   isLoadingUpdate = false
 

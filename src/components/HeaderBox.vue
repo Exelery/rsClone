@@ -6,8 +6,8 @@
         <ul>
           <li><RouterLink to="/" class="nav-link scrollto" :class="{active: $route.name==='home'}">Home</RouterLink></li>
           <li><RouterLink to="/about" class="nav-link scrollto " :class="{active: $route.name==='about'}">About</RouterLink></li>
-          <li v-if="isAuth"><RouterLink to="/builder/create" class="nav-link scrollto " :class="{active: $route.name==='creator'}">Builder</RouterLink></li>
-          <li v-if="isAuth"><RouterLink to="/account" class="nav-link scrollto " :class="{active: $route.name==='account'}">Account</RouterLink></li>
+          <li v-if="authStore.isAuth"><RouterLink to="/builder/create" class="nav-link scrollto " :class="{active: $route.name==='creator'}">Builder</RouterLink></li>
+          <li v-if="authStore.isAuth"><RouterLink to="/account" class="nav-link scrollto " :class="{active: $route.name==='account'}">Account</RouterLink></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -17,10 +17,12 @@
 </template>
 
 <script>
+import { useAuthStore } from "@/stores/authStore";
 export default {
   data(){
     return{
-      isAuth: false
+      isAuth: false,
+      authStore: useAuthStore(),
     }
   },
   mounted() {

@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import { useEditorStore } from '../../stores/editor'
+import { useEditorStore } from '@/stores/editor'
 import draggable  from 'vuedraggable'
 import nestedDraggable  from 'vuedraggable'
 

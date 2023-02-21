@@ -1,4 +1,4 @@
-import type { IRefreshResponse, IResponse } from "@/utils/types";
+import type { IResponse } from "@/utils/types";
 import axios, { type InternalAxiosRequestConfig } from "axios";
 // export const API_URL = "http://localhost:5000/api" // https://rscloneserver-production.up.railway.app/api/
 export const API_URL = "https://rscloneserver-production.up.railway.app/api/" // http://localhost:5000/api
@@ -26,12 +26,15 @@ api.interceptors.response.use(
     return response;
   },
   async (error) => {
+    console.log(error)
     const originalRequest = error.config;
-    const errMessage = error.response.data.status as number;
-    if (errMessage === 403 && !originalRequest._retry) {
-      originalRequest._retry = true;
-      await refreshAccessTokenFn();
-      return api(originalRequest);
+    if (error.response) {
+      const errMessage = error.response.data.status as number;
+      if (errMessage === 403 && !originalRequest._retry) {
+        originalRequest._retry = true;
+        await refreshAccessTokenFn();
+        return api(originalRequest);
+      }
     }
     return Promise.reject(error);
   }
