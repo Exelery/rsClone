@@ -59,7 +59,7 @@ import Auth from '../api/authApi';
 import type { IResponse, ISignUpInput } from '@/utils/types';
 import type { AxiosError } from 'axios';
 import LoadButton from './LoadButton.vue';
-import { useAuthStore } from '../stores/authStore';
+import { useAuthStore } from '@/stores/authStore';
 // import router from '@/router';
 
 const authStore = useAuthStore();
@@ -109,8 +109,7 @@ const { isLoading, mutate } = useMutation(
       console.log('sucess', data.value.token)
       localStorage.setItem('token', data.value.token)
       resetForm();
-      addUserParams()
-
+      addUserParams();
     },
   }
 );

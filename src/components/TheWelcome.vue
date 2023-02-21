@@ -59,6 +59,8 @@ export default {
   methods: {
     logout() {
       // выбрасываем юзера
+      const store = useAuthStore();
+      store.logout();
     }
   },
   components: {
