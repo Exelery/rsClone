@@ -15,10 +15,10 @@
 
 <script lang="ts">
 import { RouterView } from "vue-router";
-import HeaderBox from "@/components/HeaderBox.vue";
-import FooterBox from "@/components/FooterBox.vue";
-import LeftBar from '@/components/Builder/LeftBar.vue'
-import BuilderTabs from "@/components/Builder/BuilderTabs.vue";
+// import HeaderBox from "@/components/HeaderBox.vue";
+// import FooterBox from "@/omponents/FooterBox.vue";
+import LeftBar from '@/components/builder/LeftBar.vue'
+import BuilderTabs from "@/components/builder/BuilderTabs.vue";
 import draggable from 'vuedraggable'
 declare var require: any
 
@@ -29,8 +29,8 @@ declare var require: any
         }
     },
     components: {
-      FooterBox,
-      HeaderBox,
+      // FooterBox,
+      // HeaderBox,
         draggable,
         LeftBar,
         BuilderTabs
