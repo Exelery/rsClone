@@ -19,9 +19,13 @@ export interface IRefreshResponse {
   accessToken: string;
   refreshToken: string;
 }
+export interface IUserStateUpdate {
+  name: string;
+  email: string;
+}
 
 export interface IUser {
-  username: string;
+  name: string;
   email: string;
   isActivated: boolean;
   id: string;
@@ -36,6 +40,10 @@ export interface ISignUpInput {
   name: string;
   email: string;
   password: string;
+}
+
+export interface IUpdateUser extends ISignUpInput {
+  newpassword: string
 }
 
 export type IAuthStoreState = {

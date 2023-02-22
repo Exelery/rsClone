@@ -100,6 +100,7 @@ const { isLoading, mutate } = useMutation(
       console.log('sucess', data.value.token)
       localStorage.setItem('token', data.value.token)
       // queryClient.refetchQueries({queryKey: ['authStore']});
+      // data-bs-toggle="modal"
       addUserParams()
       // resetForm();
       
