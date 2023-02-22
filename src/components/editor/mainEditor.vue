@@ -40,7 +40,7 @@ import "codemirror/theme/mbo.css";
 
       return {
         cmOptions: {
-          mode: "text/html",
+          mode: "htmlmixed",
           theme: "mbo", 
           lineNumbers: true, 
           smartIndent: true,
@@ -54,7 +54,7 @@ import "codemirror/theme/mbo.css";
           indentUnit: 4, 
           foldGutter: true, 
           styleActiveLine: true, 
-          completeSingle:false
+          completeSingle: false
         },
       };
     },
@@ -64,8 +64,6 @@ import "codemirror/theme/mbo.css";
             cm.showHint({completeSingle:false})
         })
 
-    },
-    onCmFocus() {
     },
     onCmCodeChange(newCode: any) {
       this.code = newCode;

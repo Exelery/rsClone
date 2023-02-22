@@ -42,13 +42,13 @@
 import { useEditorStore } from '@/stores/editor'
 import draggable from 'vuedraggable'
 import blocks from '@/blocks/';
-import EditMenu from '@/components/Builder/EditMenu.vue';
-import ModalNewPrject from '@/components/Builder/ModalNewPrject.vue';
+import EditMenu from '@/components/builder/EditMenu.vue';
+import ModalNewPrject from '@/components/builder/ModalNewPrject.vue';
 
 export default {
     data() {
         let data : any = {
-            htmlHeader: `<head><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"></head>`,
+            htmlHeader: `<head><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">`,
             enabled: true,
             blocks: [],
             blocksType: '',
@@ -62,12 +62,26 @@ export default {
     },
     methods:{
         preview(){
-            let storeData = localStorage.getItem(`${useEditorStore().activePage}/${this.activeProject}/page`)
-            let data = JSON.parse(String(storeData))
-            let htmlString = '';
-            data.forEach((block: {data: string}) => {
-                htmlString += block.data;
-            });
+            // let storeData = localStorage.getItem(`${useEditorStore().activePage}/${this.activeProject}/page`)
+            // let jsonData = JSON.parse(String(storeData));
+            // let htmlString = '';
+            
+            // jsonData.forEach( (block: {data: string, html: boolean}) => {
+            //     htmlString += block.data;
+            // });
+
+            // data.forEach((block: {data: string, html: boolean, name: string}) => {
+            //     if(!block.html && block.name.includes(".js")){
+            //         htmlString += '<script>' + block.data + '</script>';
+            //     }
+            // });
+
+            // data.forEach((block: {data: string, html: boolean, name: string}) => {
+            //     if(!block.html && block.name.includes(".css")){
+            //         this.htmlHeader += '<style>' + block.data + '</style>';
+            //     }
+            // });
+
             let myWindow = window.open();
             myWindow!.document.write(this.htmlHeader + htmlString);
         },
@@ -139,7 +153,7 @@ export default {
             }
         }
 
-        setList()
+        setList();
 
         this.workingParent = this.$el
         useEditorStore().$onAction((e)=>{
@@ -152,7 +166,6 @@ export default {
                 setList()
             }
         },true);
-    
     }
 }
 </script>

@@ -1,7 +1,6 @@
 <template>
-  <HeaderBox></HeaderBox>
-  <div class="mt-3 ">
-    <div class="d-flex vh-100 bg-light builder pt-5" >
+  <div class="mt-0 ">
+    <div class="d-flex vh-100 bg-light builder" >
         <LeftBar/>
         <div style="width:100%">
             <BuilderTabs/>
@@ -23,29 +22,10 @@ import draggable from 'vuedraggable'
 declare var require: any
 
  export default {
-    data() {
-        return {
-            htmlCode: '<h1>hello world</h1>'
-        }
-    },
     components: {
-      // FooterBox,
-      // HeaderBox,
         draggable,
         LeftBar,
         BuilderTabs
-    },
-    computed:{
-        getComponents(): number {
-            const ComponentContext = import.meta.glob('@/components/Builder/')
-            return 1
-        },
-        show(){
-            
-        }
-    },
-    created(){
-      let i = this.getComponents
     }
  }
 </script>
@@ -56,7 +36,6 @@ declare var require: any
     overflow-y: hidden;
 }
 #header {
-
   padding: 0 0;
 }
 </style>

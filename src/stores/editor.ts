@@ -1,11 +1,13 @@
 import { defineStore } from "pinia";
 
+
 export const useEditorStore = defineStore({
   id: "editor",
   state: () => ({
     activeBlock: 'navBar',
+    activeProject: localStorage.getItem("activeProject"),
     tabs: [{
-      type: "page", //page or script
+      type: "page", //"page" or "script"
       name: "Main"
     }],
     editorValue: '',
@@ -32,6 +34,9 @@ export const useEditorStore = defineStore({
     },
     setActivePage(name: string){
       this.activePage = name
+    },
+    updateEditorList(){
+      return 1
     }
   },
 });

@@ -37,6 +37,7 @@
     "vue-query": "^1.26.0",
     "vue-router": "^4.0.14",
     "vuedraggable": "^4.1.0",
+    "vuex-map-fields": "^1.4.1",
     "zod": "^3.20.4-beta.0"
   },
   "devDependencies": {
