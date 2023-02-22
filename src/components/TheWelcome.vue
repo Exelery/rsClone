@@ -18,7 +18,6 @@
                 <a v-if="!authStore.isAuth" href="#login" class="btn-get-started scrollto me-2" data-bs-toggle="modal"
                   data-bs-target="#loginModal">Login</a>
                 <a v-if="authStore.isAuth" href="#logout" @click="logout()" class="btn-get-started scrollto me-2">Logout</a>
-                <RouterLink v-if="authStore.isAuth" to="/account" class="btn-get-started scrollto me-2">Account</RouterLink>
               </div>
             </div>
             <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
@@ -59,8 +58,7 @@ export default {
   methods: {
     logout() {
       // выбрасываем юзера
-      const store = useAuthStore();
-      store.logout();
+      this.authStore.logout();
     }
   },
   components: {

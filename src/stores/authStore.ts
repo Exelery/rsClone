@@ -1,17 +1,14 @@
 import { defineStore } from "pinia";
 
-import type { IAuthStoreState, IUser } from "@/utils/types";
+import type { IAuthStoreState, IUser, IUserStateUpdate } from "@/utils/types";
 import { useLocalStorage } from "@vueuse/core";
 
 export const useAuthStore = defineStore({
   id: "authStore",
-  // state: () => ({
-  //   authUser: null,
-  // } as IAuthStoreState),
   state: () => {
     return {
       authUser: useLocalStorage("authStore", {
-        username: "",
+        name: "",
         email: '',
         isActivated: false,
         id: ''
@@ -37,6 +34,10 @@ export const useAuthStore = defineStore({
       };
       // console.log('user', this.authUser)
     },
+    updateUser({email, name}: IUserStateUpdate) {
+      this.authUser.email = email
+      this.authUser.name = name
+    }
   },
 })
 
