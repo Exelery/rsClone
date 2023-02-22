@@ -15,10 +15,12 @@ import { useEditorStore } from "../../stores/editor";
 import Codemirror from "codemirror-editor-vue3";
 
 import "codemirror/mode/htmlmixed/htmlmixed.js";
+import "codemirror/mode/javascript/javascript.js";
 
 import 'codemirror/addon/edit/closebrackets'
 import 'codemirror/addon/edit/closetag'
 import 'codemirror/addon/fold/foldcode.js'
+
 
 import 'codemirror/addon/hint/show-hint';
 import 'codemirror/addon/hint/show-hint.css';
@@ -30,7 +32,8 @@ import "codemirror/theme/mbo.css";
     data(){
       let data: any = {
         text: "<!--- start buld your future ---->",
-        fileParams: {}
+        fileParams: {},
+        fileName: ""
       }
 
       return data
@@ -40,15 +43,18 @@ import "codemirror/theme/mbo.css";
 
       return {
         cmOptions: {
-          mode: "htmlmixed",
+          mode: "text/html",
           theme: "mbo", 
           lineNumbers: true, 
           smartIndent: true,
+          line: true,
           extraKeys: {
             Ctrl: 'autocomplete',
           },
+          showDifferences: true,
           autoCloseBrackets: true,
           autoClosetag: true,
+          gutters: ['CodeMirror-linenumbers', 'CodeMirror-foldgutter'],
           linerWrapping: true,
           lint: true,
           indentUnit: 4, 
@@ -62,14 +68,19 @@ import "codemirror/theme/mbo.css";
       onCmReady(cm : any) {
         cm.on('keypress', () => {
             cm.showHint({completeSingle:false})
+          
         })
-
+        
+        cm.on('change', () => {
+          cm.setOption('mode', (this.fileName.includes(".js"))?'text/javascript':'text/html')
+        })
     },
     onCmCodeChange(newCode: any) {
       this.code = newCode;
     },
     onChange() {
       this.codemirror.showHint();
+      
     },
   },
     computed: {
@@ -97,14 +108,16 @@ import "codemirror/theme/mbo.css";
       useEditorStore().$onAction((e)=>{
         if(e.name === 'editorSetValue'){
           this.text = e.args[0].text;
-          this.fileParams = e.args[0].params
+          this.fileParams = e.args[0].params;
         }
 
         if(e.name === 'setActiveEditor'){
           let list = localStorage.getItem(e.args[0].path);
           let ParsedList = JSON.parse(String(list));
           this.text = ParsedList[e.args[0].index].data;
-          this.fileParams = e.args[0]
+          this.fileParams = e.args[0];
+          this.fileName = ParsedList[e.args[0].index].name
+    
         }
         },true)
     }
