@@ -11,8 +11,9 @@ export const useEditorStore = defineStore({
       name: "Main"
     }],
     editorValue: '',
-    activePage:'main',
-    activeEditor: {name:'', path: '', index: -1, id:''}
+    activePage:'Main',
+    activeEditor: {name:'', path: '', index: -1, id:''},
+    editorSaved: false
   }),
   getters: {
     value: (state) => state.activeBlock,
@@ -37,6 +38,9 @@ export const useEditorStore = defineStore({
     },
     updateEditorList(){
       return 1
+    },
+    saveUpdates(){
+
     }
   },
 });

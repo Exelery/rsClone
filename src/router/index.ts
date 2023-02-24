@@ -5,6 +5,7 @@ import BuilderPage from "../pages/builder/BuilderPage.vue"
 import BuilderEditor from "../pages/builder/BuilderEditor.vue"
 import BuilderConstuctor from "../pages/builder/BuilderConstructor.vue"
 import AccountPage from "../pages/AccountPage.vue"
+import mainPageVue from "@/pages/userHome/mainPage.vue";
 
 import { useAuthStore } from "@/stores/authStore";
 
@@ -34,16 +35,16 @@ const router = createRouter({
       ]
     },
     
-    // {
-    //   path: "/registration",
-    //   name: "Registration" ,
-    //   component: Registration
-    // },
     {
       path: "/builder/",
       name: "builder",
       component: BuilderPage,
       children: [
+        {
+            path: "user",
+            name: "user",
+            component: mainPageVue,
+        },
         {
           path: "create",
           name: "creator",

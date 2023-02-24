@@ -1,5 +1,5 @@
 <template>
-    <div :style="`transform: translate(${position.x}px, ${position.y}px); visibility: ${isVibsile}`">
+    <div :style="`transform: translate(${position.x}px, ${position.y}px); visibility: ${isVibsile}; ${isVibsile === 'hidden'?'display:none':''}`">
         <p @click="createFile">Create file {{ pageName }}</p>
         <p>Delete page</p>
     </div>
