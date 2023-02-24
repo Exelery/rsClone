@@ -4,6 +4,7 @@
     <LoadButton :loading="isLoadingUpdate" v-on:click="updateProject" class="btn btn-primary me-2">Update Project</LoadButton>
     <LoadButton :loading="isLoadingDelete" v-on:click="deleteProject" class="btn btn-primary me-2">Delete project</LoadButton>
     <LoadButton :loading="isLoadingAdd" v-on:click="addProject" class="btn btn-primary me-2">Add project</LoadButton>
+    <LoadButton :loading="isLoadingBind" v-on:click="bindProject" class="btn btn-primary me-2">Bind project</LoadButton>
   </div>
 </template>
 
@@ -15,6 +16,7 @@ let isLoadingAll = false
 let isLoadingAdd = false
 let isLoadingUpdate = false
 let isLoadingDelete = false
+let isLoadingBind = false
 
 const getData = async () => {
   isLoadingAll = true
@@ -28,6 +30,13 @@ const deleteProject = async () => {
   const answer = await DataApi.deleteProject(0)
   console.log('answer', answer.data.value)
   isLoadingDelete = false
+}
+
+const bindProject = async () => {
+  isLoadingBind = true
+  const answer = await DataApi.bindProject(11)
+  console.log('answer', answer.data.value)
+  isLoadingBind = false
 
 }
 

@@ -21,5 +21,9 @@ export default class DataApi {
   Promise<AxiosResponse<IResponse<string>>> {
   return api.delete("/data", {data: {projectId: projectId} })
 }
+
+static async bindProject(projectId: number): Promise<AxiosResponse<IResponse<string>>>{
+  return api.post("/data/bind", {projectId: projectId})
+}
   
 }
