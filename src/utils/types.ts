@@ -73,3 +73,7 @@ export interface IResponseUserProject {
 export interface IResponseIdProject {
   projectId: number
 }
+
+export interface NavigatorLanguage  {
+  userLanguage?: string;
+}

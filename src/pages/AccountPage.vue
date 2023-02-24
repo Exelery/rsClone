@@ -7,7 +7,7 @@
           <form name="profile" @submit="onSubmit">
             <!-- PERSONAL INFO -->
             <div class="col-12">
-              <h2>User Profile</h2>
+              <h2>{{ $t("account.header") }}</h2>
             </div>
             <hr>
             <div class="row">
@@ -121,7 +121,9 @@ import { useMutation } from '@tanstack/vue-query';
 import type { IUpdateUser, IUserStateUpdate } from '@/utils/types';
 import type { AxiosError } from 'axios';
 import Auth from "@/api/authApi";
+// import { useI18n } from "vue-i18n";
 
+// const { t } = useI18n()
 const authStore = useAuthStore()
 const registerSchema = toFormValidator(
   zod
@@ -138,8 +140,7 @@ const registerSchema = toFormValidator(
             .min(1, 'Password is required')
             .min(6, 'Password must be more than 8 characters')
             .max(32, 'Password must be less than 32 characters')
-        ), // .or(zod.string())
-      // passwordConfirm: zod.string().min(1, 'Please confirm your password'),
+        ),
       newPassword: zod.literal("")
         .or(
           zod
@@ -147,7 +148,7 @@ const registerSchema = toFormValidator(
             .min(1, 'Password is required')
             .min(6, 'Password must be more than 8 characters')
             .max(32, 'Password must be less than 32 characters')
-        ), // .or(zod.string())
+        ),
 
     }).refine((data) => {
       if (data.newPassword.length > 0) {
@@ -159,10 +160,7 @@ const registerSchema = toFormValidator(
       path: ['oldPassword'],
       message: 'Type old password',
     })
-  // .refine((data) => data.password === data.passwordConfirm, {
-  //   path: ['passwordConfirm'],
-  //   message: 'Passwords do not match',
-  // })
+
 );
 const { handleSubmit, errors, resetForm } = useForm({
   validationSchema: registerSchema,
@@ -174,9 +172,7 @@ const { handleSubmit, errors, resetForm } = useForm({
   },
 });
 const { value: name } = useField('name');
-// name = authStore.authUser.name
 const { value: email } = useField('email');
-// value = authStore.authUser.email
 const { value: newPassword } = useField('newPassword');
 const { value: oldPassword } = useField('oldPassword');
 let sendedData: IUserStateUpdate

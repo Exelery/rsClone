@@ -8,16 +8,16 @@
           <div class="row">
             <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
               data-aos="fade-up" data-aos-delay="200">
-              <h1>Create web pages in one click</h1>
-              <h2>We are team of talented developers give you the best webpage builder!</h2>
+              <h1>{{ $t("welcome.header") }}</h1>
+              <h2>{{ $t("welcome.text") }}</h2>
               <div class="d-flex justify-content-center justify-content-lg-start">
-                <RouterLink v-if="authStore.isAuth" to="/builder/create" class="btn-get-started scrollto me-2">Get Started
+                <RouterLink v-if="authStore.isAuth" to="/builder/create" class="btn-get-started scrollto me-2">{{ $t("welcome.startBtn") }}
                 </RouterLink>
                 <a v-if="!authStore.isAuth" href="#register" class="btn-get-started scrollto me-2" data-bs-toggle="modal"
-                  data-bs-target="#registerModal">Register</a>
+                  data-bs-target="#registerModal">{{ $t("welcome.register") }}</a>
                 <a v-if="!authStore.isAuth" href="#login" class="btn-get-started scrollto me-2" data-bs-toggle="modal"
-                  data-bs-target="#loginModal">Login</a>
-                <a v-if="authStore.isAuth" href="#logout" @click="logout()" class="btn-get-started scrollto me-2">Logout</a>
+                  data-bs-target="#loginModal">{{ $t("welcome.login") }}</a>
+                <a v-if="authStore.isAuth" href="#logout" @click="logout()" class="btn-get-started scrollto me-2">{{ $t("welcome.logout") }}</a>
               </div>
             </div>
             <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
