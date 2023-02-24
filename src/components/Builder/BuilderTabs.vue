@@ -1,14 +1,17 @@
 <template>
-<div class="d-flex p-2 btn-tab text-bg-dark">
-        <div v-for="tab in tabsList">
+<div class="d-flex btn-tab text-bg-dark">
+    <div class="scroll p-2">
+    <div v-for="tab in tabsList">
             <button v-if="tab.type === 'page'"  @click="()=> setActivePage(tab.name)" class="tab btn btn-primary">{{tab.name}}</button>
             <button v-else  @click="()=> setActiveEditor(tab.name, String(tab.path), Number(tab.index), String(tab.id))" class="tab btn btn-primary btn-script" :class="{'tabs-active':activeTabId === tab.id}">{{tab.name}} <i class="bi bi-code-slash"></i></button>
         </div>
-        
+    </div>
+        <button class="tab btn btn-primary sync-button" @click="saveChanges()">sync</button>
     </div>
 </template>
 
 <script lang="ts">
+import DataApi from '@/api/dataApi';
 import { useEditorStore } from '../../stores/editor'
     export default {
         data(){
@@ -37,6 +40,26 @@ import { useEditorStore } from '../../stores/editor'
             setActiveEditor(name: string, path: string, index: number, id: string){
                 useEditorStore().setActiveEditor({name, path, index, id})
                 this.$router.push('/builder/editor');
+            },
+            async saveChanges(){
+                let pages = []
+                for(let page in localStorage){
+                    if(page.includes("/page")){
+                        pages.push({
+                            fileName: page.split("/")[0] + ".json",
+                            content: String(localStorage.getItem(page))
+                        })
+                    }
+                }
+                const data = {
+                    projectId: Number(localStorage.getItem("activeProjectId")),
+                    projectName: String(localStorage.getItem("activeProject")),
+                    data: pages
+                }
+
+                console.log(pages)
+                const answer = await DataApi.updateProject(data)
+                console.log('answer', answer.data)
             }
         },
 
@@ -84,7 +107,12 @@ import { useEditorStore } from '../../stores/editor'
 <style>
 .btn-tab{
     max-width: calc(100vw - 280px);
-    overflow: auto !important;
+    display: flex;
+}
+.btn-tab .scroll{
+    width: calc(100% - 86px);
+    display: flex;
+    overflow: auto !important
 }
 .btn-tab button{
     padding: 2px 19px !important;
@@ -93,6 +121,12 @@ import { useEditorStore } from '../../stores/editor'
     color: rgb(233, 233, 233);
     animation-name: add-tab;
     animation-duration: 0.3s;
+}
+.btn-tab .sync-button{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 999;
 }
 
 .btn-script{
@@ -106,23 +140,23 @@ import { useEditorStore } from '../../stores/editor'
 }
 
 
-.btn-tab::-webkit-scrollbar {
+.btn-tab .scroll::-webkit-scrollbar {
   width: 5px;
   height: 5px;
   cursor: pointer;
 }
 
-.btn-tab::-webkit-scrollbar-track {
+.btn-tab .scroll::-webkit-scrollbar-track {
   background: #212529; 
 }
  
 
-.btn-tab::-webkit-scrollbar-thumb {
+.btn-tab .scroll::-webkit-scrollbar-thumb {
   background: #888; 
 }
 
 
-.btn-tab::-webkit-scrollbar-thumb:hover {
+.btn-tab .scroll::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
 

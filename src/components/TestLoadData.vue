@@ -45,12 +45,11 @@ const updateProject = async () => {
 
 }
 
-const addProject = async () => {
+const addProject = async (projectName: string) => {
   isLoadingUpdate = true
   const data = {
-    projectName: "zero",
-    data: [{ fileName: "html.html", content: "<html><html>" },
-    { fileName: "style.html", content: "<style><style>" }]
+    projectName,
+    data: [{ fileName: "Main.json", content: "[]" }]
   }
   const answer = await DataApi.addProject(data)
   console.log('answer', answer.data)

@@ -188,7 +188,7 @@ export default {
     scale: 0.5;
     transform: translateY(10px);
     transform-origin: calc(630px + 50%) top;
-    background: rgb(230, 230, 230);
+    background: rgb(255, 255, 255);
     transition: all 0.2s ease-in;
 }
 .working-space-drop{
