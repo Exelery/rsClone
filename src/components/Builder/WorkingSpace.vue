@@ -34,6 +34,10 @@
         <button type="button" @click="preview" class="btn btn-primary button-control">
             Preview
         </button>
+
+        <button type="button" @click="publishProject" class="btn btn-primary button-control">
+            Publish
+        </button>
     </div>
 </div>
 </template>
@@ -41,9 +45,13 @@
 <script lang="ts">
 import { useEditorStore } from '@/stores/editor'
 import draggable from 'vuedraggable'
+import router from '@/router';
+
 import blocks from '@/blocks/';
 import EditMenu from '@/components/builder/EditMenu.vue';
 import ModalNewPrject from '@/components/builder/ModalNewPrject.vue';
+import createNewPage from "@/utils/generator"
+import DataApi from '@/api/dataApi';
 
 export default {
     data() {
@@ -108,6 +116,16 @@ export default {
             elem.setAttribute("style", "outline: 2px solid rgb(67, 211, 255)")
             elem.getBoundingClientRect();
             // https://api.unsplash.com/search/photos?page=1&query=mountain&client_id=yugMy1rL6bPUQVHjtXVFzkZWc8mRLS0EOqrb6IAw3oA&per_page=2
+        },
+
+        async publishProject(){
+            const answer = await DataApi.bindProject(Number(localStorage.getItem("activeProjectId")));
+            console.log('answer', answer.data.value)
+            const randomNumber = Math.floor(Math.random() * 1001);
+            let url =  createNewPage(`/newpath${randomNumber}`, 'MyNewPage', answer.data.value )
+            console.log('url', url)
+            router.push(url)
+            console.log('routes', router.getRoutes())
         },
         removeEdit(event: Event){
             let elem = (event.currentTarget) as HTMLElement;
