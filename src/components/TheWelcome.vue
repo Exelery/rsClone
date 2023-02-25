@@ -70,7 +70,7 @@ export default {
 
 }
 </script>
-<style >
+<style scoped>
 @import "../layout/assets/css/style.css";
 
 a {
