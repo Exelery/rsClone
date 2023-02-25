@@ -6,6 +6,8 @@ import BuilderEditor from "../pages/builder/BuilderEditor.vue"
 import BuilderConstuctor from "../pages/builder/BuilderConstructor.vue"
 import AccountPage from "../pages/AccountPage.vue"
 import mainPageVue from "@/pages/userHome/mainPage.vue";
+import NotFound from "@/pages/NotFound.vue";
+import PreviewProject from "@/pages/PreviewProject.vue";
 
 import { useAuthStore } from "@/stores/authStore";
 
@@ -13,7 +15,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: "/:locale?",
+      path: "/",
       component: RouterView,
       // beforeEnter: router
       children: [
@@ -34,16 +36,16 @@ const router = createRouter({
         },
       ]
     },
-    
+
     {
       path: "/builder/",
       name: "builder",
       component: BuilderPage,
       children: [
         {
-            path: "user",
-            name: "user",
-            component: mainPageVue,
+          path: "user",
+          name: "user",
+          component: mainPageVue,
         },
         {
           path: "create",
@@ -56,7 +58,23 @@ const router = createRouter({
           component: BuilderEditor,
         }
       ]
-    }
+    },
+    {
+      path: '/preview/:id',
+      name: 'PreviewProject',
+      component: PreviewProject
+    }, 
+    {
+      path: '/:pathMatch(.*)',
+      redirect: "/404",
+      name: "notFound",
+    },
+    {
+      path: "/404",
+      name: "404",
+      component: NotFound,
+  }
+    
   ],
 });
 
