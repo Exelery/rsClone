@@ -4,6 +4,8 @@
     <LoadButton :loading="isLoadingUpdate" v-on:click="updateProject" class="btn btn-primary me-2">Update Project</LoadButton>
     <LoadButton :loading="isLoadingDelete" v-on:click="deleteProject" class="btn btn-primary me-2">Delete project</LoadButton>
     <LoadButton :loading="isLoadingAdd" v-on:click="addProject" class="btn btn-primary me-2">Add project</LoadButton>
+    <label for="id">projectId</label>
+    <input type="number" v-model="projectId" name="id" id="">
     <LoadButton :loading="isLoadingBind" v-on:click="bindProject" class="btn btn-primary me-2">Bind project</LoadButton>
     <!-- <LoadButton :loading="isLoadingBind" v-on:click="showRoutes" class="btn btn-primary me-2">show routes</LoadButton> -->
     <!-- <RouterLink v-if="url" to={{ url }} class="btn-get-started scrollto me-2">page</RouterLink> -->
@@ -25,6 +27,7 @@ let isLoadingAdd = false
 let isLoadingUpdate = false
 let isLoadingDelete = false
 let isLoadingBind = false
+let projectId = 1
 
 const showRoutes= () => {
   console.log(router.getRoutes())
@@ -39,7 +42,7 @@ const getData = async () => {
 
 const deleteProject = async () => {
   isLoadingDelete = true
-  const answer = await DataApi.deleteProject(0)
+  const answer = await DataApi.deleteProject(projectId)
   console.log('answer', answer.data.value)
   isLoadingDelete = false
 }
@@ -47,14 +50,15 @@ let url: RouteLocation
 
 const bindProject = async () => {
   isLoadingBind = true
-  const answer = await DataApi.bindProject(11)
+  console.log(projectId)
+  const answer = await DataApi.bindProject(projectId)
   // console.log('answer', answer.data.value)
-  const randomNumber = Math.floor(Math.random() * 1001);
+  // const randomNumber = Math.floor(Math.random() * 1001);
   isLoadingBind = false
-  url =  createNewPage(`/newpath${randomNumber}`, 'MyNewPage', answer.data.value )
-  console.log('url', url)
-  router.push(url)
-  console.log('routes', router.getRoutes())
+  // url =  createNewPage(`/newpath${randomNumber}`, 'MyNewPage', answer.data.value )
+  // console.log('url', url)
+  // router.push(url)
+  console.log(answer.data)
 
 
 }
