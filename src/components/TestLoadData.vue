@@ -4,17 +4,31 @@
     <LoadButton :loading="isLoadingUpdate" v-on:click="updateProject" class="btn btn-primary me-2">Update Project</LoadButton>
     <LoadButton :loading="isLoadingDelete" v-on:click="deleteProject" class="btn btn-primary me-2">Delete project</LoadButton>
     <LoadButton :loading="isLoadingAdd" v-on:click="addProject" class="btn btn-primary me-2">Add project</LoadButton>
+    <LoadButton :loading="isLoadingBind" v-on:click="bindProject" class="btn btn-primary me-2">Bind project</LoadButton>
+    <!-- <LoadButton :loading="isLoadingBind" v-on:click="showRoutes" class="btn btn-primary me-2">show routes</LoadButton> -->
+    <!-- <RouterLink v-if="url" to={{ url }} class="btn-get-started scrollto me-2">page</RouterLink> -->
   </div>
+  <router-view></router-view>
 </template>
 
 <script setup lang="ts">
+import type { RouteLocation } from 'vue-router';
 import Auth from '../api/authApi';
 import DataApi from '../api/dataApi';
 import LoadButton from '../components/LoadButton.vue'
+import createNewPage from "../utils/generator"
+import TestLoadData from '@/components/TestLoadData.vue'
+import router from '@/router';
+
 let isLoadingAll = false
 let isLoadingAdd = false
 let isLoadingUpdate = false
 let isLoadingDelete = false
+let isLoadingBind = false
+
+const showRoutes= () => {
+  console.log(router.getRoutes())
+}
 
 const getData = async () => {
   isLoadingAll = true
@@ -28,6 +42,20 @@ const deleteProject = async () => {
   const answer = await DataApi.deleteProject(0)
   console.log('answer', answer.data.value)
   isLoadingDelete = false
+}
+let url: RouteLocation 
+
+const bindProject = async () => {
+  isLoadingBind = true
+  const answer = await DataApi.bindProject(11)
+  // console.log('answer', answer.data.value)
+  const randomNumber = Math.floor(Math.random() * 1001);
+  isLoadingBind = false
+  url =  createNewPage(`/newpath${randomNumber}`, 'MyNewPage', answer.data.value )
+  console.log('url', url)
+  router.push(url)
+  console.log('routes', router.getRoutes())
+
 
 }
 
@@ -54,6 +82,7 @@ const addProject = async (projectName: string) => {
   const answer = await DataApi.addProject(data)
   console.log('answer', answer.data)
   isLoadingUpdate = false
+  
 
 }
 </script>

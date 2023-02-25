@@ -1,0 +1,41 @@
+{
+  "locale": {
+    "en": "Eng",
+    "ru": "Ru"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "builder": "Builder",
+    "account": "Account"
+  },
+  "account": {
+    "header": "User Profile",
+    "name": "Public Name",
+    "emailHeader": "Email Details",
+    "emailText": "Your personal information is never shown to other users."
+  },
+  "welcome": {
+    "header": "Create web pages in one click",
+    "text": "We are team of talented developers give you the best webpage builder!",
+    "startBtn": "Get Started",
+    "register": "Register",
+    "logout": "Logout",
+    "login": "Login"
+  },
+  "about": {
+    "team": "Team",
+    "about": "ABOUT US",
+    "text": "We are team of talented developers give you the best webpage builder! Why our application is better?",
+    "reasonOne": "We use modern technologies",
+    "reasonTwo": "We give you the ability to create web pages in one click",
+    "reasonThree": "We are the best of the best :)",
+    "jahanbayev": "Jahanbayev Samandar",
+    "gladyshev": "Aleksei Gladyshev",
+    "komarov": "Anatoliy Komarov",
+    "name": "Page builder",
+    "description": "The best application in the world",
+    "technologies": "Used technologies",
+    "technologiesDescription": "Our work is done using the framework vue.js"
+  }
+}

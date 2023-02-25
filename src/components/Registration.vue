@@ -56,7 +56,7 @@ import { toFormValidator } from '@vee-validate/zod';
 import * as zod from 'zod';
 import { useMutation } from '@tanstack/vue-query';
 import Auth from '../api/authApi';
-import type { IResponse, ISignUpInput } from '@/utils/types';
+import type { ISignUpInput } from '@/utils/types';
 import type { AxiosError } from 'axios';
 import LoadButton from './LoadButton.vue';
 import { useAuthStore } from '@/stores/authStore';

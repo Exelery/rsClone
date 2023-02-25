@@ -4,20 +4,24 @@
       <h1 class="logo me-auto"><RouterLink to="/">Page builder</RouterLink></h1>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><RouterLink to="/" class="nav-link scrollto" :class="{active: $route.name==='home'}">Home</RouterLink></li>
-          <li><RouterLink to="/about" class="nav-link scrollto " :class="{active: $route.name==='about'}">About</RouterLink></li>
-          <li v-if="authStore.isAuth"><RouterLink to="/builder/create" class="nav-link scrollto " :class="{active: $route.name==='creator'}">Builder</RouterLink></li>
-          <li v-if="authStore.isAuth"><RouterLink to="/account" class="nav-link scrollto " :class="{active: $route.name==='account'}">Account</RouterLink></li>
+          <li><RouterLink to="/" class="nav-link scrollto" :class="{active: $route.name==='home'}">{{ $t("nav.home") }}</RouterLink></li>
+          <li><RouterLink to="/about" class="nav-link scrollto " :class="{active: $route.name==='about'}">{{ $t("nav.about") }}</RouterLink></li>
+          <!-- <li v-if="authStore.isAuth"><RouterLink to="/builder/create" class="nav-link scrollto " :class="{active: $route.name==='creator'}">Builder</RouterLink></li> -->
+          <li v-if="authStore.isAuth"><RouterLink to="/account" class="nav-link scrollto " :class="{active: $route.name==='account'}">{{ $t("nav.account") }}</RouterLink></li>
         </ul>
+        <LanguageSwitcher></LanguageSwitcher>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
-
+      
     </div>
+    
+    
   </header>
 </template>
 
 <script>
 import { useAuthStore } from "@/stores/authStore";
+import LanguageSwitcher from "@/components/LanguageSwitcher.vue";
 export default {
   data(){
     return{
@@ -33,6 +37,9 @@ export default {
     })
 
   },
+  components: {
+    LanguageSwitcher
+  }
 }
 </script>
 
