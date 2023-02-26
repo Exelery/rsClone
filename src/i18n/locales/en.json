@@ -13,7 +13,16 @@
     "header": "User Profile",
     "name": "Public Name",
     "emailHeader": "Email Details",
-    "emailText": "Your personal information is never shown to other users."
+    "emailText": "Your personal information is never shown to other users.",
+    "verify": "Verify email",
+    "verified": "Your email is verifed",
+    "email":"Email Address",
+    "password": "Password",
+    "passwordText": "Leave password blank if don't want to change.",
+    "currentPasword": "Current Password",
+    "newPassword": "New Password",
+    "save": "Save Changes",
+    "cancel": "Cancel"
   },
   "welcome": {
     "header": "Create web pages in one click",
@@ -37,5 +46,19 @@
     "description": "The best application in the world",
     "technologies": "Used technologies",
     "technologiesDescription": "Our work is done using the framework vue.js"
+  },
+  "login": {
+    "header": "Login to Page Builder",
+    "email": "Email Address",
+    "password": "Password",
+    "login": "Login"
+  },
+  "registration": {
+    "name": "Account name",
+    "header": "Create new account",
+    "email": "Email Address",
+    "password": "Password",
+    "confirm": "Confirm Password",
+    "create": "Create account"
   }
 }

@@ -12,13 +12,21 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
-import { supportedLocales, setCurrentLocale } from "../i18n/index"
+import { supportedLocales, switchLanguage } from "../i18n/index"
+import {useRouter} from "vue-router"
 const { locale } = useI18n()
+const router = useRouter()
 
 const changeLanguage = async (event: Event) => {
   if (event.target) {
     const newLocale = (event.target as HTMLInputElement).value
-    await setCurrentLocale(newLocale as 'ru' | 'en')
+    await switchLanguage(newLocale as 'ru' | 'en')
+    try {
+      await router.replace({params:{locale: newLocale}})
+    } catch (e) {
+      console.error(e)
+      router.push('/')
+    }
   }
 
 }

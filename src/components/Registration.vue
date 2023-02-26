@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Login to Page Builder</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">{{ $t("registration.header") }}</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -11,26 +11,26 @@
             class="max-w-[27rem] mx-auto overflow-hidden shadow-lg bg-ct-dark-200 rounded-2xl p-8 space-y-5">
             <div class="mb-3">
               <div class="">
-                <label for="name" class="block text-ct-blue-600 mb-3 form-label">Full Name</label>
+                <label for="name" class="block text-ct-blue-600 mb-3 form-label">{{ $t("registration.name") }}</label>
                 <input v-model="name" type="text" placeholder=" " class=" form-control" id="name" />
                 <span class="text-red-500 text-xs pt-1 block">{{ errors.name }}</span>
               </div>
               <div class="">
-                <label for="email" class="block text-ct-blue-600 mb-3 form-label">Email Address</label>
+                <label for="email" class="block text-ct-blue-600 mb-3 form-label">{{ $t("registration.email") }}</label>
                 <input v-model="email" type="email" placeholder=" " class="form-control" id="email" />
                 <span class="text-red-500 text-xs pt-1 block">{{
                   errors.email
                 }}</span>
               </div>
               <div class="">
-                <label for="password" class="block text-ct-blue-600 mb-3 form-label">Password</label>
+                <label for="password" class="block text-ct-blue-600 mb-3 form-label">{{ $t("registration.password") }}</label>
                 <input v-model="password" type="password" placeholder="" class="form-control" id="password" />
                 <span class="text-red-500 text-xs pt-1 block">{{
                   errors.password
                 }}</span>
               </div>
               <div class="">
-                <label for="passwordConfirm" class="block text-ct-blue-600 mb-3 form-label">Confirm Password</label>
+                <label for="passwordConfirm" class="block text-ct-blue-600 mb-3 form-label">{{ $t("registration.confirm") }}</label>
                 <input v-model="passwordConfirm" type="password" placeholder=" " class=" form-control"
                   id="passwordConfirm" />
                 <span class="text-red-500 text-xs pt-1 block">{{
@@ -41,7 +41,7 @@
 
             <!-- <span class="block">Already have an account?
                   <router-link :to="{ name: 'login' }" class="text-ct-blue-600">Login Here</router-link></span> -->
-            <LoadButton :loading="isLoading" class="btn btn-primary">Create account</LoadButton>
+            <LoadButton :loading="isLoading" class="btn btn-primary">{{ $t("registration.create") }}</LoadButton>
           </form>
         </div>
       </div>

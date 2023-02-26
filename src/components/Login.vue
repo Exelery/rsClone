@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Login to Page Builder</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">{{ $t("login.header") }}</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -11,15 +11,15 @@
             class="max-w-[27rem] mx-auto overflow-hidden shadow-lg bg-ct-dark-200 rounded-2xl p-8 space-y-5">
             <div class="mb-3">
               <div class="">
-                <label for="email" class="block text-ct-blue-600 mb-3 form-label">Email Address</label>
-                <input v-model="email" type="email" placeholder=" " class="form-control" id="email" />
+                <label for="emailLogin" class="block text-ct-blue-600 mb-3 form-label">{{ $t("login.email") }}</label>
+                <input v-model="email" type="email" placeholder=" " class="form-control" id="emailLogin" />
                 <span class="text-red-500 text-xs pt-1 block">{{
                   errors.email
                 }}</span>
               </div>
               <div class="">
-                <label for="password" class="block text-ct-blue-600 mb-3 form-label">Password</label>
-                <input v-model="password" type="password" placeholder=" " class="form-control" id="password" />
+                <label for="password" class="block text-ct-blue-600 mb-3 form-label">{{ $t("login.password") }}</label>
+                <input v-model="password" type="password" placeholder=" " class="form-control" id="passwordLogn" />
                 <span class="text-red-500 text-xs pt-1 block">{{
                   errors.password
                 }}</span>
@@ -29,7 +29,7 @@
             <!-- <span class="block">Already have an account?
                         <router-link :to="{ name: 'login' }" class="text-ct-blue-600">Login Here</router-link></span> -->
             <!-- <button :loading="isLoading" class="btn btn-primary">Log in</button> -->
-            <LoadButton :loading="isLoading" class="btn btn-primary">Log in</LoadButton>
+            <LoadButton :loading="isLoading" class="btn btn-primary">{{ $t("login.login") }}</LoadButton>
           </form>
         </div>
       </div>

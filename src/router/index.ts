@@ -7,7 +7,8 @@ import BuilderConstuctor from "../pages/builder/BuilderConstructor.vue"
 import AccountPage from "../pages/AccountPage.vue"
 import mainPageVue from "@/pages/userHome/mainPage.vue";
 import NotFound from "@/pages/NotFound.vue";
-import PreviewProject from "@/pages/PreviewProject.vue";
+import ListProjects from "@/components/userProjects/ListProjects.vue";
+import {guessDefaultLocale, i18nRouterMiddleware, isLocaleSupported, switchLanguage} from "../i18n/index";
 
 import { useAuthStore } from "@/stores/authStore";
 
@@ -15,12 +16,12 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: "/",
+      path: "/:locale?",
       component: RouterView,
-      // beforeEnter: router
+      beforeEnter: i18nRouterMiddleware,
       children: [
         {
-          path: "/",
+          path: "",
           name: "home",
           component: HomeView,
         },
@@ -59,11 +60,11 @@ const router = createRouter({
         }
       ]
     },
-    {
-      path: '/preview/:id',
-      name: 'PreviewProject',
-      component: PreviewProject
-    }, 
+    // {
+    //   path: '/preview/:id',
+    //   name: 'PreviewProject',
+    //   component: PreviewProject
+    // }, 
     {
       path: '/:pathMatch(.*)',
       redirect: "/404",
@@ -97,5 +98,15 @@ router.beforeEach((to, from, next) => {
     next();
   }
 });
+
+// router.beforeEach(async (to, _from, next) => {
+//   const paramLocale = to.params.locale as string
+
+//   if(paramLocale === "en" || paramLocale === "ru") {
+//     await switchLanguage(paramLocale)
+//     return next()
+//   }
+
+// })
 
 export default router;

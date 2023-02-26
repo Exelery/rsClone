@@ -29,7 +29,7 @@
                     </div> -->
               <div class="col-12 ">
                 <label for="name" class="w-100">
-                  <div class="label-title" data-note="Optional">Public Name</div>
+                  <div class="label-title" data-note="Optional">{{ $t("account.name") }}</div>
                   <input class="form-control" placeholder="Public Name" type="text" name="name" v-model="name" id="name">
                 </label>
                 <span class="text-red-500 text-xs pt-1 block">{{ errors.name }}</span>
@@ -40,25 +40,25 @@
 
             <div class="my-2 row">
               <div class="col-12">
-                <h2>Email Details</h2>
+                <h2>{{ $t("account.emailHeader") }} </h2>
                 <p>
-                  Your personal information is never shown to other users.
+                  {{ $t("account.emailText") }}
                 </p>
               </div>
               <div class="row">
                 <div v-if="!authStore.authUser.isActivated" class="col-12">
-                  <button class="label-title required">Verify email</button>
+                  <button class="label-title required">{{ $t("account.verify") }}</button>
                 </div>
                 <div v-else class="col-12">
                   <p>
-                    Your email is verifed
+                    {{ $t("account.verified") }}
                   </p>
                 </div>
               </div>
               <div class="row">
                 <div class="col-12 col-md-4">
                   <label for="email" class="w-100">
-                    <div class="label-title required">Email address</div>
+                    <div class="label-title required">{{ $t("account.email") }}</div>
                     <input class="form-control" placeholder="Email address" type="email" name="account_email" id="email"
                       v-model="email">
                   </label>
@@ -69,24 +69,23 @@
             <hr>
             <div class="my-3 row">
               <div class="col-12">
-                <h2>Password</h2>
-                <p class="note fix-3-12 margin-top-1 desktop-fix-12-12 toLeft">Leave password blank if don't want to
-                  change.</p>
+                <h2>{{ $t("account.password") }}</h2>
+                <p class="note fix-3-12 margin-top-1 desktop-fix-12-12 toLeft">{{ $t("account.passwordText") }}</p>
               </div>
               <div class="row">
 
                 <div class="col-12 col-md-6">
                   <label for="oldPassword" class="w-100">
-                    <div class="label-title">Current Password</div>
-                    <input v-model="oldPassword" class="form-control" placeholder="Current Password" type="password"
+                    <div class="label-title">{{ $t("account.currentPasword") }}</div>
+                    <input v-model="oldPassword" class="form-control" :placeholder="$t('account.currentPasword')" type="password"
                       name="current_password" id="oldPassword" autocomplete="off">
                   </label>
                   <span class="text-red-500 text-xs pt-1 block">{{ errors.oldPassword }}</span>
                 </div>
                 <div class="col-12 col-md-6">
                   <label for="newPassword" class="w-100">
-                    <div class="label-title">New Password</div>
-                    <input v-model="newPassword" class="form-control" placeholder="New Password" type="password"
+                    <div class="label-title">{{ $t("account.newPassword") }}</div>
+                    <input v-model="newPassword" class="form-control" :placeholder="$t('account.newPassword')" type="password"
                       name="newPassword" id="newPassword" autocomplete="off">
                   </label>
                   <span class="text-red-500 text-xs pt-1 block">{{ errors.newPassword }}</span>
@@ -95,8 +94,8 @@
             </div>
             <hr>
             <div class="col-12 my-2">
-              <LoadButton class="btn btn-primary" :loading="isLoading">Save Changes</LoadButton>
-              <RouterLink to="/" class="btn-get-started scrollto ms-2 btn btn-success">Cancel</RouterLink>
+              <LoadButton class="btn btn-primary" :loading="isLoading">{{ $t("account.save") }}</LoadButton>
+              <RouterLink to="/" class="btn-get-started scrollto ms-2 btn btn-success">{{ $t("account.cancel") }}</RouterLink>
             </div>
           </form>
         </div>
