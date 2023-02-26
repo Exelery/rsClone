@@ -1,6 +1,5 @@
 <template>
     <div>
-        <h1>hello grid</h1>
         <main class="gallery">
   <ul class="gallery__list">
 
