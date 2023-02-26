@@ -120,12 +120,7 @@ export default {
 
         async publishProject(){
             const answer = await DataApi.bindProject(Number(localStorage.getItem("activeProjectId")));
-            console.log('answer', answer.data.value)
-            const randomNumber = Math.floor(Math.random() * 1001);
-            let url =  createNewPage(`/newpath${randomNumber}`, 'MyNewPage', answer.data.value )
-            console.log('url', url)
-            router.push(url)
-            console.log('routes', router.getRoutes())
+            console.log(answer)
         },
         removeEdit(event: Event){
             let elem = (event.currentTarget) as HTMLElement;

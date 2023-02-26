@@ -73,12 +73,12 @@ export default {
                     projectTabs.push({
                         type: 'page',
                         name: element.fileName.split('.')[0]
-                    })
+                    });
                 }
             });
 
             localStorage.setItem('tabsList', JSON.stringify(projectTabs));
-
+            localStorage.setItem('editorSaved', "true");
             this.$router.push('/builder/create');
         },
         clearProjectsHistory(){

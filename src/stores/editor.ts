@@ -13,7 +13,7 @@ export const useEditorStore = defineStore({
     editorValue: '',
     activePage:'Main',
     activeEditor: {name:'', path: '', index: -1, id:''},
-    editorSaved: false
+    editorSaved: Boolean(localStorage.getItem("editorSaved"))
   }),
   getters: {
     value: (state) => state.activeBlock,
@@ -39,8 +39,8 @@ export const useEditorStore = defineStore({
     updateEditorList(){
       return 1
     },
-    saveUpdates(){
-
+    saveUpdates(save : boolean){
+      this.editorSaved = save
     }
   },
 });
