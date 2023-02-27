@@ -1,16 +1,27 @@
 import { createRouter, createWebHistory, RouterView } from "vue-router";
-import HomeView from "../views/HomeView.vue";
-import AboutView from "../views/AboutView.vue";
-import BuilderPage from "../pages/builder/BuilderPage.vue"
-import BuilderEditor from "../pages/builder/BuilderEditor.vue"
-import BuilderConstuctor from "../pages/builder/BuilderConstructor.vue"
-import AccountPage from "../pages/AccountPage.vue"
-import mainPageVue from "@/pages/userHome/mainPage.vue";
-import NotFound from "@/pages/NotFound.vue";
-import ListProjects from "@/components/userProjects/ListProjects.vue";
-import {guessDefaultLocale, i18nRouterMiddleware, isLocaleSupported, switchLanguage} from "../i18n/index";
+// import AboutView from "../views/AboutView.vue";
+// import BuilderPage from "../pages/builder/BuilderPage.vue";
+// import BuilderEditor from "../pages/builder/BuilderEditor.vue";
+// import BuilderConstuctor from "../pages/builder/BuilderConstructor.vue";
+// import mainPageVue from "@/pages/userHome/mainPage.vue";
+import { i18nRouterMiddleware } from "../i18n/index";
 
 import { useAuthStore } from "@/stores/authStore";
+const HomeView = () => import("../views/HomeView.vue");
+const NotFound = () => import("@/pages/NotFound.vue");
+const AccountPage = () => import("../pages/AccountPage.vue");
+const BuilderPage  = () => import("../pages/builder/BuilderPage.vue");
+const BuilderEditor  = () => import("../pages/builder/BuilderEditor.vue");
+const BuilderConstuctor = () => import("../pages/builder/BuilderConstructor.vue");
+const mainPageVue = () => import( "@/pages/userHome/mainPage.vue");
+const About = () => import("../views/AboutView.vue")
+
+
+
+
+
+
+
 
 const router = createRouter({
   history: createWebHistory(),
@@ -28,43 +39,38 @@ const router = createRouter({
         {
           path: "about",
           name: "about",
-          component: AboutView,
+          component: About,
         },
         {
           path: "account",
           name: "account",
           component: AccountPage,
         },
+        {
+          path: "builder/",
+          name: "builder",
+          component: BuilderPage,
+          children: [
+            {
+              path: "user",
+              name: "user",
+              component: mainPageVue,
+            },
+            {
+              path: "create",
+              name: "creator",
+              component: BuilderConstuctor,
+            },
+            {
+              path: "editor",
+              name: "editor",
+              component: BuilderEditor,
+            }
+          ]
+        },
       ]
     },
 
-    {
-      path: "/builder/",
-      name: "builder",
-      component: BuilderPage,
-      children: [
-        {
-          path: "user",
-          name: "user",
-          component: mainPageVue,
-        },
-        {
-          path: "create",
-          name: "creator",
-          component: BuilderConstuctor,
-        },
-        {
-          path: "editor",
-          name: "editor",
-          component: BuilderEditor,
-        }
-      ]
-    },
-    // {
-    //   path: '/preview/:id',
-    //   name: 'PreviewProject',
-    //   component: PreviewProject
-    // }, 
     {
       path: '/:pathMatch(.*)',
       redirect: "/404",
@@ -74,8 +80,8 @@ const router = createRouter({
       path: "/404",
       name: "404",
       component: NotFound,
-  }
-    
+    }
+
   ],
 });
 

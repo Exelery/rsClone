@@ -1,19 +1,19 @@
 import { createI18n } from "vue-i18n";
 import i18n from "@/i18n";
-import en from "./locales/en.json"
-import ru from "./locales/ru.json"
+// import en from "./locales/en.json"
+// import ru from "./locales/ru.json"
 import type { NavigatorLanguage } from "../utils/types"
 import { defaultLocation } from "@vueuse/core";
 import { nextTick } from "vue";
 
+// type MessageSchema = typeof en
 
-
-export default createI18n({
-  locale: "en",
+export default createI18n({ //<[MessageSchema], 'en' | 'ru'>
+  // locale: "en",
   fallbackLocale: "en",
   legacy: false,
   globalInjection: true,
-  messages: { en, ru }, // (await import(`./locales/en.json`)).default
+  // messages: { en }, // (await import(`./locales/en.json`)).default
   // availableLocales: ["en", "ru"],
   runtimeOnly: false
 })
@@ -77,7 +77,9 @@ async function loadLocalMessages(locale: "en" | "ru") {
   if(!i18n.global.availableLocales.includes(locale)){
     const messages = await import(`./locales/${locale}.json`)
       i18n.global.setLocaleMessage(locale, messages.default)
+      console.log('load true')
     }
+    console.log('loading', locale)
     
     return nextTick()
 }

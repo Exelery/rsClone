@@ -102,13 +102,20 @@ const { isLoading, mutate } = useMutation(
       // queryClient.refetchQueries({queryKey: ['authStore']});
       // data-bs-toggle="modal"
       addUserParams()
-      // resetForm();
+      resetForm();
+      // const collapseElement = document.querySelector('#loginModal') as Element;
       
+      // collapseElement.setAttribute("style", "display: none;")
+      // collapseElement.setAttribute("aria-hidden", "true")
+      // collapseElement.setAttribute("aria-modal", "")
+      // collapseElement.setAttribute("role", "")
+      // collapseElement.classList.toggle('show');
+
     },
   }
 );
 
-const addUserParams = async() => {
+const addUserParams = async () => {
   const response = await Auth.getUserInfo()
   console.log('pinia', response)
   authStore.setLoginState(response.data.value)

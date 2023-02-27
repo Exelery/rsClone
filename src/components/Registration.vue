@@ -23,14 +23,16 @@
                 }}</span>
               </div>
               <div class="">
-                <label for="password" class="block text-ct-blue-600 mb-3 form-label">{{ $t("registration.password") }}</label>
+                <label for="password" class="block text-ct-blue-600 mb-3 form-label">{{ $t("registration.password")
+                }}</label>
                 <input v-model="password" type="password" placeholder="" class="form-control" id="password" />
                 <span class="text-red-500 text-xs pt-1 block">{{
                   errors.password
                 }}</span>
               </div>
               <div class="">
-                <label for="passwordConfirm" class="block text-ct-blue-600 mb-3 form-label">{{ $t("registration.confirm") }}</label>
+                <label for="passwordConfirm" class="block text-ct-blue-600 mb-3 form-label">{{ $t("registration.confirm")
+                }}</label>
                 <input v-model="passwordConfirm" type="password" placeholder=" " class=" form-control"
                   id="passwordConfirm" />
                 <span class="text-red-500 text-xs pt-1 block">{{
@@ -107,6 +109,9 @@ const { isLoading, mutate } = useMutation(
       console.log('sucess', data)
       localStorage.setItem('token', data.value.token)
       resetForm();
+      const collapseElements = document.querySelector('#registerModal') as Element;
+
+      collapseElements.classList.toggle('show');
       addUserParams();
     },
   }
