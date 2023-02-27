@@ -10,28 +10,32 @@ export default class Auth {
 
   static async login(user: ILoginInput):
     Promise<AxiosResponse<IResponse<IRefreshResponse>>> {
-      const answer = await api.post("/auth/login", user)
+    const answer = await api.post("/auth/login", user)
     return answer.data
-    
+
   }
 
   static async logout():
     Promise<AxiosResponse<IResponse<string>>> {
     return api.get("/auth/logout",)
   }
-  
+
   static async getUserInfo():
     Promise<AxiosResponse<IResponse<IUser>>> {
-      console.log('getting user data')
+    console.log('getting user data')
     return api.get("/user",)
   }
-  
-  static async updateUser(data: IUpdateUser): Promise<AxiosResponse<IResponse<IUser>>>
-    { 
-      console.log('updateUser')
-    return api.put("/user", data )
+
+  static async updateUser(data: IUpdateUser): Promise<AxiosResponse<IResponse<IUser>>> {
+    console.log('updateUser')
+    return api.put("/user", data)
   }
-  
+
+  static async resetPass(email: string): Promise<AxiosResponse<IResponse<string>>> {
+    console.log('resetPass')
+    return api.post("/user/resetpass", {email: email})
+  }
+
 
   // static async verify(user: ILoginInput):
   //   Promise<AxiosResponse<IAuthResponse>> {

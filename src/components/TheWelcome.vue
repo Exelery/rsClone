@@ -47,6 +47,7 @@ import FooterBox from "@/components/FooterBox.vue";
 import Registration from "@/components/Registration.vue";
 import Login from "@/components/Login.vue";
 import { useAuthStore } from "@/stores/authStore";
+import Auth from "@/api/authApi";
 // import {i18nRoute} from "../i18n/index"
 export default {
   data() {
@@ -56,9 +57,13 @@ export default {
     }
   },
   methods: {
-    logout() {
+    async logout() {
       // выбрасываем юзера
       this.authStore.logout();
+      const response = await Auth.logout()
+      localStorage.removeItem("token")
+      localStorage.removeItem("authStore")
+      console.log(response)
     }
   },
   components: {
