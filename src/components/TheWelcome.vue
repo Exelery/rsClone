@@ -11,7 +11,7 @@
               <h1>{{ $t("welcome.header") }}</h1>
               <h2>{{ $t("welcome.text") }}</h2>
               <div class="d-flex justify-content-center justify-content-lg-start">
-                <RouterLink v-if="authStore.isAuth" to="builder/user" class="btn-get-started scrollto me-2">{{ $t("welcome.startBtn") }}</RouterLink>
+                <RouterLink v-if="authStore.isAuth" to="user" class="btn-get-started scrollto me-2">{{ $t("welcome.startBtn") }}</RouterLink>
                 <a v-if="!authStore.isAuth" href="#register" class="btn-get-started scrollto me-2" data-bs-toggle="modal"
                   data-bs-target="#registerModal">{{ $t("welcome.register") }}</a>
                 <a v-if="!authStore.isAuth" href="#login" class="btn-get-started scrollto me-2" data-bs-toggle="modal"
