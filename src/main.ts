@@ -13,6 +13,7 @@ import BootstrapVue from "bootstrap-vue-3"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap-vue/dist/bootstrap-vue.css"
 import "bootstrap-icons/font/bootstrap-icons.css";
+import "bootstrap";
 
 
 const app = createApp(App);

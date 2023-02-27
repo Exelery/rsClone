@@ -45,6 +45,7 @@
   "devDependencies": {
     "@interactjs/types": "^1.10.17",
     "@rushstack/eslint-patch": "^1.1.0",
+    "@types/bootstrap": "^5.2.6",
     "@types/jsdom": "^16.2.14",
     "@types/node": "^16.18.11",
     "@types/sortablejs": "^1.15.0",

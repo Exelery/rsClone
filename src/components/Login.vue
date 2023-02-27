@@ -39,7 +39,9 @@
 </template>
 
 <script setup lang="ts">
-import { onBeforeUpdate } from 'vue';
+// import * as bootstrap from 'bootstrap';
+// import { Toast } from 'bootstrap.esm.min.js'
+// import { Popover } from "bootstrap";
 import { Form, useField, useForm } from 'vee-validate';
 import { toFormValidator } from '@vee-validate/zod';
 import * as zod from 'zod';
@@ -103,7 +105,8 @@ const { isLoading, mutate } = useMutation(
       // data-bs-toggle="modal"
       addUserParams()
       resetForm();
-      // const collapseElement = document.querySelector('#loginModal') as Element;
+      const collapseElement = document.querySelector('#loginModal') as Element;
+      // bootstrap.Collapse(collapseElement).hide()
       
       // collapseElement.setAttribute("style", "display: none;")
       // collapseElement.setAttribute("aria-hidden", "true")
