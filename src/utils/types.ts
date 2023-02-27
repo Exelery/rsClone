@@ -2,12 +2,6 @@ export interface IResponse<T> {
   status: number;
   value: T
 }
-
-// export interface IAuthResponse {
-//   accessToken: string;
-//   refreshToken: string;
-//   user: IUser
-// }
  
 export interface ILoginResponse {
   text: string;

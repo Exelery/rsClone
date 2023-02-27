@@ -30,7 +30,7 @@ api.interceptors.response.use(
     const originalRequest = error.config;
     if (error.response) {
       const errMessage = error.response.data.status as number;
-      if (errMessage === 403 && !originalRequest._retry) {
+      if (errMessage === 401 && !originalRequest._retry) {
         originalRequest._retry = true;
         await refreshAccessTokenFn();
         return api(originalRequest);

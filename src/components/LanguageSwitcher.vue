@@ -21,12 +21,12 @@ const changeLanguage = async (event: Event) => {
   if (event.target) {
     const newLocale = (event.target as HTMLInputElement).value
     await switchLanguage(newLocale as 'ru' | 'en')
-    try {
-      await router.replace({params:{locale: newLocale}})
-    } catch (e) {
-      console.error(e)
-      router.push('/')
-    }
+    // try {
+    //   await router.replace({params:{locale: newLocale}})
+    // } catch (e) {
+    //   console.error(e)
+    //   router.push('/')
+    // }
   }
 
 }

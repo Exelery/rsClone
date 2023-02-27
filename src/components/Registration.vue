@@ -109,20 +109,14 @@ const { isLoading, mutate } = useMutation(
       console.log('sucess', data)
       localStorage.setItem('token', data.value.token)
       resetForm();
-      // const collapseElements = document.querySelector('#registerModal') as Element;
-
-      // collapseElements.classList.toggle('show');
+      const collapseElement = document.querySelector('#registerModal .btn-close') as HTMLButtonElement;
+      collapseElement.click()
+      
       authStore.setAuth()
-      // addUserParams();
+
     },
   }
 );
-
-// const addUserParams = async () => {
-//   const response = await Auth.getUserInfo()
-//   console.log('pinia', response)
-//   authStore.setLoginState(response.data.value)
-// }
 
 const onSubmit = handleSubmit((values: { name: any; email: any; password: any; }) => {
   mutate({
