@@ -124,6 +124,8 @@ import Auth from "@/api/authApi";
 
 // const { t } = useI18n()
 const authStore = useAuthStore()
+
+authStore.addUserParams()
 const registerSchema = toFormValidator(
   zod
     .object({

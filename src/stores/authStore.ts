@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 
 import type { IAuthStoreState, IUser, IUserStateUpdate } from "@/utils/types";
 import { useLocalStorage } from "@vueuse/core";
+import Auth from "@/api/authApi";
 
 export const useAuthStore = defineStore({
   id: "authStore",
@@ -19,9 +20,11 @@ export const useAuthStore = defineStore({
 
   getters: {},
   actions: {
-    setLoginState(user: IUser | null) {
-      this.setAuthUser(user)
+    setAuth() {
       this.isAuth = true
+    },
+    setLoginState(user: IUser | null) {
+      this.setAuthUser(user) 
     },
 
     logout() {
@@ -37,8 +40,14 @@ export const useAuthStore = defineStore({
     updateUser({email, name}: IUserStateUpdate) {
       this.authUser.email = email
       this.authUser.name = name
+    },
+    async addUserParams() {
+      const response = await Auth.getUserInfo()
+      console.log('pinia', response)
+      this.setLoginState(response.data.value)
     }
   },
+ 
 })
 
 // token: JSON.parse(localStorage.getItem("token")|| '')

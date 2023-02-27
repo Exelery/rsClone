@@ -27,7 +27,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: "/:locale?",
+      path: "/",
       component: RouterView,
       beforeEnter: i18nRouterMiddleware,
       children: [

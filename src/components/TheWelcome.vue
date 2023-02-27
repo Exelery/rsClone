@@ -11,7 +11,7 @@
               <h1>{{ $t("welcome.header") }}</h1>
               <h2>{{ $t("welcome.text") }}</h2>
               <div class="d-flex justify-content-center justify-content-lg-start">
-                <RouterLink v-if="authStore.isAuth" :to="i18nRoute({ name: 'user'})" class="btn-get-started scrollto me-2">{{ $t("welcome.startBtn") }}</RouterLink>
+                <RouterLink v-if="authStore.isAuth" to="builder/user" class="btn-get-started scrollto me-2">{{ $t("welcome.startBtn") }}</RouterLink>
                 <a v-if="!authStore.isAuth" href="#register" class="btn-get-started scrollto me-2" data-bs-toggle="modal"
                   data-bs-target="#registerModal">{{ $t("welcome.register") }}</a>
                 <a v-if="!authStore.isAuth" href="#login" class="btn-get-started scrollto me-2" data-bs-toggle="modal"
@@ -47,7 +47,7 @@ import FooterBox from "@/components/FooterBox.vue";
 import Registration from "@/components/Registration.vue";
 import Login from "@/components/Login.vue";
 import { useAuthStore } from "@/stores/authStore";
-import {i18nRoute} from "../i18n/index"
+// import {i18nRoute} from "../i18n/index"
 export default {
   data() {
     return {
@@ -59,8 +59,7 @@ export default {
     logout() {
       // выбрасываем юзера
       this.authStore.logout();
-    },
-    i18nRoute
+    }
   },
   components: {
     HeaderBox,

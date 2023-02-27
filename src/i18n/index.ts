@@ -84,30 +84,25 @@ async function loadLocalMessages(locale: "en" | "ru") {
     return nextTick()
 }
 
-
-// async function switchLanguage(newLocale: "en" | "ru") {
-//   currentLocale = newLocale
-//   document.querySelector
-// }
 export async function i18nRouterMiddleware(to: any, _from: any, next: any) {
-  const paramLocale = to.params.locale
+  // const paramLocale = to.params.locale
 
-  if (!isLocaleSupported(paramLocale)) {
-    return next(guessDefaultLocale())
-  }
+  // if (!isLocaleSupported(paramLocale)) {
+   const temp = guessDefaultLocale() as 'ru' | 'en'
+  // }
 
-  await switchLanguage(paramLocale)
+  await switchLanguage(temp)
   return next()
 
 
 }
 
-export function i18nRoute(to: any) {
-  return {
-    ...to,
-    params: {
-      locale: i18n.global.locale.value,
-      ...to.params
-    }
-  }
-}
+// export function i18nRoute(to: any) {
+//   return {
+//     ...to,
+//     params: {
+//       locale: i18n.global.locale.value,
+//       ...to.params
+//     }
+//   }
+// }

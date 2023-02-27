@@ -103,7 +103,8 @@ const { isLoading, mutate } = useMutation(
       localStorage.setItem('token', data.value.token)
       // queryClient.refetchQueries({queryKey: ['authStore']});
       // data-bs-toggle="modal"
-      addUserParams()
+      // addUserParams()
+      authStore.setAuth()
       resetForm();
       const collapseElement = document.querySelector('#loginModal') as Element;
       // bootstrap.Collapse(collapseElement).hide()
@@ -118,25 +119,17 @@ const { isLoading, mutate } = useMutation(
   }
 );
 
-const addUserParams = async () => {
-  const response = await Auth.getUserInfo()
-  console.log('pinia', response)
-  authStore.setLoginState(response.data.value)
-}
+// const addUserParams = async () => {
+//   const response = await Auth.getUserInfo()
+//   console.log('pinia', response)
+//   authStore.setLoginState(response.data.value)
+// }
 const onSubmit = handleSubmit((values: { name: any; email: any; password: any; }) => {
   mutate({
     email: values.email,
     password: values.password
   });
 });
-
-// onBeforeUpdate(() => {
-//   if (authResult.isSuccess.value) {
-//     console.log('onbefore', authResult)
-//     const authUser = Object.assign({}, authResult.data.value?.data.value);
-//     authStore.setAuthUser(authUser);
-//   }
-// });
 
 
 </script>

@@ -15,11 +15,8 @@
 
 <script setup lang="ts">
 import type { RouteLocation } from 'vue-router';
-import Auth from '../api/authApi';
 import DataApi from '../api/dataApi';
 import LoadButton from '../components/LoadButton.vue'
-import createNewPage from "../utils/generator"
-import TestLoadData from '@/components/TestLoadData.vue'
 import router from '@/router';
 
 let isLoadingAll = false
