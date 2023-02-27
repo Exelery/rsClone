@@ -22,7 +22,7 @@
         <strong>mdo</strong>
       </a>
       <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-        <li><router-link class="dropdown-item" to="/ru/builder/user">Profile</router-link></li>
+        <li><router-link class="dropdown-item" to="/user">Profile</router-link></li>
         <li><hr class="dropdown-divider"></li>
         <li><router-link class="dropdown-item" to="/">Back to main</router-link></li>
       </ul>

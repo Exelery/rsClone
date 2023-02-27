@@ -8,9 +8,13 @@
       </div>
       <div class="modal-body">
         <div class="flex" v-for="page in pages">
-        <div>
+        <div 
+        class="page-name" 
+        data-bs-dismiss="modal"
+        @click="setActiveLink(page.name)">
             {{ page.name }}
         </div>
+        <hr>
         </div>
       </div>
       <div class="modal-footer">
@@ -24,18 +28,32 @@
 
 <script lang="ts">
 import { useEditorStore } from "../../stores/editor"
-
+import { useBuilderFloatMenu } from "@/stores/builderFloatMenu"
 export default{
     data(){
         return {
             bool: true
         }
     },
+    methods:{
+        setActiveLink(name: string){
+            useBuilderFloatMenu().setActive(name)
+        }   
+    },
     computed:{
         pages(){
-            console.log(useEditorStore().tabs)
             return useEditorStore().tabs.filter((page: {type:string}) => page.type == 'page')
         }
     }
 }
 </script>
+
+<style>
+.page-name{
+    cursor: pointer;
+    padding:10px;
+}
+.page-name:hover{
+    background: #d5d5d5;
+}
+</style>

@@ -36,6 +36,9 @@ export const useEditorStore = defineStore({
     setActivePage(name: string){
       this.activePage = name
     },
+    saveBlocks(){
+      return true
+    },
     updateEditorList(){
       return 1
     },

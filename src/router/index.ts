@@ -47,15 +47,16 @@ const router = createRouter({
           component: AccountPage,
         },
         {
+          path: "user",
+          name: "user/",
+          component: mainPageVue,
+        },
+        {
           path: "builder/",
           name: "builder",
           component: BuilderPage,
           children: [
-            {
-              path: "user",
-              name: "user",
-              component: mainPageVue,
-            },
+            
             {
               path: "create",
               name: "creator",

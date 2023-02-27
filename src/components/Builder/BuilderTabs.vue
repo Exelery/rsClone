@@ -65,7 +65,6 @@ import { useEditorStore } from '../../stores/editor'
                 const answer = await DataApi.updateProject(data);
                 useEditorStore().saveUpdates(true);
                 (this.$refs.syncButton as HTMLElement).removeAttribute("style")
-                console.log('answer', answer.data)
             }
         },
 

@@ -115,9 +115,10 @@ export default {
             
         },
         editBlock(){
-            this.blocks[this.editIndex].data = document.querySelector(".working-space")!.querySelectorAll('[data-draggable]')[this.editIndex].innerHTML
+            this.blocks[this.editIndex].data = document.querySelector(".working-space")!.querySelectorAll('[data-draggable]')[this.editIndex]!.querySelector("div")!.innerHTML
         },
         saveBlocks(){
+            
             localStorage.setItem(this.activePage + `/${this.activeProject}/page`, JSON.stringify(this.blocks))
         },
         darragableClick(event: Event){
@@ -135,8 +136,25 @@ export default {
         },
 
         async publishProject(){
-            const answer = await DataApi.bindProject(Number(localStorage.getItem("activeProjectId")));
-            window.open(answer.data.value)
+            let pages = [];
+                for(let page in localStorage){
+                    if(page.includes("/page")){
+                        pages.push({
+                            fileName: page.split("/")[0] + ".json",
+                            content: String(localStorage.getItem(page))
+                        })
+                    }
+                }
+                const data = {
+                    projectId: Number(localStorage.getItem("activeProjectId")),
+                    projectName: String(localStorage.getItem("activeProject")),
+                    data: pages
+                }
+
+                const answers = await DataApi.updateProject(data);
+                useEditorStore().saveUpdates(true);
+                const answer = await DataApi.bindProject(Number(localStorage.getItem("activeProjectId")));
+                window.open(answer.data.value)
         },
         removeEdit(event: Event){
             let elem = (event.currentTarget) as HTMLElement;
@@ -203,6 +221,13 @@ export default {
             if(e.name === 'setActivePage'){
                 this.activePage = e.args[0];
                 setList()
+            }
+
+            if(e.name === 'saveBlocks'){
+                document.querySelector(".working-space")!.querySelectorAll('[data-draggable]').forEach((listElement, index) =>{
+                this.blocks[index].data = document.querySelector(".working-space")!.querySelectorAll('[data-draggable]')[index]!.querySelector("div")!.innerHTML
+            })
+                this.saveBlocks();
             }
         },true);
     }

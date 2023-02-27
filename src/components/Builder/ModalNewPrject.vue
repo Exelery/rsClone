@@ -35,12 +35,15 @@ import { useEditorStore } from '../../stores/editor'
     },
     methods:{
       createPage(){
+        if(this.projectName.length != 0){
+          console.log(this.projectName.length)
           localStorage.setItem(this.projectName + "/" + localStorage.getItem("activeProject") + "/page", "[]");
           useEditorStore().addTab({
             name: this.projectName,
             type: "page"
           })
           this.projectName = ""
+        }    
       }
     }
   }
