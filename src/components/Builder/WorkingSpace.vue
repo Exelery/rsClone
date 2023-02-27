@@ -120,7 +120,7 @@ export default {
 
         async publishProject(){
             const answer = await DataApi.bindProject(Number(localStorage.getItem("activeProjectId")));
-            console.log(answer)
+            window.open(answer.data.value)
         },
         removeEdit(event: Event){
             let elem = (event.currentTarget) as HTMLElement;
@@ -147,6 +147,7 @@ export default {
     },
     watch:{
         blocks(newList){
+            useEditorStore().saveUpdates(false)
             newList.forEach( (block : any, index: number) => {
                 if(block.id == null){
                     block.id = Math.random().toString(36).slice(-10)

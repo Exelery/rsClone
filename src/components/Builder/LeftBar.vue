@@ -22,17 +22,16 @@
         <strong>mdo</strong>
       </a>
       <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-        
-        <li><a class="dropdown-item" href="#">Settings</a></li>
-        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><router-link class="dropdown-item" to="/">Profile</router-link></li>
         <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Sign out</a></li>
+        <li><router-link class="dropdown-item" to="/ru/builder/user">Back to main</router-link></li>
       </ul>
     </div>
   </div>
 </template>
 
 <script lang="ts">
+import { RouterLink } from 'vue-router'
 import { useEditorStore } from "../../stores/editor";
 import LeftBar from "../editor/LeftBar.vue";
 import blocks from '../../blocks/'; 

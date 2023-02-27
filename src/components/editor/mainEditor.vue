@@ -101,7 +101,8 @@ import "codemirror/theme/mbo.css";
           let list = localStorage.getItem(this.fileParams.path);
           let ParsedList = JSON.parse(String(list));
           ParsedList[this.fileParams.index].data = this.text;
-          localStorage.setItem(this.fileParams.path, JSON.stringify(ParsedList))
+          localStorage.setItem(this.fileParams.path, JSON.stringify(ParsedList));
+          useEditorStore().saveUpdates(false)
         }
       }, false);
 
