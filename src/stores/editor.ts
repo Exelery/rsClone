@@ -40,7 +40,8 @@ export const useEditorStore = defineStore({
       return 1
     },
     saveUpdates(save : boolean){
-      this.editorSaved = save
+      this.editorSaved = save;
+      localStorage.setItem("editorSaved", String(save))
     }
   },
 });

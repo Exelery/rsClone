@@ -4,7 +4,7 @@
             <i class="bi bi-pen"></i>
         </div>
         <div class="edit-button">
-            <i class="bi bi-code-slash"></i>
+            <i class="bi bi-link-45deg"></i>
         </div>
         <div class="edit-button">
             <i class="bi bi-card-image"></i>
@@ -13,9 +13,7 @@
 </template>
 
 <script lang="ts">
-// import {Resizable} from 'resizable-dom';
-import Sortable from 'sortablejs';
-
+// import Sortable from 'sortablejs';
 import interact from 'interactjs'
 
 export default {

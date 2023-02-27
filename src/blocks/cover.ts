@@ -21,11 +21,13 @@ export default [
 },{
     html: true,
     name: 'PunnyHeadline',
-    data: `<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+    data: `<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light"
+                style="background-image: url('https://images.unsplash.com/photo-1675935576526-1a196e8e7a76?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80'); background-position: center; background-size: cover;"
+    >
     <div class="col-md-5 p-lg-5 mx-auto my-5">
-      <h1 class="display-4 fw-normal">Punny headline</h1>
-      <p class="lead fw-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
-      <a class="btn btn-outline-secondary" href="#">Coming soon</a>
+      <h1 class="display-4 fw-normal text-white">Punny headline</h1>
+      <p class="lead fw-normal text-white">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
+      <a class="btn btn-outline-primary text-white" href="#">Coming soon</a>
     </div>
     <div class="product-device shadow-sm d-none d-md-block"></div>
     <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
@@ -58,7 +60,7 @@ export default [
       <div class="row justify-content-center align-items-center">
         <div class="col-12 col-lg-6">
           <h2>Join us!</h2>
-          <p class="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia. </p>
+          <p class="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
         </div>
         <div class="col-12 col-lg-5 text-center">
           <div class="input-group mt-4">

@@ -6,7 +6,7 @@
             <button v-else  @click="()=> setActiveEditor(tab.name, String(tab.path), Number(tab.index), String(tab.id))" class="tab btn btn-primary btn-script" :class="{'tabs-active':activeTabId === tab.id}">{{tab.name}} <i class="bi bi-code-slash"></i></button>
         </div>
     </div>
-        <button class="tab btn btn-primary sync-button" @click="saveChanges()">sync</button>
+        <button ref="syncButton" class="tab btn btn-primary sync-button" :class="{'btn-warning': !isSynced}" @click="saveChanges()">sync</button>
     </div>
 </template>
 
@@ -31,7 +31,11 @@ import { useEditorStore } from '../../stores/editor'
 
             return data
         },
-
+        computed:{
+            isSynced(){
+                return useEditorStore().editorSaved;
+            }
+        },
         methods:{
             setActivePage(name: string) {
                 useEditorStore().setActivePage(name)
@@ -42,7 +46,8 @@ import { useEditorStore } from '../../stores/editor'
                 this.$router.push('/builder/editor');
             },
             async saveChanges(){
-                let pages = []
+                (this.$refs.syncButton as HTMLElement).setAttribute("style","cursor: progress;")
+                let pages = [];
                 for(let page in localStorage){
                     if(page.includes("/page")){
                         pages.push({
@@ -57,8 +62,9 @@ import { useEditorStore } from '../../stores/editor'
                     data: pages
                 }
 
-                console.log(pages)
-                const answer = await DataApi.updateProject(data)
+                const answer = await DataApi.updateProject(data);
+                useEditorStore().saveUpdates(true);
+                (this.$refs.syncButton as HTMLElement).removeAttribute("style")
                 console.log('answer', answer.data)
             }
         },
