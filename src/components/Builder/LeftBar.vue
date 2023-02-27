@@ -22,9 +22,9 @@
         <strong>mdo</strong>
       </a>
       <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-        <li><router-link class="dropdown-item" to="/">Profile</router-link></li>
+        <li><router-link class="dropdown-item" to="/ru/builder/user">Profile</router-link></li>
         <li><hr class="dropdown-divider"></li>
-        <li><router-link class="dropdown-item" to="/ru/builder/user">Back to main</router-link></li>
+        <li><router-link class="dropdown-item" to="/">Back to main</router-link></li>
       </ul>
     </div>
   </div>
@@ -55,7 +55,6 @@ export default {
   },
   created(){
     this.blocks = Object.keys(blocks);
-    console.log(this.blocks)
   }
 }
 </script>

@@ -76,6 +76,14 @@ import { useEditorStore } from '../../stores/editor'
                         type: "page",
                         name: page.split("/")[0]
                     })
+
+                    if(page.split("/")[0] !== 'Main'){
+                        useEditorStore().addTab({
+                            type: "page",
+                            name: page.split("/")[0]
+                        })
+                    }
+                    
                 }
             }
             useEditorStore().$onAction((e)=>{

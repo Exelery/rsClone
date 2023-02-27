@@ -1,20 +1,24 @@
 <template>
-    <div @click="preventEdit()" ref="editMenu" class="edit-menu">
+    <div>
+    <ModalLinkConnect/>
+        <div @click="preventEdit()" ref="editMenu" class="edit-menu">
         <div class="edit-button" :class="{'btn-active-blue' : buttonActive == 'elementEditText'}" @click="elementEditText()">
             <i class="bi bi-pen"></i>
         </div>
-        <div class="edit-button">
+        <div class="edit-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <i class="bi bi-link-45deg"></i>
         </div>
-        <div class="edit-button">
+        <div class="edit-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <i class="bi bi-card-image"></i>
         </div> 
+    </div>
     </div>
 </template>
 
 <script lang="ts">
 // import Sortable from 'sortablejs';
 import interact from 'interactjs'
+import ModalLinkConnect from './ModalLinkConnect.vue';
 
 export default {
     props: ["parent","editSave"],
@@ -35,6 +39,9 @@ export default {
             this.elementEdit.setAttribute("contenteditable","true")
             this.elementEdit.focus()
         }
+    },
+    components:{
+        ModalLinkConnect
     },
     created(){
         onmousemove = (e) => {

@@ -1,8 +1,9 @@
 <template>
     <div>
         <EditMenu :parent="workingParent" :editSave="editBlock" />
+   
         <ModalNewPrject/>
-    <div ref="workingSpace" class="working-space">
+    <div ref="workingSpace" class="working-space" :class="device">
         <draggable
         v-model="blocks"
         group="people"
@@ -12,7 +13,7 @@
         :disabled="false"
         class="working-space-drop"
         >
-            <template  #item="{element}">
+            <template #item="{element}">
                 <div
                 @mouseover="edit($event)"
                 @mouseout="removeEdit($event)"
@@ -24,6 +25,17 @@
             </template>
         </draggable>
     </div>
+    
+
+    <div class="position-absolute d-flex switcher">
+            <button type="button" @click="deviceSwitcher('desktop')" class="btn btn-primary button-control ml-4">
+                <i class="bi bi-laptop"></i>
+            </button>
+            <button type="button"  @click="deviceSwitcher('desktop')" class="btn btn-primary button-control ml-2">
+                <i class="bi bi-phone"></i>
+            </button>
+    </div>
+
     <div class="position-absolute d-flex"  style="right: 25px; bottom: 25px;">
         <button type="button" class="btn btn-success button-control" data-bs-toggle="modal" data-bs-target="#myModal">
             New page <i class="bi bi-file-earmark-code-fill"></i>
@@ -45,12 +57,12 @@
 <script lang="ts">
 import { useEditorStore } from '@/stores/editor'
 import draggable from 'vuedraggable'
-import router from '@/router';
 
 import blocks from '@/blocks/';
+
 import EditMenu from '@/components/builder/EditMenu.vue';
 import ModalNewPrject from '@/components/builder/ModalNewPrject.vue';
-import createNewPage from "@/utils/generator"
+import ModalLinkConnect from './ModalLinkConnect.vue';
 import DataApi from '@/api/dataApi';
 
 export default {
@@ -58,6 +70,7 @@ export default {
         let data : any = {
             htmlHeader: `<head><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"><link href="https://wbbuilder.000webhostapp.com/style.css" rel="stylesheet">`,
             enabled: true,
+            device: "desktop",
             blocks: [],
             blocksType: '',
             dragging: false,
@@ -70,6 +83,9 @@ export default {
         return data;
     },
     methods:{
+        deviceSwitcher(device: string){
+            this.device = device
+        },
         preview(){
             let storeData = localStorage.getItem(`${this.activePage}/${this.activeProject}/page`)
             let jsonData = JSON.parse(String(storeData));
@@ -159,16 +175,20 @@ export default {
     components:{
         draggable,
         EditMenu,
-        ModalNewPrject
+        ModalNewPrject,
+        ModalLinkConnect
     },
     created(){
         if(localStorage.getItem("activeProject") == null){
             localStorage.setItem("activeProject","first");
         }
-        const setList = () =>{
+
+        const setList = () => {
         this.activeProject = localStorage.getItem("activeProject");
             if(localStorage.getItem(this.activePage + `/${this.activeProject}/page`) != null){
-                this.blocks = JSON.parse(String(localStorage.getItem(this.activePage + `/${this.activeProject}/page`)))
+                this.blocks = JSON.parse(String(localStorage.getItem(this.activePage + `/${this.activeProject}/page`))).filter((element: any) => {
+                    return element.html == true
+                });
             }
         }
 
@@ -204,6 +224,22 @@ export default {
     transform-origin: calc(630px + 50%) top;
     background: rgb(255, 255, 255);
     transition: all 0.2s ease-in;
+}
+.working-space.mobile{
+    width: 390px;
+    height: 844px;
+}
+.switcher{
+    position: absolute;
+    display: fleax;
+    justify-content: center;
+    width: calc(100% - 622px);
+    bottom: 120px;
+    right: 0%;
+}
+
+.switcher button {
+    border-radius: 50px;
 }
 .working-space-drop{
     height: 100%;
