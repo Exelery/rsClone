@@ -20,11 +20,12 @@
               <div class="">
                 <label for="password" class="block text-ct-blue-600 mb-3 form-label">{{ $t("login.password") }}</label>
                 <input v-model="password" type="password" placeholder=" " class="form-control" id="passwordLogn" />
+                <!-- <span toggle="#passwordLogn" class="fa fa-fw fa-eye field-icon toggle-password"></span> -->
                 <span class="text-red-500 text-xs pt-1 block">{{ errors.password }}</span>
               </div>
             </div>
             <div class="w-50 text-md-right" @click="resetPass()">
-              <a href="#">Forgot Password?</a>
+              <a href="#">{{ $t("login.forgot") }}</a>
             </div>
 
             <!-- <span class="block">Already have an account?
@@ -54,7 +55,6 @@ import type { AxiosError } from 'axios';
 import { useAuthStore } from '../stores/authStore';
 // import router from '@/router';
 import LoadButton from './LoadButton.vue';
-import router from '@/router';
 
 const authStore = useAuthStore();
 

@@ -101,7 +101,7 @@
         </div>
       </div>
     </div>
-    <TestLoadData></TestLoadData>
+    <!-- <TestLoadData></TestLoadData> -->
   </div>
   <FooterBox></FooterBox>
 </template>
@@ -120,9 +120,7 @@ import { useMutation } from '@tanstack/vue-query';
 import type { IUpdateUser, IUserStateUpdate } from '@/utils/types';
 import type { AxiosError } from 'axios';
 import Auth from "@/api/authApi";
-// import { useI18n } from "vue-i18n";
 
-// const { t } = useI18n()
 const authStore = useAuthStore()
 
 authStore.addUserParams()
