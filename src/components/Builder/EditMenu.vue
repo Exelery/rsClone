@@ -15,9 +15,9 @@
         >
             <i class="bi bi-link-45deg"></i>
         </div>
-        <div class="edit-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <!-- <div class="edit-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <i class="bi bi-card-image"></i>
-        </div>
+        </div> -->
         <div class="edit-button"
             :class="{'btn-active-blue' : buttonActive == 'elementSizing'}" 
             @click="elementSizing()"
