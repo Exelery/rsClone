@@ -51,7 +51,8 @@
     "header": "Login to Page Builder",
     "email": "Email Address",
     "password": "Password",
-    "login": "Login"
+    "login": "Login",
+    "forgot": "Forgot Password?"
   },
   "registration": {
     "name": "Account name",

@@ -35,7 +35,6 @@ export const useAuthStore = defineStore({
       if (user) {
         this.authUser = user
       };
-      // console.log('user', this.authUser)
     },
     updateUser({email, name}: IUserStateUpdate) {
       this.authUser.email = email
@@ -43,11 +42,8 @@ export const useAuthStore = defineStore({
     },
     async addUserParams() {
       const response = await Auth.getUserInfo()
-      console.log('pinia', response)
       this.setLoginState(response.data.value)
     }
   },
  
 })
-
-// token: JSON.parse(localStorage.getItem("token")|| '')
