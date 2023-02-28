@@ -20,17 +20,12 @@
               <div class="">
                 <label for="password" class="block text-ct-blue-600 mb-3 form-label">{{ $t("login.password") }}</label>
                 <input v-model="password" type="password" placeholder=" " class="form-control" id="passwordLogn" />
-                <!-- <span toggle="#passwordLogn" class="fa fa-fw fa-eye field-icon toggle-password"></span> -->
                 <span class="text-red-500 text-xs pt-1 block">{{ errors.password }}</span>
               </div>
             </div>
             <div class="w-50 text-md-right" @click="resetPass()">
               <a href="#">{{ $t("login.forgot") }}</a>
             </div>
-
-            <!-- <span class="block">Already have an account?
-                        <router-link :to="{ name: 'login' }" class="text-ct-blue-600">Login Here</router-link></span> -->
-            <!-- <button :loading="isLoading" class="btn btn-primary">Log in</button> -->
             <LoadButton :loading="isLoading" class="btn btn-primary">{{ $t("login.login") }}</LoadButton>
           </form>
         </div>
@@ -41,19 +36,15 @@
 </template>
 
 <script setup lang="ts">
-import * as bootstrap from 'bootstrap';
-// import { Toast } from 'bootstrap.esm.min.js'
-// import { Popover } from "bootstrap";
 
 import { Form, useField, useForm } from 'vee-validate';
 import { toFormValidator } from '@vee-validate/zod';
 import * as zod from 'zod';
-import { useMutation, useQuery, useQueryClient } from '@tanstack/vue-query';
+import { useMutation } from '@tanstack/vue-query';
 import Auth from '../api/authApi';
-import type { ILoginInput, ILoginResponse, IResponse, ISignUpInput } from '@/utils/types';
+import type { ILoginInput} from '@/utils/types';
 import type { AxiosError } from 'axios';
 import { useAuthStore } from '../stores/authStore';
-// import router from '@/router';
 import LoadButton from './LoadButton.vue';
 
 const authStore = useAuthStore();
@@ -84,15 +75,6 @@ const resetPass = async () => {
   console.log(answer)
 }
 
-// const authResult = useQuery({
-//   queryKey: ['authStore'],
-//   queryFn: Auth.getUserInfo,
-//   retry: 1,
-//   enabled: false
-// });
-
-// const queryClient = useQueryClient();
-
 
 const { isLoading, mutate } = useMutation(
   (credentials: ILoginInput) => Auth.login(credentials),
@@ -100,34 +82,24 @@ const { isLoading, mutate } = useMutation(
     onError: (error: AxiosError) => {
       if (Array.isArray((error as any).response.data.error)) {
         (error as any).response.data.error.forEach((el: any) =>
-          console.log('92', error.message)
+          console.log(error.message)
         );
       } else {
-        console.log('95', error.message)
+        console.log( error.message)
       }
     },
     onSuccess: (data: any) => {
-      console.log('sucess', data)
-      console.log('sucess', data.value.token)
+      
       localStorage.setItem('token', data.value.token)
-      // queryClient.refetchQueries({queryKey: ['authStore']});
-      // data-bs-toggle="modal"
-      // addUserParams()
       authStore.setAuth()
       resetForm();
       const collapseElement = document.querySelector('#loginModal .btn-close') as HTMLButtonElement;
-      // console.log(collapseElement)
       collapseElement.click()
 
     },
   }
 );
 
-// const addUserParams = async () => {
-//   const response = await Auth.getUserInfo()
-//   console.log('pinia', response)
-//   authStore.setLoginState(response.data.value)
-// }
 const onSubmit = handleSubmit((values: { name: any; email: any; password: any; }) => {
   mutate({
     email: values.email,

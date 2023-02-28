@@ -6,7 +6,6 @@
         <ul>
           <li><RouterLink to="/" class="nav-link scrollto" :class="{active: $route.name==='home'}">{{ $t("nav.home") }}</RouterLink></li>
           <li><RouterLink to="/about" class="nav-link scrollto " :class="{active: $route.name==='about'}">{{ $t("nav.about") }}</RouterLink></li>
-          <!-- <li v-if="authStore.isAuth"><RouterLink to="/builder/create" class="nav-link scrollto " :class="{active: $route.name==='creator'}">Builder</RouterLink></li> -->
           <li v-if="authStore.isAuth"><RouterLink to="/account" class="nav-link scrollto " :class="{active: $route.name==='account'}">{{ $t("nav.account") }}</RouterLink></li>
         </ul>
         <LanguageSwitcher></LanguageSwitcher>

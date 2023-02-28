@@ -5,7 +5,6 @@
       <div class="py-2">
         <div class="personal-information row">
           <form name="profile" @submit="onSubmit">
-            <!-- PERSONAL INFO -->
             <div class="col-12">
               <h2>{{ $t("account.header") }}</h2>
             </div>
@@ -47,7 +46,7 @@
               </div>
               <div class="row">
                 <div v-if="!authStore.authUser.isActivated" class="col-12">
-                  <button class="label-title required">{{ $t("account.verify") }}</button>
+                  <button @click="activate()" class="btn btn-primary">{{ $t("account.verify") }}</button>
                 </div>
                 <div v-else class="col-12">
                   <p>
@@ -196,9 +195,7 @@ const { isLoading, mutate } = useMutation(
     },
     onSuccess: (data: any) => {
       console.log('sucess', data)
-      // localStorage.setItem('token', data.value.token)
       authStore.updateUser(sendedData)
-      // resetForm();
     },
   }
 );
@@ -212,7 +209,11 @@ const onSubmit = handleSubmit((values: { name: any; email: any; oldPassword: any
   });
 });
 
-// console.log(authStore)
+const activate = async () => {
+  const answer = await Auth.activateUser()
+  console.log(answer)
+}
+
 
 
 </script>

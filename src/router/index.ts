@@ -48,7 +48,7 @@ const router = createRouter({
         },
         {
           path: "user",
-          name: "user/",
+          name: "user",
           component: mainPageVue,
         },
         {

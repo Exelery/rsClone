@@ -35,6 +35,11 @@ export default class Auth {
     console.log('resetPass')
     return api.post("/user/resetpass", {email: email})
   }
+  
+  static async activateUser(): Promise<AxiosResponse<IResponse<string>>> {
+    console.log('activate')
+    return api.get("/user/activate")
+  }
 
 
   // static async verify(user: ILoginInput):
