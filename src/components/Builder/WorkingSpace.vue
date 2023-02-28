@@ -26,7 +26,7 @@
         </draggable>
     </div>
     
-
+<!-- 
     <div class="position-absolute d-flex switcher">
             <button type="button" @click="deviceSwitcher('desktop')" class="btn btn-primary button-control ml-4">
                 <i class="bi bi-laptop"></i>
@@ -34,7 +34,7 @@
             <button type="button"  @click="deviceSwitcher('desktop')" class="btn btn-primary button-control ml-2">
                 <i class="bi bi-phone"></i>
             </button>
-    </div>
+    </div> -->
 
     <div class="position-absolute d-flex"  style="right: 25px; bottom: 25px;">
         <button type="button" class="btn btn-success button-control" data-bs-toggle="modal" data-bs-target="#myModal">
