@@ -56,7 +56,10 @@ export default {
                   data: [{ fileName: "Main.json", content: "[]" }]
                 }
                 const answer = await DataApi.addProject(data)
-                console.log('answer', answer.data)
+
+                const answers = await DataApi.getUserProjects()
+                this.projectList = answers.data.value
+                
                 this.isLoadingAll = true
             }
         },

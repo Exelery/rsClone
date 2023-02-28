@@ -146,7 +146,7 @@ export default {
 <style>
 .edit-menu{
     position: fixed;
-    left: 0;
+    left: -3000px;
     display: flex;
     background: #fff;
     border-radius: 50px;
