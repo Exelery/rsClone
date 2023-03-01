@@ -11,11 +11,13 @@
 
     <li class="project-card" 
         v-for="(project, index) in projectList" :key="project.projectName"
-        @click="loadProject(index)"
+        
     >
         <h2>
             {{ project.projectName }}
         </h2>
+        <button class="btn btn-primary" @click="loadProject(index)">Редактировать</button>
+        <button class="btn btn-warning" @click="deleteProject(project.projectId)">Удалить</button>
     </li>
 
   </ul>
@@ -37,7 +39,6 @@ export default {
     },
     methods:{
         async getListProjects() {
-            
                 this.isLoadingAll = true
                 const answer = await DataApi.getUserProjects()
                 console.log('answer', answer.data.value)
@@ -63,6 +64,15 @@ export default {
                 this.isLoadingAll = true
             }
         },
+        async deleteProject(id: number){
+            let isTrue = confirm("Ты здесь главный?");
+            if(isTrue) {
+                const answer = await DataApi.deleteProject(id)
+                console.log('answer', answer.data.value)
+                location.reload()
+            }
+            
+        },        
         loadProject(index: number){
             this.clearProjectsHistory();
             let selectedProject = this.projectList[index];
@@ -108,6 +118,7 @@ export default {
   grid-template-rows: repeat(6, 200px);
   grid-gap: 1rem;
   grid-auto-flow: dense;
+  margin-top: 20px;
 }
 
 .gallery .gallery__list li{
@@ -130,8 +141,19 @@ export default {
     opacity: 0.5;
 }
 
+.gallery .gallery__list .project-card {
+    padding: 10px;
+}
+
 .gallery .gallery__list .project-card h2{
     text-align: center;
+    margin-bottom: 90px;
 }
+
+.gallery .gallery__list .project-card .btn-warning{
+    margin-left: 10px;
+}
+
+
 
 </style>
