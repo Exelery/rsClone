@@ -88,5 +88,15 @@
     "teamsBlocks": "Teams",
     "testimonialBlocks": "Testimonial",
     "cover": "cover"
+  },
+  "projects": {
+    "create": "Create project",
+    "edit": "Edit",
+    "delete": "Delete",
+    "answer": "The project will be permanently deleted. Please confirm"
+  },
+  "editor": {
+    "create": "Create file",
+    "delete": "Delete page"
   }
 }
