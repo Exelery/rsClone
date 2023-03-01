@@ -55,8 +55,8 @@ import draggable from 'vuedraggable'
 
 import blocks from '@/blocks/';
 
-import EditMenu from '@/components/builder/EditMenu.vue';
-import ModalNewPrject from '@/components/builder/ModalNewPrject.vue';
+import EditMenu from '@/components/Builder/EditMenu.vue';
+import ModalNewPrject from '@/components/Builder/ModalNewPrject.vue';
 import ModalLinkConnect from './ModalLinkConnect.vue';
 import DataApi from '@/api/dataApi';
 

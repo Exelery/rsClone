@@ -6,7 +6,7 @@ import { nextTick } from "vue";
 
 
 
-export default createI18n({ 
+export default createI18n({
   fallbackLocale: "en",
   legacy: false,
   globalInjection: true,
@@ -63,24 +63,28 @@ export function guessDefaultLocale() {
 
 export async function switchLanguage(newLocale: "en" | "ru") {
   await loadLocalMessages(newLocale)
-  i18n.global.locale.value  = newLocale
+  i18n.global.locale.value = newLocale
   document.querySelector("html")?.setAttribute("lang", newLocale)
   localStorage.setItem("user-locale", newLocale)
 }
 
 async function loadLocalMessages(locale: "en" | "ru") {
-  if(!i18n.global.availableLocales.includes(locale)){
+  if (!i18n.global.availableLocales.includes(locale)) {
     const messages = await import(`./locales/${locale}.json`)
-      i18n.global.setLocaleMessage(locale, messages.default)
-    }
-    
-    return nextTick()
+    i18n.global.setLocaleMessage(locale, messages.default)
+  }
+
+  return nextTick()
 }
 
 export async function i18nRouterMiddleware(to: any, _from: any, next: any) {
-   const temp = guessDefaultLocale() as 'ru' | 'en'
-
-  await switchLanguage(temp)
+  let temp = guessDefaultLocale()
+  if (temp === 'ru' || temp === 'en') {
+    await switchLanguage(temp)
+  } else {
+    switchLanguage("en")
+  }
+  // i18n.global.fallbackLocale
   return next()
 
 
