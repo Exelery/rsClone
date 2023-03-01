@@ -38,18 +38,13 @@
 
     <div class="position-absolute d-flex"  style="right: 25px; bottom: 25px;">
         <button type="button" class="btn btn-success button-control" data-bs-toggle="modal" data-bs-target="#myModal">
-            New page <i class="bi bi-file-earmark-code-fill"></i>
+          {{ $t("builder.newPage") }} <i class="bi bi-file-earmark-code-fill"></i>
         </button>
         
-        <button type="button" @click="$router.push('/builder/editor')" class="btn btn-dark button-control">Edit page <i class="bi bi-code-slash"></i></button>
-        <button type="button" @click="show" class="btn btn-primary button-control">fullScreen <i class="bi bi-eye"></i></button>
-        <button type="button" @click="preview" class="btn btn-primary button-control">
-            Preview
-        </button>
-
-        <button type="button" @click="publishProject" class="btn btn-primary button-control">
-            Publish
-        </button>
+        <button type="button" @click="$router.push('/builder/editor')" class="btn btn-dark button-control">{{ $t("builder.editPage") }} <i class="bi bi-code-slash"></i></button>
+        <button type="button" @click="show" class="btn btn-primary button-control">{{ $t("builder.fullScreen") }} <i class="bi bi-eye"></i></button>
+        <button type="button" @click="preview" class="btn btn-primary button-control">{{ $t("builder.preview") }}</button>
+        <button type="button" @click="publishProject" class="btn btn-primary button-control">{{ $t("builder.publish") }}</button>
     </div>
 </div>
 </template>
@@ -60,8 +55,8 @@ import draggable from 'vuedraggable'
 
 import blocks from '@/blocks/';
 
-import EditMenu from '@/components/builder/EditMenu.vue';
-import ModalNewPrject from '@/components/builder/ModalNewPrject.vue';
+import EditMenu from '@/components/Builder/EditMenu.vue';
+import ModalNewPrject from '@/components/Builder/ModalNewPrject.vue';
 import ModalLinkConnect from './ModalLinkConnect.vue';
 import DataApi from '@/api/dataApi';
 

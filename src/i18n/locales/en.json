@@ -16,7 +16,7 @@
     "emailText": "Your personal information is never shown to other users.",
     "verify": "Verify email",
     "verified": "Your email is verifed",
-    "email":"Email Address",
+    "email": "Email Address",
     "password": "Password",
     "passwordText": "Leave password blank if don't want to change.",
     "currentPasword": "Current Password",
@@ -61,5 +61,32 @@
     "password": "Password",
     "confirm": "Confirm Password",
     "create": "Create account"
+  },
+  "builder": {
+    "projects": "All project",
+    "main": "Back to main page",
+    "save": "Save",
+    "newPage": "New page",
+    "editPage": "Change code",
+    "fullScreen": "Full Screen",
+    "preview": "Preview",
+    "publish": "Publish",
+    "createTitle": "Create new page",
+    "createBtn": "Create",
+    "creator": "Visual editor",
+    "editor": "Code editor"
+  },
+  "blocks": {
+    "navBar": "Navigation",
+    "callAction": "Call To Action",
+    "contactUs": "Contact Us",
+    "featureBlocks": "Features",
+    "contentBlocks": "Content",
+    "footerBlocks": "Footer",
+    "formsBlocks": "Forms",
+    "pricingBlocks": "Pricing",
+    "teamsBlocks": "Teams",
+    "testimonialBlocks": "Testimonial",
+    "cover": "cover"
   }
 }

@@ -6,7 +6,7 @@
             <button v-else  @click="()=> setActiveEditor(tab.name, String(tab.path), Number(tab.index), String(tab.id))" class="tab btn btn-primary btn-script" :class="{'tabs-active':activeTabId === tab.id}">{{tab.name}} <i class="bi bi-code-slash"></i></button>
         </div>
     </div>
-        <button ref="syncButton" class="tab btn btn-primary sync-button" :class="{'btn-warning': !isSynced}" @click="saveChanges()">sync</button>
+        <button ref="syncButton" class="tab btn btn-primary sync-button" :class="{'btn-warning': !isSynced}" @click="saveChanges()">{{ $t("builder.save") }}</button>
     </div>
 </template>
 
