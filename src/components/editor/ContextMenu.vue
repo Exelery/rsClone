@@ -1,7 +1,7 @@
 <template>
     <div :style="`transform: translate(${position.x}px, ${position.y}px); visibility: ${isVibsile}; ${isVibsile === 'hidden'?'display:none':''}`">
         <p @click="createFile">Create file {{ pageName }}</p>
-        <p>Delete page</p>
+        <p  @click="deleteFile">Delete page</p>
     </div>
 </template>
 <script lang="ts">
@@ -45,6 +45,12 @@ import {useEditorStore} from '@/stores/editor'
                         useEditorStore().updateEditorList();
                     }, 100);
                 }
+            },
+            deleteFile(){
+                localStorage.removeItem(`${this.pageName}/${useEditorStore().activeProject}/page`);
+                setTimeout(() => {
+                        useEditorStore().updateEditorList();
+                    }, 200);
             }
         },
         created(){

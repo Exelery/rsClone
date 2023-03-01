@@ -117,8 +117,7 @@ import "codemirror/theme/mbo.css";
           let ParsedList = JSON.parse(String(list));
           this.text = ParsedList[e.args[0].index].data;
           this.fileParams = e.args[0];
-          this.fileName = ParsedList[e.args[0].index].name
-    
+          this.fileName = ParsedList[e.args[0].index].name;
         }
         },true)
     }
