@@ -23,5 +23,5 @@ export default {
     pricingBlocks,
     teamsBlocks,
     testimonialBlocks,
-    cover
+    cover,
 }

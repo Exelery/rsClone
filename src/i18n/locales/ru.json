@@ -61,5 +61,32 @@
     "password": "Пароль",
     "confirm": "Подтвердить пароль",
     "create": "Создать аккаунт"
+  },
+  "builder": {
+    "projects": "Все проекты",
+    "main": "На главную страницу",
+    "save": "Coхранить",
+    "newPage": "Новая страница",
+    "editPage": "Изменить код",
+    "fullScreen": "На полный экран",
+    "preview": "Предпросмотр",
+    "publish": "Опубликовать",
+    "createTitle": "Создать новую страницу",
+    "createBtn": "Создать",
+    "creator": "Визуальный редактор",
+    "editor": "Редактор кода" 
+  },
+  "blocks": {
+    "navBar": "Навигация",
+    "callAction": "Призыв к действию",
+    "contactUs": "Связаться",
+    "featureBlocks": "Преимущества",
+    "contentBlocks": "Контент",
+    "footerBlocks": "Подвал",
+    "formsBlocks": "Формы",
+    "pricingBlocks": "Цены",
+    "teamsBlocks": "Команда",
+    "testimonialBlocks": "Отзывы",
+    "cover": "Обложка"
   }
 }

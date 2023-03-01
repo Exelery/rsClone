@@ -6,7 +6,7 @@
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Create new page</h4>
+        <h4 class="modal-title">{{ $t("builder.createTitle") }}</h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
@@ -17,7 +17,7 @@
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" @click="createPage" class="btn btn-primary" data-bs-dismiss="modal">Create</button>
+        <button type="button" @click="createPage" class="btn btn-primary" data-bs-dismiss="modal">{{ $t("builder.createBtn") }}</button>
       </div>
 
     </div>
