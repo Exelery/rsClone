@@ -6,7 +6,7 @@
     <li class="create-project" @click="createPorject()">
 
             <h1><i class="bi bi-cloud-plus"></i></h1>
-            <h2>Create project</h2>
+            <h2>{{ $t("projects.create") }}</h2>
     </li>
 
     <li class="project-card" 
@@ -16,8 +16,8 @@
         <h2>
             {{ project.projectName }}
         </h2>
-        <button class="btn btn-primary" @click="loadProject(index)">Редактировать</button>
-        <button class="btn btn-warning" @click="deleteProject(project.projectId)">Удалить</button>
+        <button class="btn btn-primary" @click="loadProject(index)">{{ $t("projects.edit") }}</button>
+        <button class="btn btn-warning" @click="deleteProject(project.projectId)">{{ $t("projects.delete") }}</button>
     </li>
 
   </ul>
@@ -65,7 +65,7 @@ export default {
             }
         },
         async deleteProject(id: number){
-            let isTrue = confirm("Ты здесь главный?");
+            let isTrue = confirm(this.$t("projects.answer"));
             if(isTrue) {
                 const answer = await DataApi.deleteProject(id)
                 console.log('answer', answer.data.value)

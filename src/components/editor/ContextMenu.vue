@@ -1,7 +1,7 @@
 <template>
     <div :style="`transform: translate(${position.x}px, ${position.y}px); visibility: ${isVibsile}; ${isVibsile === 'hidden'?'display:none':''}`">
-        <p @click="createFile">Create file {{ pageName }}</p>
-        <p>Delete page</p>
+        <p @click="createFile">{{ $t("editor.create") }} {{ pageName }}</p>
+        <p>{{ $t("editor.delete") }}</p>
     </div>
 </template>
 <script lang="ts">
