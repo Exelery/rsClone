@@ -1,7 +1,6 @@
 import { createI18n } from "vue-i18n";
 import i18n from "@/i18n";
 import type { NavigatorLanguage } from "../utils/types"
-import { defaultLocation } from "@vueuse/core";
 import { nextTick } from "vue";
 
 
@@ -45,7 +44,9 @@ function getPersistedLocale() {
 export function guessDefaultLocale() {
   const userPersistedLocale = getPersistedLocale()
   if (userPersistedLocale) {
-    return userPersistedLocale
+    if (isLocaleSupported(userPersistedLocale)) {
+      return userPersistedLocale
+    }
   }
   const userPreferredLocale = getUserLocale()
 
@@ -56,7 +57,7 @@ export function guessDefaultLocale() {
     return userPreferredLocale.localeNoRegion
   }
 
-  return defaultLocation
+  return i18n.global.fallbackLocale
 
 
 }
@@ -84,7 +85,6 @@ export async function i18nRouterMiddleware(to: any, _from: any, next: any) {
   } else {
     switchLanguage("en")
   }
-  // i18n.global.fallbackLocale
   return next()
 
 
