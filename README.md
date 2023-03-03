@@ -1,59 +1,54 @@
-# RSClone
+# Page Builder
+#### RsClone
 
-This template should help get you started developing with Vue 3 in Vite.
+Конструктов сайтов, который позволяет создавать сайты визуально используя готовые элементы, либо писать код самостоятельно и настраивать всё под себя.
 
-## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
 
-## Type Support for `.vue` Imports in TS
+## Tech Stack
+#### Frontend
+- Vue
+- TypeScript
+- Vite
+- SASS
+- ESlint
+- Drag&drop
+- SPA
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+#### Backend
+- JavaScript
+- Express.js
+- Node.js
+- MySql
+- REST API
+- JWT
+- CORS
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run build
-npm run test:e2e # or `npm run test:e2e:ci` for headless testing
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+## Libreries
+#### Frontend
+ - Axios - отправка запросов на сервер
+ - TanStack Query - Асинхронное управление состоянием
+ - VeeValidate и Zod  - Валидация запросов перед отправкой на сервер
+ - i18next  - Перевод сайта на множество языков
+ - VueUse - Коллекция поллезных утилит для Vue
+ - Сodemirror - Превращение простого поля для ввода текста в редактор кода
+ - Draggable - Реализация Drag&drop функционала
+ - Interactjs -  Контроль размеров элементов при перетаскивании
+ - Pinia - управления состояниями 
+ - Resizable - Управление размерами элеметов на странице
+ - SortableJS и Vue.draggable.next - Drag&drop функционал
+ - Vue Router маршрутизация в приложении
+ - Bootstrap библиотека для стилизации приложения
+ 
+#### Backend
+ - nodemon - запуск кода, и его автоматического перезапуска после изменений
+ - bcrypt - шифрование паролей
+ - cors - работа с cors
+ - dotenv - чтение переменных среды из файла .env
+ - nodemailer - отправление почты
+ - express-validator - валидация входящих данных
+ - uuid - генерация уникальных id
+ - jsonwebtoken - работа с jwt токеном
+ 
+ 
+  
