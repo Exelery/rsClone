@@ -19,7 +19,8 @@ import {useEditorStore} from '@/stores/editor'
         },
         methods:{
             createFile(){
-                this.promptResult = String(prompt("Enter file name", ""));
+                this.promptResult = String(prompt("Enter file name"));
+                if (this.promptResult === "" || this.promptResult === "null" ) return true
                 let list = localStorage.getItem(`${this.pageName}/${useEditorStore().activeProject}/page`);
                 let ParsedList = JSON.parse(String(list));
                 if(this.promptResult != null){
