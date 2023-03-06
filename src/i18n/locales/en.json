@@ -1,0 +1,102 @@
+{
+  "locale": {
+    "en": "Eng",
+    "ru": "Ru"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "builder": "Builder",
+    "account": "Account"
+  },
+  "account": {
+    "header": "User Profile",
+    "name": "Public Name",
+    "emailHeader": "Email Details",
+    "emailText": "Your personal information is never shown to other users.",
+    "verify": "Verify email",
+    "verified": "Your email is verifed",
+    "email": "Email Address",
+    "password": "Password",
+    "passwordText": "Leave password blank if don't want to change.",
+    "currentPasword": "Current Password",
+    "newPassword": "New Password",
+    "save": "Save Changes",
+    "cancel": "Cancel"
+  },
+  "welcome": {
+    "header": "Create web pages in one click",
+    "text": "We are team of talented developers give you the best webpage builder!",
+    "startBtn": "Get Started",
+    "register": "Register",
+    "logout": "Logout",
+    "login": "Login"
+  },
+  "about": {
+    "team": "Team",
+    "about": "ABOUT US",
+    "text": "We are team of talented developers give you the best webpage builder! Why our application is better?",
+    "reasonOne": "We use modern technologies",
+    "reasonTwo": "We give you the ability to create web pages in one click",
+    "reasonThree": "We are the best of the best :)",
+    "jahanbayev": "Jahanbayev Samandar",
+    "gladyshev": "Aleksei Gladyshev",
+    "komarov": "Anatoliy Komarov",
+    "name": "Page builder",
+    "description": "The best application in the world",
+    "technologies": "Used technologies",
+    "technologiesDescription": "Our work is done using the framework vue.js"
+  },
+  "login": {
+    "header": "Login to Page Builder",
+    "email": "Email Address",
+    "password": "Password",
+    "login": "Login",
+    "forgot": "Forgot Password?"
+  },
+  "registration": {
+    "name": "Account name",
+    "header": "Create new account",
+    "email": "Email Address",
+    "password": "Password",
+    "confirm": "Confirm Password",
+    "create": "Create account"
+  },
+  "builder": {
+    "projects": "All project",
+    "main": "Back to main page",
+    "save": "Save to server",
+    "newPage": "New page",
+    "editPage": "Change code",
+    "fullScreen": "Full Screen",
+    "preview": "Preview",
+    "publish": "Publish",
+    "createTitle": "Create new page",
+    "createBtn": "Create",
+    "creator": "Visual editor",
+    "editor": "Code editor"
+  },
+  "blocks": {
+    "navBar": "Navigation",
+    "callAction": "Call To Action",
+    "contactUs": "Contact Us",
+    "featureBlocks": "Features",
+    "contentBlocks": "Content",
+    "footerBlocks": "Footer",
+    "formsBlocks": "Forms",
+    "pricingBlocks": "Pricing",
+    "teamsBlocks": "Teams",
+    "testimonialBlocks": "Testimonial",
+    "cover": "cover"
+  },
+  "projects": {
+    "create": "Create project",
+    "edit": "Edit",
+    "delete": "Delete",
+    "answer": "The project will be permanently deleted. Please confirm"
+  },
+  "editor": {
+    "create": "Create file",
+    "delete": "Delete page"
+  }
+}
