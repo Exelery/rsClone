@@ -13,7 +13,7 @@
         :disabled="false"
         class="working-space-drop"
         >
-            <template #item="{element}">
+            <template #item="{element}" :class="{"file-not-html" : element.html}">
                 <div
                 @mouseover="edit($event)"
                 @mouseout="removeEdit($event)"
@@ -199,9 +199,7 @@ export default {
         const setList = () => {
         this.activeProject = localStorage.getItem("activeProject");
             if(localStorage.getItem(this.activePage + `/${this.activeProject}/page`) != null){
-                this.blocks = JSON.parse(String(localStorage.getItem(this.activePage + `/${this.activeProject}/page`))).filter((element: any) => {
-                    return element.html == true
-                });
+                this.blocks = JSON.parse(String(localStorage.getItem(this.activePage + `/${this.activeProject}/page`)))
             }
         }
 
