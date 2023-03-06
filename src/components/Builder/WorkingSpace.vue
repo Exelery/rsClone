@@ -13,7 +13,7 @@
         :disabled="false"
         class="working-space-drop"
         >
-            <template #item="{element}" :class="{"file-not-html" : element.html}">
+            <template #item="{element}" :class="{'file-not-html' : element.html}">
                 <div
                 @mouseover="edit($event)"
                 @mouseout="removeEdit($event)"
