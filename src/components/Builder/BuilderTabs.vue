@@ -123,7 +123,7 @@ import { useEditorStore } from '../../stores/editor'
     display: flex;
 }
 .btn-tab .scroll{
-    width: calc(100% - 86px);
+    width: calc(100% - 89px);
     display: flex;
     overflow: auto !important
 }
@@ -131,6 +131,7 @@ import { useEditorStore } from '../../stores/editor'
     padding: 2px 19px !important;
     font-size: 14px;
     margin-right: 5px;
+    height: 25px;
     color: rgb(233, 233, 233);
     animation-name: add-tab;
     animation-duration: 0.3s;
@@ -138,8 +139,8 @@ import { useEditorStore } from '../../stores/editor'
 .btn-tab .sync-button{
     position: absolute;
     right: 10px;
-    top: 10px;
-    z-index: 999;
+    top: 8px;
+    z-index: 0;
 }
 
 .btn-script{

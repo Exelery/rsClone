@@ -124,12 +124,15 @@ export default {
         },true);
     },
     mounted(){
+        let editMenu = this.$refs.editMenu as HTMLDivElement;
         this.$el.parentElement.querySelector(".working-space").addEventListener('click', (e: Event)=>{
             let ActiveTarget = e.target as HTMLElement;
             if(this.canMove){
                 ActiveTarget.classList.add("element-edit");
                 this.canMove = false;
                 this.elementEdit = ActiveTarget;
+
+                editMenu.setAttribute("style", `top: ${ActiveTarget.getBoundingClientRect().y - 65}px; left: ${(ActiveTarget.getBoundingClientRect().x + 200 > ActiveTarget.getBoundingClientRect().right)?ActiveTarget.getBoundingClientRect().x - 100:ActiveTarget.getBoundingClientRect().x}px;`)
             }else if(!this.canMove && !ActiveTarget.className.includes("element-edit")){
                 this.buttonActive = ""
                 document.querySelector(".element-edit")?.classList.remove("element-edit")

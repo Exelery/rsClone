@@ -20,13 +20,15 @@ import "codemirror/mode/javascript/javascript.js";
 import 'codemirror/addon/edit/closebrackets'
 import 'codemirror/addon/edit/closetag'
 import 'codemirror/addon/fold/foldcode.js'
-
+import 'codemirror/addon/fold/brace-fold.js'
+import 'codemirror/addon/fold/foldgutter.js'
 
 import 'codemirror/addon/hint/show-hint';
 import 'codemirror/addon/hint/show-hint.css';
 import 'codemirror/addon/hint/anyword-hint';
 
 import "codemirror/theme/mbo.css";
+import "codemirror/addon/scroll/annotatescrollbar.js";
 
   export default {
     data(){
@@ -44,7 +46,8 @@ import "codemirror/theme/mbo.css";
       return {
         cmOptions: {
           mode: "text/html",
-          theme: "mbo", 
+          theme: "mbo",
+         
           lineNumbers: true, 
           smartIndent: true,
           line: true,
@@ -126,8 +129,29 @@ import "codemirror/theme/mbo.css";
 
 <style>
 .editor {
-  height: calc(100vh - 41px) !important;
+  height: calc(100vh - 47px) !important;
   width: calc(100vw - 280px) !important;
+}
+
+
+.editor *::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+}
+
+.editor *::-webkit-scrollbar-track {
+  background: #212529; 
+}
+ 
+
+.editor *::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+
+.editor *::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 
 .CodeMirror {

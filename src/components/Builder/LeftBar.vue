@@ -35,9 +35,9 @@
 
 <script lang="ts">
 import { RouterLink } from 'vue-router'
-import { useEditorStore } from "../../stores/editor";
+import { useEditorStore } from "@/stores/editor";
 import LeftBar from "../editor/LeftBar.vue";
-import blocks from '../../blocks/';
+import blocks from '@/blocks/';
 import { useAuthStore } from '@/stores/authStore';
 
 export default {

@@ -21,7 +21,7 @@ export default [
 },{
     html: true,
     name: 'PunnyHeadline',
-    data: `<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light"
+    data: `<div class="position-relative overflow-hidden p-md-5 text-center bg-light"
                 style="background-image: url('https://images.unsplash.com/photo-1675935576526-1a196e8e7a76?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80'); background-position: center; background-size: cover;"
     >
     <div class="col-md-5 p-lg-5 mx-auto my-5">

@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import type { RouteLocation } from 'vue-router';
-import DataApi from '../api/dataApi';
+import DataApi from '../../api/dataApi';
 import LoadButton from '../components/LoadButton.vue'
 import router from '@/router';
 
@@ -87,7 +87,3 @@ const addProject = async (projectName: string) => {
 
 }
 </script>
-
-<style lang="sass" scoped>
-
-</style>

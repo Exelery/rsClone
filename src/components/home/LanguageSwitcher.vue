@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
-import { supportedLocales, switchLanguage } from "../i18n/index"
+import { supportedLocales, switchLanguage } from "@/i18n/index"
 import {useRouter} from "vue-router"
 const { locale } = useI18n()
 const router = useRouter()

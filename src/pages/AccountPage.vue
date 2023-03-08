@@ -110,7 +110,7 @@ import HeaderBox from "@/components/HeaderBox.vue";
 import FooterBox from "@/components/FooterBox.vue";
 import LoadButton from '@/components/LoadButton.vue'
 import { useAuthStore } from '@/stores/authStore';
-import TestLoadData from '@/components/TestLoadData.vue'
+
 
 import { Form, useField, useForm } from 'vee-validate';
 import { toFormValidator } from '@vee-validate/zod';

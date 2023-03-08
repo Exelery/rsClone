@@ -21,7 +21,7 @@ import { useEditorStore } from '@/stores/editor'
 import draggable  from 'vuedraggable'
 import nestedDraggable  from 'vuedraggable'
 
-import blocks from '../../blocks/'
+import blocks from '@/blocks/'
 export default {
     data() {
         let data : {
@@ -75,7 +75,7 @@ export default {
     overflow-y: auto;
     scale: .3333;
     transform-origin: left top;
-    background: rgb(215, 215, 215);
+    background: #242424;
 }
 .block{
     margin-top: 10px;

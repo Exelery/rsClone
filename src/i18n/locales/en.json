@@ -65,7 +65,7 @@
   "builder": {
     "projects": "All project",
     "main": "Back to main page",
-    "save": "Save to server",
+    "save": "Sync",
     "newPage": "New page",
     "editPage": "Change code",
     "fullScreen": "Full Screen",

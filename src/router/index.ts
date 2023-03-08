@@ -1,27 +1,20 @@
 import { createRouter, createWebHistory, RouterView } from "vue-router";
-// import AboutView from "../views/AboutView.vue";
+// import HomeView from "../views/HomeView.vue";
 // import BuilderPage from "../pages/builder/BuilderPage.vue";
 // import BuilderEditor from "../pages/builder/BuilderEditor.vue";
 // import BuilderConstuctor from "../pages/builder/BuilderConstructor.vue";
 // import mainPageVue from "@/pages/userHome/mainPage.vue";
-import { i18nRouterMiddleware } from "../i18n/index";
+import { i18nRouterMiddleware } from "@/i18n/index";
 
 import { useAuthStore } from "@/stores/authStore";
-const HomeView = () => import("../views/HomeView.vue");
+const HomeView = () => import("@/pages/userHome/mainPage.vue");
 const NotFound = () => import("@/pages/NotFound.vue");
-const AccountPage = () => import("../pages/AccountPage.vue");
-const BuilderPage  = () => import("../pages/builder/BuilderPage.vue");
-const BuilderEditor  = () => import("../pages/builder/BuilderEditor.vue");
-const BuilderConstuctor = () => import("../pages/builder/BuilderConstructor.vue");
+const AccountPage = () => import("@/pages/AccountPage.vue");
+const BuilderPage  = () => import("@/pages/builder/BuilderPage.vue");
+const BuilderEditor  = () => import("@/pages/builder/BuilderEditor.vue");
+const BuilderConstuctor = () => import("@/pages/builder/BuilderConstructor.vue");
 const mainPageVue = () => import( "@/pages/userHome/mainPage.vue");
-const About = () => import("../views/AboutView.vue")
-
-
-
-
-
-
-
+const About = () => import("@/views/AboutView.vue")
 
 const router = createRouter({
   history: createWebHistory(),

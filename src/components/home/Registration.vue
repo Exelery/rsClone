@@ -57,7 +57,7 @@ import { Form, useField, useForm } from 'vee-validate';
 import { toFormValidator } from '@vee-validate/zod';
 import * as zod from 'zod';
 import { useMutation } from '@tanstack/vue-query';
-import Auth from '../api/authApi';
+import Auth from '@/api/authApi';
 import type { ISignUpInput } from '@/utils/types';
 import type { AxiosError } from 'axios';
 import LoadButton from './LoadButton.vue';
@@ -126,5 +126,3 @@ const onSubmit = handleSubmit((values: { name: any; email: any; password: any; }
   });
 });
 </script>
-
-<style></style>

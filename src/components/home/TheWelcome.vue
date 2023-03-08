@@ -1,6 +1,7 @@
 <template>
   <div class="body">
-    <HeaderBox></HeaderBox>
+    <HeaderBox/>
+    <!-- 
     <main>
       <section id="hero" class="d-flex align-items-center">
 
@@ -20,7 +21,7 @@
               </div>
             </div>
             <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-              <img src="../layout/assets/img/hero-img.png" class="img-fluid animated" alt="">
+              <img src="@/layout/assets/img/hero-img.png" class="img-fluid animated" alt="">
             </div>
           </div>
         </div>
@@ -32,20 +33,20 @@
 
     <FooterBox></FooterBox>
 
-    <!--  <div id="preloader"></div>-->
+     <div id="preloader"></div>
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
         class="bi bi-arrow-up-short"></i></a>
 
     <Registration></Registration>
-    <Login></Login>
+    <Login></Login> -->
   </div>
 </template>
 
 <script lang="ts">
-import HeaderBox from "@/components/HeaderBox.vue";
-import FooterBox from "@/components/FooterBox.vue";
-import Registration from "@/components/Registration.vue";
-import Login from "@/components/Login.vue";
+import HeaderBox from "./HeaderBox.vue";
+// import FooterBox from "@/components/FooterBox.vue";
+// import Registration from "@/components/home/Registration.vue";
+// import Login from "@/components/home/Login.vue";
 import { useAuthStore } from "@/stores/authStore";
 import Auth from "@/api/authApi";
 // import {i18nRoute} from "../i18n/index"
@@ -68,15 +69,15 @@ export default {
   },
   components: {
     HeaderBox,
-    FooterBox,
-    Registration,
-    Login
+    // FooterBox,
+    // Registration,
+    // Login
   },
 
 }
 </script>
 <style scoped>
-@import "../layout/assets/css/style.css";
+/* @import "../../layout/assets/css/style.css"; */
 
 a {
   text-decoration: none !important;

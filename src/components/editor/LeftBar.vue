@@ -1,4 +1,5 @@
 <template>
+    <ul class="nav nav-pills flex-column mb-auto">
 <div class="folders">
     <ContextMenu 
                 :isVibsile = "contextMenuVisiblity"
@@ -26,6 +27,7 @@
         </div>
     </div>
 </div>
+</ul>
 </template>
 
 <script lang="ts">
@@ -127,6 +129,7 @@ import ContextMenu from './ContextMenu.vue'
         cursor: pointer;
         padding: 2px 6px;
         position: relative;
+        border-radius: 4px;
     }
     .folders section:hover{
         background: #5d5d5d;

@@ -1,6 +1,6 @@
 <template>
   <div class="mt-0 ">
-    <div class="d-flex vh-100 bg-light builder" >
+    <div class="d-flex vh-100 builder" >
         <LeftBar/>
         <div style="width:100%">
             <BuilderTabs/>
@@ -14,10 +14,8 @@
 
 <script lang="ts">
 import { RouterView } from "vue-router";
-// import HeaderBox from "@/components/HeaderBox.vue";
-// import FooterBox from "@/omponents/FooterBox.vue";
-import LeftBar from '@/components/Builder/LeftBar.vue'
-import BuilderTabs from "@/components/Builder/BuilderTabs.vue";
+import LeftBar from '@/components/builder/LeftBar.vue'
+import BuilderTabs from "@/components/builder/BuilderTabs.vue";
 import draggable from 'vuedraggable'
 declare var require: any
 
@@ -31,9 +29,10 @@ declare var require: any
 </script>
 
 <style>
-@import '../../blocks/style/blocks.css';
+@import '@/blocks/style/blocks.css';
 .builder{
     overflow-y: hidden;
+    background-color: #171717 !important;
 }
 #header {
   padding: 0 0;

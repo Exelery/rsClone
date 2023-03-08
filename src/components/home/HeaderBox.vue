@@ -18,7 +18,7 @@
   </header>
 </template>
 
-<script>
+<script lang="ts">
 import { useAuthStore } from "@/stores/authStore";
 import LanguageSwitcher from "@/components/LanguageSwitcher.vue";
 export default {
@@ -29,10 +29,10 @@ export default {
     }
   },
   mounted() {
-    document.querySelector(".mobile-nav-toggle").addEventListener('click', function(e) {
-      document.querySelector('#navbar').classList.toggle('navbar-mobile')
-      this.classList.toggle('bi-list')
-      this.classList.toggle('bi-x')
+    document.querySelector(".mobile-nav-toggle")!.addEventListener('click', function(e) {
+      document.querySelector('#navbar')!.classList.toggle('navbar-mobile');
+      // this!.classList.toggle('bi-list')
+      // this.classList.toggle('bi-x')
     })
 
   },
